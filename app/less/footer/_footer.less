@@ -1,0 +1,25 @@
+footer{
+	position: relative;
+	height: 70px;
+	background-color: @footer_color;
+	color: #fff;
+	line-height: 69px;
+	.footer_social{
+		text-align: right;
+		li{
+			display: inline-block;
+			margin-right: 10px;
+			&:last-child{
+				margin-right: 0;
+			}
+			a{
+				color: #fff;
+				font-size: 16px;
+				transition: all 0.3s;
+				&:hover{
+					color: @base_color;
+				}
+			}
+		}
+	}
+}

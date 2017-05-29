@@ -1,0 +1,141 @@
+body{
+	font-family: @Ubuntu;
+	color: @base_color_text;
+	position: relative;
+}
+
+ul, li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a:hover, a:active, a:focus{
+	color: initial;
+	text-decoration: none;
+}
+
+img{
+	height: auto;
+	max-width: 100%;
+}
+// соціальні мережі
+.social_icon{
+	display: inline-block;
+	li{
+		display: block;
+		float: left;
+		margin-right: 5px;
+		&:last-child{
+			margin-right: 0;
+		}
+		a{
+			border-radius: 50%;
+			border: 1px solid  @base_color;
+			height: 28px;
+			width: 28px;
+			text-align: center;
+			line-height: 26px;
+			display: inline-block;
+			color: @base_color;
+			transition: all 0.3s;
+			&:hover{
+				color: #fff;
+				background-color: @base_color;
+			}
+		}
+	}
+}
+
+// заголовок секцій
+.section_title{
+	color: @title_color;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-family: @Roboto;
+	margin: 0 0 40px;
+	position: relative;
+	&::after{
+		content: "";
+		display: block;
+		position: absolute;
+		width: 50px;
+		height: 2px;
+		left: 0;
+		bottom: -20px;
+		background-color: @base_color;
+	}
+	span{
+		color: @base_color;
+		background-color: transparent;
+	}
+
+}
+.short_info{
+	text-align: center;
+	margin-bottom: 15px;
+	line-height: 22px;
+	font-family: @Roboto;
+	font-weight: 300;
+}
+
+// основні кнопки
+.base_button{
+	height: 48px;
+	padding: 0 34px;
+	display: inline-block;
+	line-height: 46px;
+	border-radius: 3px;
+	text-align: center;
+	font-weight: bold;
+	transition: all 0.3s;
+	text-transform: uppercase;
+	border: 1px solid;
+	font-size: 14px;
+}
+// кнопка з фоном
+.button_color{
+	background-color: @base_color;
+	border-color: @base_color;
+	color: #fff;
+	&:hover{
+		background-color: transparent;
+		color: @base_color;
+		border-color: @base_color;
+	}
+}
+
+// кнопка без фона
+.button_transparent{
+	background-color: transparent;
+	color: #fff;
+	border-color: #fff;
+	&:hover{
+		background-color: #fff;
+		color: @base_color;
+		border-color: #fff;
+	}
+}
+
+// кнопка "На верх"
+.button_up{
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	position: absolute;
+	top: -15px;
+	right: 5%;
+	text-align: center;
+	line-height: 28px;
+	border: 1px solid  #fff;
+	border-radius: 50%;
+	background-color: @base_color;
+	color: #fff;
+	cursor: pointer;
+	&::visited{
+		color: #fff !important;
+	}
+	.fa{
+		font-size: 16px;
+	}
+}

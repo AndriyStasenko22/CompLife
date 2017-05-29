@@ -1,0 +1,37 @@
+header{
+	.header_contacts{
+		height: 50px;
+		background-color: #fff;
+		line-height: 50px;
+	}
+	.header_menu{
+		height: 70px;
+		background-color: @base_color;
+		line-height: 70px;
+	}
+	.social_icon{
+		float: right;
+	}
+	.contact{
+		font-size: 12px;
+		li{
+			display: block;
+			float: left;
+			margin-right: 15px;
+			&:last-child{
+				margin-right: 0;
+			}
+			a{
+				color: @base_color_text;
+				transition: all 0.3s;
+				&:hover{
+					color: @base_color;
+				}
+			}
+		}
+		.fa{
+			margin-right: 10px;
+			color: @base_color;
+		}
+	}
+}
