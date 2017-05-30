@@ -2,12 +2,27 @@ header{
 	.header_contacts{
 		height: 50px;
 		background-color: #fff;
-		line-height: 50px;
+		line-height: 49px;
+		@media only screen and (max-width : 768px){
+			// line-height: 30px;
+			.contact{
+				float: none;
+				ul{
+					text-align: center;
+					li{
+						float: none;
+					}
+				}
+			}
+		}
+		@media only screen and (max-width : 393px){
+			line-height: 25px;
+		}
 	}
 	.header_menu{
 		height: 70px;
 		background-color: @base_color;
-		line-height: 70px;
+		line-height: 69px;
 	}
 	.social_icon{
 		float: right;
@@ -15,8 +30,8 @@ header{
 	.contact{
 		font-size: 12px;
 		li{
-			display: block;
-			float: left;
+			display: inline-block;
+			// float: left;
 			margin-right: 15px;
 			&:last-child{
 				margin-right: 0;

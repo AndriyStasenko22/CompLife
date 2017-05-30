@@ -30,6 +30,24 @@ $(document).ready(function() {
 		}
 	});
 	
+	var comand_slider = $('.comand_slider');
+	comand_slider.owlCarousel({
+		items:4,
+		loop:true,
+		// nav:true,
+		margin: 35,
+		autoplay:true,
+		autoplayTimeout:3000,
+		autoplaySpeed: 1000,
+	});
+
+	$('.btn_next').click(function() {
+		comand_slider.trigger('next.owl.carousel');
+	})
+	$('.btn_prev').click(function() {
+		comand_slider.trigger('prev.owl.carousel');
+	})
+
 	// однакова висота блоків "Послуги"
 	var max_height=[];
 	$('.service  .service_item').each(function() {
@@ -58,6 +76,23 @@ $(document).ready(function() {
 		$(this).find('.tab_layout .layout_icon li').last().children('a').removeClass('animated fadeInDown');
 		$(this).find('.tab_layout .layout_info').removeClass('animated fadeIn');
 	});
+
+	$('.call_form input').focus(function() {
+		$('.call_icon img.active').css({
+			"-webkit-transform": "rotate(0deg)",
+			"-moz-transform": "rotate(0deg)",
+			"transform": "rotate(0deg)" /* For modern browsers(CSS3)  */
+		}).removeClass('active');
+
+		$('.call_icon img').eq($(this).index()).css({
+			"-webkit-transform": "rotate(360deg)",
+			"-moz-transform": "rotate(360deg)",
+			"transform": "rotate(360deg)" /* For modern browsers(CSS3)  */
+		}).addClass('active');
+
+		console.log($(this).index());
+	});
+
 
 	$(window).resize(function() {
 		$('.service  .service_item').height(maxh);

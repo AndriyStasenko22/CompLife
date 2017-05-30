@@ -1,8 +1,11 @@
 // О нас
 .about_us{
-	padding: 120px 0;
+	padding: 6.3% 0;
 	.section_title{
 		margin-bottom: 60px;
+		@media only screen and (max-width : 768px){
+			margin-top: 30px;
+		}
 	}
 	.about_us_info{
 		margin-bottom: 32px;
@@ -45,7 +48,7 @@
 
 // Наши услуги
 .service{
-	padding: 120px 0;
+	padding: 6.3% 0;
 	.service_item{
 		margin-top: 40px;
 	}
@@ -76,7 +79,7 @@
 
 // Портфолио
 .portfolio{
-	padding: 120px 0;
+	padding: 6.3% 0;
 	background-color: @portfolio_color;
 	.portfolio_filter{
 		text-align: center;
@@ -135,14 +138,26 @@
 		max-height: 360px;
 		overflow: hidden;
 		position: relative;
+		// @media only screen and (max-width : 992px){
+		// 	width: 200px;
+		// }
 		&:hover{
 			.tab_layout{
 				opacity: 1;
 				transform: scale(1);
 			}
+			.tab_layout_T, .tab_layout_B{
+				width: 94%;
+				transition-delay: 0.3s;
+			}
+			.tab_layout_L, .tab_layout_R{
+				height: 94%;
+				transition-delay: 0.7s;
+			}
 		}
 		img{
 			width: 100%;
+			max-height: 100%;
 		}
 	}
 	.tab_layout{
@@ -152,13 +167,43 @@
 		top: 0;
 		left: 0;
 		background-color: rgba(231,76,60,.8);
-		transform: scale(1);
-		transition: all 0.3s;
+		transform: scale(0.7);
+		transition: all 0.4s;
 		opacity: 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+	}
+	.tab_layout_line{
+		position: absolute;
+		display: inline-block;
+		background-color: #fff;
+		transition: all 0.5s;
+	}
+	.tab_layout_T{
+		top: 3%;
+		left: 3%;
+		height: 1px;
+		width: 0;
+	}
+	.tab_layout_B{
+		bottom: 3%;
+		right: 3%;
+		height: 1px;
+		width: 0;
+	}
+	.tab_layout_L{
+		bottom: 3%;
+		left: 3%;
+		height: 0;
+		width: 1px;
+	}
+	.tab_layout_R{
+		top: 3%;
+		right: 3%;
+		height: 0;
+		width: 1px;
 	}
 	.layout_icon{
 		margin-bottom: 25px;
@@ -193,10 +238,68 @@
 		opacity: 0.8;
 		transition: all 0.3s;
 		font-size: 20px;
+		text-align: center;
 		animation-duration: 1s;
 		animation-delay: 0.8s;
+		strong{
+			font-size: 24px;
+		}
 		&:hover{
 			opacity: 1;
+		}
+	}
+}
+
+// Наша команда
+.comand{
+	background-color: @comand_color;
+	padding: 100px 0;
+	color: #fff;
+	.section_title{
+		color: #fff;
+		margin-bottom: 65px;
+		display: inline-block;
+	}
+	.comand_person_info{
+		margin-top: 20px;
+		text-align: center;
+	}
+	.comand_person_name{
+		font-size: 16px;
+		text-transform: uppercase;
+		font-weight: 500;
+		margin-bottom: 15px;
+	}
+	.slider_btn{
+		float: right;
+		vertical-align: top;
+	}
+	.btn_prev, .btn_next{
+		display: block;
+		float: left;
+		width: 40px;
+		height: 40px;
+		border: 1px solid  #fff;
+		text-align: center;
+		line-height: 38px;
+		margin-left: 10px;
+		font-size: 26px;
+		cursor: pointer;
+		transition: all 0.3s;
+		&:hover{
+			background-color: @base_color;
+			border-color: @base_color;
+		}
+	}
+}
+
+.say{
+	padding: 100px 0;
+	.section_title{
+		text-align: center;
+		&::after{
+			left: 50%;
+			margin-left: -25px;
 		}
 	}
 }
@@ -208,17 +311,22 @@
 		margin-bottom: 60px;
 	}
 }
-.personal{
-	padding: 50px 0;
-}
 
+// Связатса
 .call{
+	text-align: center;
 	padding: 50px 0;
-	background-color: @portfolio_color;
+	background: transparent url(../img/icon/call.png) top center no-repeat;
+	background-size: cover;
+	.section_title{
+		margin-bottom: 60px;
+		color: #fff;
+	}
 	.call_icon{
-		width: 66px;
+		vertical-align: top;
+		width: 12%;
 		position: relative;
-		margin-right: 35px;
+		margin: 0 7%;
 		display: block;
 		float: left;
 		&::after{
@@ -238,25 +346,61 @@
 			margin-bottom: 25px;
 			position: relative;
 			z-index: 10;
+			transition: all 0.8s;
 			&:last-child{
 				margin-bottom: 0;
 			}
+			// &:hover{
+			// 	transform: rotate(360deg);
+			// 	transition: all 0.5s;
+			// }
+			// &.active{
+			// 	// transform: rotate(360deg);
+			// 	transition: all 0.5s;
+			// }
 		}
 	}
-	.form{
-		display: block;
-		float: left;
+	.block_forma{
+		margin-bottom: 50px;
 	}
 	.call_form{
+		vertical-align: top;
 		display: block;
 		float: left;
-		vertical-align: top;
+		width: 66%;
+		position: relative;
 		input{
 			width: 100%;
-			display: inline-block;
+			display: block;
+			height: 60px;
+			border-radius: 26px;
+			margin-bottom: 31px;
+			padding: 0 20px;
+			font-size: 24px;
+			color: #000;
+			outline: none;
+			border: 0;
+			background-color: rgba(179,179,179,.7);
+			&:first-child{
+				margin-top: 3px;
+			}
+			&:last-child{
+				margin-bottom: 0;
+			}
+			&:focus {
+				background-color: rgba(179,179,179,1);
+			}
+		}
+	}
+	.button_color{
+		width: 85%;
+		&:hover{
+			background-color: #fff;
+			color: @base_color;
 		}
 	}
 }
+
 // Загальний стиль заголовків
 .clients, .portfolio, .service, .call{
 	.section_title{
