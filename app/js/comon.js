@@ -159,13 +159,39 @@ $(document).ready(function() {
 		$('.dropdown_menu').slideUp('500');
 	});
 
+	// малювання процентних ліній
+	var flag=1;
+	$(document).scroll(function() {
+		if($(window).scrollTop() >= $('.progres').offset().top-120 && flag){
+			$('.progres_bar').each(function() {
+				ProgresLine(this);
+			});
+			flag=0;
+		}
+	});
+
 	$(window).resize(function() {
 		$('.service  .service_item').height(maxh);
 	});
 });
 
+
 //  функція додавання класу .active в елементах списку li
 function AddActive(elem){
 	$(elem).parent().siblings('li').removeClass('active');
 	$(elem).parent().addClass('active');
+}
+
+// 
+function ProgresLine(el){
+	var line_width=0;
+	var intervar=setInterval(function(){
+		line_width++;
+		$(el).children('.progres_line').width(line_width+'%');
+		$(el).children('.progres_point').css('left', line_width+'%');
+		$(el).find('.procent').html(line_width);
+		if(line_width == $(el).data('size')){
+			clearInterval(intervar);
+		}
+	},30);
 }

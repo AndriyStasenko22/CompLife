@@ -162,6 +162,51 @@
 	}
 }
 
+.progres{
+	padding: 110px 0;
+	.section_title{
+		margin-bottom: 80px;
+	}
+	.progres_name{
+		margin-bottom: 20px;
+	}
+	.progres_bar{
+		width: 100%;
+		background-color: #eee;
+		height: 5px;
+		position: relative;
+		margin-bottom: 15px;
+	}
+	.progres_point{
+		position: absolute;
+		width: 25px;
+		text-align: center;
+		top: -22px;
+		transform: translateX(-12px);
+		left: 0%;
+		color: red;
+		font-size: 16px;
+		.procent{
+			margin-bottom: 0px;
+			font-size: 12px;
+			line-height: 1;
+			&::after{
+				content: "%";
+			}
+		}
+		.fa{
+			line-height: 1;
+			display: block;
+		}
+	}
+	.progres_line{
+		height: 100%;
+		width: 0%;
+		display: block;
+		background-color: red;
+	}
+}
+
 // Наша команда
 .comand{
 	background-color: @comand_color;
