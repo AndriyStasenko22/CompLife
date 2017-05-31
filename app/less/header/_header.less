@@ -19,11 +19,6 @@ header{
 			line-height: 25px;
 		}
 	}
-	.header_menu{
-		height: 70px;
-		background-color: @base_color;
-		line-height: 69px;
-	}
 	.social_icon{
 		float: right;
 	}
@@ -47,6 +42,107 @@ header{
 		.fa{
 			margin-right: 10px;
 			color: @base_color;
+		}
+	}
+	.header_menu{
+		background-color: @base_color;
+		line-height: 69px;
+		@media only screen and (max-width : 768px){
+			line-height: 55px;
+			text-align: center;
+		}
+	}
+	.logo{
+		float: left;
+		img{
+			height: 50px;
+		}
+		@media only screen and (max-width : 768px){
+			float: none;
+			img{
+				height: 40px;
+			}
+		}
+	}
+	.menu{
+		display: inline-block;
+		float: right;
+		&>li{
+			display: inline-block;
+			position: relative;
+			&.active>a{
+				color: @title_color;
+				&::before{
+					width: 100%;
+					left: 0;
+				}
+			}
+			&.li_dropdown>a::after{
+				content: '\f0d7';
+				font-family: 'FontAwesome';
+				margin-left: 5px;
+				line-height: 1;
+			}
+			// &.li_dropdown:hover .dropdown_menu{
+			// 	display: block;
+			// }
+			a{
+				margin: 0 15px;
+				display: inline-block;
+				color: #fff;
+				text-transform: uppercase;
+				font-family: 'Roboto-Medium';
+				transition: all 0.3s;
+				position: relative;
+				&::before{
+					content: "";
+					position: absolute;
+					left: 50%;
+					bottom: 15px;
+					display: block;
+					width: 0;
+					height: 1px;
+					background-color: @title_color;
+					transition: all 0.3s;
+				}
+				&:hover{
+					color: @title_color;
+					&::before{
+						left: 0;
+						right: 0;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	.dropdown_menu{
+		background-color: @base_color;
+		position: absolute;
+		display: none;
+		z-index: 10;
+		li{
+			display: block;
+			padding: 0 15px;
+			min-width: 250px;
+			&:last-child a{
+				border-bottom:0;
+			}
+			&:hover{
+				background-color: rgba(0,0,0, 0.1);
+			}
+			a{
+				line-height: 50px;
+				display: block;
+				margin: 0;
+				border-bottom: 1px solid  #fff;
+				&:hover{
+					color: #fff;
+					&::before{
+						width: 0;
+					}
+				}
+			}
 		}
 	}
 }

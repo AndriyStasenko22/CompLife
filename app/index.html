@@ -35,15 +35,51 @@
 		<div class="header_menu">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-2 col-sm-2">
-						<a href="#" class="logo"><img src="img/icon/complife.png" alt=""></a>
-					</div>
-					<div class="col-xs-10 col-sm-10">
+					<div class="col-xs-12 col-sm-12">
+						<div class="mobile_menu_button visible-xs"><i class="fa fa-bars" aria-hidden="true"></i></div>
+						<a href="#" class="logo"><img src="img/icon/logo.png" alt=""></a>
+						<ul class="menu hidden-xs">
+							<li class="active"><a href="#">главная</a></li>
+							<li><a href="#">о нас</a></li>
+							<li class="li_dropdown">
+								<a href="#">услуги</a>
+								<ul class="dropdown_menu">
+									<li><a href="#">Разработка WEB-сайтов</a></li>
+									<li><a href="#">Автоматизация учета</a></li>
+									<li><a href="#">Печатная техника</a></li>
+									<li><a href="#">Компьютерная техника</a></li>
+									<li><a href="#">Программное обеспечение</a></li>
+									<li><a href="#">Торговое оборудование</a></li>
+								</ul>
+							</li>
+							<li><a href="#">портфолио</a></li>
+							<li><a href="#">контакты</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
+	<section class="home_baner">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<div class="row">
+						<div class="home_slider owl-carousel">
+							<div class="home_slid_item">
+								<div class="home_slid_item_text">Разработка WEB-сайтов</div>
+								<img src="img/icon/baner-2.jpg" alt="">
+							</div>
+							<div class="home_slid_item">
+								<div class="home_slid_item_text">Автоматизация учета</div>
+								<img src="img/icon/baner1.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<!-- О нас -->
 	<section class="about_us">
 		<div class="container">
@@ -222,20 +258,24 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="row mixitup-wrapper">
 				<div class="col-xs-12 col-sm-12">
 					<div class="portfolio_filter">
 						<ul>
-							<li class="active"><a href="#">all</a></li>
-							<li><a href="#">branding</a></li>
-							<li><a href="#">design</a></li>
-							<li><a href="#">Development</a></li>
-							<li><a href="#">Print</a></li>
+							<li class="active"><a href="#" class='filter' data-filter='all'>Все</a></li>
+							<li><a href="#" class='filter' data-filter='.branding'>Интернет магазины</a></li>
+							<li><a href="#" class='filter' data-filter='.design'>дизайны</a></li>
+							<li><a href="#" class='filter' data-filter='.Development'>разработка</a></li>
+							<li><a href="#" class='filter' data-filter='.Print'>Проекты</a></li>
 						</ul>
 					</div>
 				</div>
+			</div>
+			<div class="row">
 				<div class="col-xs-12 col-sm-12">
-					<div class="row">
-						<div class="col-sm-6 col-md-4">
+					<div id="Grid" class="row">
+						<div class="col-sm-6 col-md-4 mix Print branding design"  data-myorder="1">
 							<div class="row">
 								<div class="tab_item">
 									<img src="img/icon/banner - категории - школа.jpg" alt="">
@@ -248,21 +288,21 @@
 											<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 											<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
 										</ul>
-										<a href="#" class="layout_info"><strong>"Luxic"</strong><br>Интернет магазин детской одежды</a>
+										<a href="#" class="layout_info"><strong>"Luxik"</strong><br>Интернет магазин детской одежды</a>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-4">
+						<div class="col-sm-6 col-md-4 mix branding design Development"  data-myorder="2">
 							<div class="row">
 								<div class="tab_item">
 									<img src="img/icon/style_nika.jpg" alt="">
 									<div class="tab_layout">
+										<span class="tab_layout_line tab_layout_T"></span>
+										<span class="tab_layout_line tab_layout_R"></span>
+										<span class="tab_layout_line tab_layout_B"></span>
+										<span class="tab_layout_line tab_layout_L"></span>
 										<ul class="layout_icon">
-											<span class="tab_layout_line tab_layout_T"></span>
-											<span class="tab_layout_line tab_layout_R"></span>
-											<span class="tab_layout_line tab_layout_B"></span>
-											<span class="tab_layout_line tab_layout_L"></span>
 											<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 											<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
 										</ul>
@@ -271,16 +311,16 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-4">
+						<div class="col-sm-6 col-md-4 mix Development design" data-myorder="2">
 							<div class="row">
 								<div class="tab_item">
 									<img src="img/icon/3.jpg" alt="">
 									<div class="tab_layout">
+										<span class="tab_layout_line tab_layout_T"></span>
+										<span class="tab_layout_line tab_layout_R"></span>
+										<span class="tab_layout_line tab_layout_B"></span>
+										<span class="tab_layout_line tab_layout_L"></span>
 										<ul class="layout_icon">
-											<span class="tab_layout_line tab_layout_T"></span>
-											<span class="tab_layout_line tab_layout_R"></span>
-											<span class="tab_layout_line tab_layout_B"></span>
-											<span class="tab_layout_line tab_layout_L"></span>
 											<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 											<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
 										</ul>
@@ -289,16 +329,16 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-4">
+						<div class="col-sm-6 col-md-4  mix Print Development branding">
 							<div class="row">
 								<div class="tab_item">
 									<img src="img/icon/2.jpg" alt="">
 									<div class="tab_layout">
+										<span class="tab_layout_line tab_layout_T"></span>
+										<span class="tab_layout_line tab_layout_R"></span>
+										<span class="tab_layout_line tab_layout_B"></span>
+										<span class="tab_layout_line tab_layout_L"></span>
 										<ul class="layout_icon">
-											<span class="tab_layout_line tab_layout_T"></span>
-											<span class="tab_layout_line tab_layout_R"></span>
-											<span class="tab_layout_line tab_layout_B"></span>
-											<span class="tab_layout_line tab_layout_L"></span>
 											<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 											<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
 										</ul>
@@ -307,16 +347,16 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-4">
+						<div class="col-sm-6 col-md-4 mix Print Development design">
 							<div class="row">
 								<div class="tab_item">
 									<img src="img/icon/5.jpg" alt="">
 									<div class="tab_layout">
+										<span class="tab_layout_line tab_layout_T"></span>
+										<span class="tab_layout_line tab_layout_R"></span>
+										<span class="tab_layout_line tab_layout_B"></span>
+										<span class="tab_layout_line tab_layout_L"></span>
 										<ul class="layout_icon">
-											<span class="tab_layout_line tab_layout_T"></span>
-											<span class="tab_layout_line tab_layout_R"></span>
-											<span class="tab_layout_line tab_layout_B"></span>
-											<span class="tab_layout_line tab_layout_L"></span>
 											<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 											<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
 										</ul>
@@ -325,16 +365,16 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-4">
+						<div class="col-sm-6 col-md-4 mix Print branding">
 							<div class="row">
 								<div class="tab_item">
 									<img src="img/icon/6.jpg" alt="">
 									<div class="tab_layout">
+										<span class="tab_layout_line tab_layout_T"></span>
+										<span class="tab_layout_line tab_layout_R"></span>
+										<span class="tab_layout_line tab_layout_B"></span>
+										<span class="tab_layout_line tab_layout_L"></span>
 										<ul class="layout_icon">
-											<span class="tab_layout_line tab_layout_T"></span>
-											<span class="tab_layout_line tab_layout_R"></span>
-											<span class="tab_layout_line tab_layout_B"></span>
-											<span class="tab_layout_line tab_layout_L"></span>
 											<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 											<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
 										</ul>
@@ -362,35 +402,100 @@
 				<div class="col-xs-12 col-sm-12">
 					<div class="comand_slider owl-carousel">
 						<div class="comand_person">
-							<div class="comand_person_img"><img src="img/icon/hasan-262x285.jpg" alt=""></div>
+							<div class="comand_person_img">
+								<img src="img/icon/hasan-262x285.jpg" alt="">
+								<div class="tab_layout">
+									<span class="tab_layout_line tab_layout_T"></span>
+									<span class="tab_layout_line tab_layout_R"></span>
+									<span class="tab_layout_line tab_layout_B"></span>
+									<span class="tab_layout_line tab_layout_L"></span>
+									<ul class="layout_icon">
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+									</ul>
+								</div>
+							</div>
 							<div class="comand_person_info">
 								<div class="comand_person_name">Андрій Стасенко</div>
 								<div class="comand_person_post">Front-end Developer</div>
 							</div>
 						</div>
 						<div class="comand_person">
-							<div class="comand_person_img"><img src="img/icon/beauty.jpg" alt=""></div>
+							<div class="comand_person_img">
+								<img src="img/icon/beauty.jpg" alt="">
+								<div class="tab_layout">
+									<span class="tab_layout_line tab_layout_T"></span>
+									<span class="tab_layout_line tab_layout_R"></span>
+									<span class="tab_layout_line tab_layout_B"></span>
+									<span class="tab_layout_line tab_layout_L"></span>
+									<ul class="layout_icon">
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+									</ul>
+								</div>
+							</div>
 							<div class="comand_person_info">
 								<div class="comand_person_name">Андрій Стасенко</div>
 								<div class="comand_person_post">Front-end Developer</div>
 							</div>
 						</div>
 						<div class="comand_person">
-							<div class="comand_person_img"><img src="img/icon/hasan-262x285.jpg" alt=""></div>
+							<div class="comand_person_img">
+								<img src="img/icon/hasan-262x285.jpg" alt="">
+								<div class="tab_layout">
+									<span class="tab_layout_line tab_layout_T"></span>
+									<span class="tab_layout_line tab_layout_R"></span>
+									<span class="tab_layout_line tab_layout_B"></span>
+									<span class="tab_layout_line tab_layout_L"></span>
+									<ul class="layout_icon">
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+									</ul>
+								</div>
+							</div>
 							<div class="comand_person_info">
 								<div class="comand_person_name">Андрій Стасенко</div>
 								<div class="comand_person_post">Front-end Developer</div>
 							</div>
 						</div>
 						<div class="comand_person">
-							<div class="comand_person_img"><img src="img/icon/mina-262x285.jpg" alt=""></div>
+							<div class="comand_person_img">
+								<img src="img/icon/mina-262x285.jpg" alt="">
+								<div class="tab_layout">
+									<span class="tab_layout_line tab_layout_T"></span>
+									<span class="tab_layout_line tab_layout_R"></span>
+									<span class="tab_layout_line tab_layout_B"></span>
+									<span class="tab_layout_line tab_layout_L"></span>
+									<ul class="layout_icon">
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+									</ul>
+								</div>
+							</div>
 							<div class="comand_person_info">
 								<div class="comand_person_name">Андрій Стасенко</div>
 								<div class="comand_person_post">Front-end Developer</div>
 							</div>
 						</div>
 						<div class="comand_person">
-							<div class="comand_person_img"><img src="img/icon/kashem-262x285.jpg" alt=""></div>
+							<div class="comand_person_img">
+								<img src="img/icon/kashem-262x285.jpg" alt="">
+								<div class="tab_layout">
+									<span class="tab_layout_line tab_layout_T"></span>
+									<span class="tab_layout_line tab_layout_R"></span>
+									<span class="tab_layout_line tab_layout_B"></span>
+									<span class="tab_layout_line tab_layout_L"></span>
+									<ul class="layout_icon">
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+									</ul>
+								</div>
+							</div>
 							<div class="comand_person_info">
 								<div class="comand_person_name">Андрій Стасенко</div>
 								<div class="comand_person_post">Front-end Developer</div>
@@ -401,7 +506,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- Отзиви -->
+	<!-- Отзывы -->
 	<section class="say">
 		<div class="container">
 			<div class="row">
@@ -410,18 +515,47 @@
 					<div class="row">
 						<div class="col-sm-8 col-sm-offset-2">
 							<div class="short_info">
-								<p>jnpbdb</p>
+								<p>Наша компания имеет хорошую репутацию среди клиентов.</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12">
-					
+					<div class="say_slider owl-carousel">
+						<div class="say_item">
+							<div class="say_icon"><img src="img/icon/mina-262x285.jpg" alt=""></div>
+							<div class="say_user_info"><p>Андрій Стасенко</p></div>
+							<div class="say_coment">
+								Nam liber tempor cum soluta nobis eleifend option congue mperdiet doming id quod mazim placerat facer possim as. Typi non habent claritatem insitam.
+							</div>
+						</div>
+						<div class="say_item">
+							<div class="say_icon"><img src="img/icon/kashem-262x285.jpg" alt=""></div>
+							<div class="say_user_info"><p>Андрій Стасенко</p></div>
+							<div class="say_coment">
+								Nam liber tempor cum soluta nobis eleifend option congue mperdiet doming id quod mazim placerat facer possim as. Typi non habent claritatem insitam.
+							</div>
+						</div>
+						<div class="say_item">
+							<div class="say_icon"><img src="img/icon/mina-262x285.jpg" alt=""></div>
+							<div class="say_user_info"><p>Андрій Стасенко</p></div>
+							<div class="say_coment">
+								Nam liber tempor cum soluta nobis eleifend option congue mperdiet doming id quod mazim placerat facer possim as. Typi non habent claritatem insitam.
+							</div>
+						</div>
+						<div class="say_item">
+							<div class="say_icon"><img src="img/icon/hasan-262x285.jpg" alt=""></div>
+							<div class="say_user_info"><p>Андрій Стасенко</p></div>
+							<div class="say_coment">
+								Nam liber tempor cum soluta nobis eleifend option congue mperdiet doming id quod mazim placerat facer possim as. Typi non habent claritatem insitam.
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- Связатса -->
+	<!-- Оставить заявку-->
 	<section class="call">
 		<div class="container">
 			<div class="row">

@@ -1,11 +1,20 @@
 footer{
 	position: relative;
-	height: 70px;
+	min-height: 70px;
 	background-color: @footer_color;
 	color: #fff;
 	line-height: 69px;
+	@media only screen and (max-width : 768px){
+		padding: 20px 0;
+		line-height: 24px;
+		text-align: center;
+	}
 	.footer_social{
 		text-align: right;
+		@media only screen and (max-width : 768px){
+			text-align: center;
+			margin-top: 10px;
+		}
 		li{
 			display: inline-block;
 			margin-right: 10px;
