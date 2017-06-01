@@ -53,8 +53,14 @@
 		margin-top: 40px;
 	}
 	.service_icon{
-		img{
-			margin: 0 auto;
+		text-align: center;
+		span{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			background-color: @base_color;
 		}
 	}
 	.service_title{
@@ -166,6 +172,10 @@
 	padding: 110px 0;
 	.section_title{
 		margin-bottom: 80px;
+	}
+	.short_info{
+		text-align: justify;
+		text-indent: 15px;
 	}
 	.progres_name{
 		margin-bottom: 20px;
@@ -305,7 +315,7 @@
 
 // Наши клиенты
 .clients{
-	padding: 50px 0;
+	padding: 100px 0;
 	.section_title{
 		margin-bottom: 60px;
 	}
@@ -315,7 +325,7 @@
 .call{
 	text-align: center;
 	padding: 90px 0;
-	background: transparent url(../img/icon/call.png) top center no-repeat;
+	background: transparent url(../../img/baners/call.png) top center no-repeat;
 	background-size: cover;
 	.section_title{
 		margin-bottom: 60px;
@@ -359,9 +369,9 @@
 			// }
 		}
 	}
-	.block_forma{
-		margin-bottom: 50px;
-	}
+	// .block_forma{
+	// 	margin-bottom: 50px;
+	// }
 	.call_form{
 		vertical-align: top;
 		display: block;
@@ -380,24 +390,31 @@
 			outline: none;
 			border: 0;
 			background-color: rgba(179,179,179,.7);
-			&:first-child{
+			&:first-of-type{
 				margin-top: 3px;
 			}
-			&:last-child{
-				margin-bottom: 0;
+			&:last-of-type{
+				margin-bottom: 50px;
 			}
 			&:focus {
 				background-color: rgba(179,179,179,1);
 			}
 		}
-	}
-	.button_color{
-		width: 85%;
-		&:hover{
-			background-color: #fff;
-			color: @base_color;
+		.button_color{
+			width: 100%;
+			&:hover{
+				background-color: #fff;
+				color: @base_color;
+			}
 		}
 	}
+	// .button_color{
+	// 	width: 85%;
+	// 	&:hover{
+	// 		background-color: #fff;
+	// 		color: @base_color;
+	// 	}
+	// }
 }
 
 // Загальний стиль заголовків

@@ -115,7 +115,10 @@ $(document).ready(function() {
 		max_height.push($(this).height());
 	});
 	var maxh=Math.max.apply(Math,max_height);
-	$('.service  .service_item').height(maxh);
+
+	if($(window).width()>768){
+		$('.service  .service_item').height(maxh);
+	}
 
 	// кнопка 'на верх' 
 	$('.button_up').click(function(event) {
@@ -141,28 +144,32 @@ $(document).ready(function() {
 
 	// анімація картинок "Оставить заявку"
 	$('.call_form input').focus(function() {
-		$('.call_icon img.active').css({
-			"-webkit-transform": "rotate(0deg)",
-			"-moz-transform": "rotate(0deg)",
-			"transform": "rotate(0deg)"
-		}).removeClass('active');
+		// $('.call_icon img').css({
+		// 	"-webkit-transform": "rotate(0deg)",
+		// 	"-moz-transform": "rotate(0deg)",
+		// 	"transform": "rotate(0deg)"
+		// });
+		// var rad=
 		$('.call_icon img').eq($(this).index()).css({
 			"-webkit-transform": "rotate(360deg)",
 			"-moz-transform": "rotate(360deg)",
 			"transform": "rotate(360deg)"
-		}).addClass('active');
+		});
 	});
+	// $('.call_form input').focusout(function() {
+	// 	$('.call_icon img').removeAttr('style');
+	// });
 
-	$('.li_dropdown').hover(function() {
-		$('.dropdown_menu').slideDown('500');
-	}, function() {
-		$('.dropdown_menu').slideUp('500');
-	});
+	// $('.li_dropdown').hover(function() {
+	// 	$('.dropdown_menu').slideDown('500');
+	// }, function() {
+	// 	$('.dropdown_menu').slideUp('500');
+	// });
 
 	// малювання процентних ліній
 	var flag=1;
 	$(document).scroll(function() {
-		if($(window).scrollTop() >= $('.progres').offset().top-120 && flag){
+		if($(window).scrollTop() >= $('.progres').offset().top-200 && flag){
 			$('.progres_bar').each(function() {
 				ProgresLine(this);
 			});
@@ -170,8 +177,24 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.mobile_menu_button').click(function() {
+		$('.mob_menu').animate({'left': '0'}, 300);
+		$('.overlay').css({
+			'visibility': 'visible'
+		});
+
+	});
+	$('.overlay').click(function() {
+		$('.mob_menu').animate({'left': '-260'}, 300);
+		$('.overlay').css({
+			'visibility': 'hidden'
+		});
+	});
+
 	$(window).resize(function() {
-		$('.service  .service_item').height(maxh);
+		if($(window).width()>768){
+			$('.service  .service_item').height(maxh);
+		}
 	});
 });
 
@@ -193,5 +216,5 @@ function ProgresLine(el){
 		if(line_width == $(el).data('size')){
 			clearInterval(intervar);
 		}
-	},30);
+	},5);
 }
