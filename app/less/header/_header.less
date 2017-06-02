@@ -83,9 +83,13 @@ header{
 				margin-left: 5px;
 				line-height: 1;
 			}
-			// &.li_dropdown:hover .dropdown_menu{
-			// 	display: block;
-			// }
+			&.li_dropdown:hover .dropdown_menu{
+				opacity: 1;
+				li{
+					height: 50px;
+					overflow: visible;
+				}
+			}
 			a{
 				margin: 0 15px;
 				display: inline-block;
@@ -119,12 +123,16 @@ header{
 	.dropdown_menu{
 		background-color: @base_color;
 		position: absolute;
-		display: none;
 		z-index: 10;
+		min-width: 250px;
+		opacity: 0;
+		transition: opacity 0.3s ease 0.1s; 
 		li{
 			display: block;
+			height: 0;
+			overflow: hidden;
 			padding: 0 15px;
-			min-width: 250px;
+			transition: height 0.3s ease 0.1s;
 			&:last-child a{
 				border-bottom:0;
 			}
