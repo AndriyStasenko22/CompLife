@@ -1,6 +1,12 @@
 $(document).ready(function() {
 
 	$('#Grid').mixItUp();
+	// new Vivus('ipad', {duration: 200}, myCallback);
+	
+	// var obt1 = new Vivus('mac', {
+	// 	type: 'delayed',
+	// 	duration: 150
+	// });
 
 	var home_slider =$('.home_slider');
 	home_slider.owlCarousel({
