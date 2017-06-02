@@ -6,15 +6,16 @@ $(document).ready(function() {
 	
 	// перлоадер
 	$('#load').css('opacity', '1');
-	// if($('#load').css('opacity') == 1){
-	// 	var obt1 = new Vivus('load', {start: 'autostart', duration: 100},function (obj) {
-	// 		obj.el.classList.add('finished');
-	// 		$('.preloader_img').animate({'opacity': '1'},3000);
-	// 		$('#load').animate({'opacity': '0'},2000);
-	// 		$('.preloader').delay(2500).fadeOut(2000);
+	if($('#load').css('opacity') == 1){
+		var obt1 = new Vivus('load', {start: 'autostart', duration: 100},function (obj) {
+			obj.el.classList.add('finished');
+			$('.preloader_img').animate({'opacity': '1'},3000);
+			$('#load').animate({'opacity': '0'},2000);
+			$('.preloader').delay(2300).fadeOut(2000);
 
-	// 	});
-	// }
+		});
+	}
+	
 
 	var home_slider =$('.home_slider');
 	home_slider.owlCarousel({
@@ -163,13 +164,21 @@ $(document).ready(function() {
 	});
 
 	// малювання процентних ліній
-	var flag=1;
+	var flagproc=1;
+	var flagcall=1;
 	$(document).scroll(function() {
-		if($(window).scrollTop() >= $('.progres').offset().top-200 && flag){
+		if($(window).scrollTop() >= $('.progres').offset().top-200 && flagproc){
 			$('.progres_bar').each(function() {
 				ProgresLine(this);
 			});
-			flag=0;
+			flagproc=0;
+		}
+		if($(window).scrollTop() >= $('.call').offset().top-200 && flagcall){
+			$('#mac').css('opacity', '1');
+			if($('#mac').css('opacity') == 1){
+				var obt2 = new Vivus('mac', {start: 'autostart', duration: 100});
+			}
+			flagcall=0;
 		}
 	});
 
