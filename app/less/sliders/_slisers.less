@@ -12,6 +12,7 @@
 		p{
 			color: @base_color;
 			font-size: 4.6vw;
+			
 		}
 	}
 	.text_left{
@@ -23,10 +24,9 @@
 	.owl-dots{
 		position: absolute;
 		bottom: 3%;
-		width: 200px;
+		width: 100%;
 		left: 0;
-		right: 0;
-		margin: auto;
+		text-align: center;
 	}
 	.owl-dot{
 		display: inline-block;
@@ -36,6 +36,10 @@
 			height: 12px;
 			display: block;
 			background-color: #675e5e;
+			// @media only screen and (max-width : 400px){
+			// 	width: 9px;
+			// 	height: 9px;
+			// }
 		}
 		&.active span{
 			background-color: @base_color;

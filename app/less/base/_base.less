@@ -55,6 +55,7 @@ img{
 	font-family: @Roboto;
 	margin: 0 0 40px;
 	position: relative;
+	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
 	&::after{
 		content: "";
 		display: block;
@@ -68,8 +69,11 @@ img{
 	span{
 		color: @base_color;
 		background-color: transparent;
+		text-shadow: 1px 1px 1px rgba(231, 76, 60, 1);
 	}
-
+	@media only screen and (max-width : 767px){
+		font-size: 28px;
+	}
 }
 .short_info{
 	text-align: center;
@@ -254,4 +258,38 @@ img{
 	z-index: 99;
 	// opacity: 0;
 	visibility: hidden;
+}
+
+.preloader{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #f2f2f2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	overflow: hidden;
+	display: none;
+	// opacity: 1;
+	// transition: opacity 3s;
+}
+#load{
+	opacity: 0;
+}
+#load * {
+	fill-opacity: 0;
+	transition: fill-opacity 1s;
+}
+
+#load.finished * {
+	fill-opacity: 1;
+}
+
+.preloader_img{
+	position: absolute;
+	opacity: 0;
 }
