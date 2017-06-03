@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 	$('#Grid').mixItUp();
 	
+
 	// перлоадер
 	$('#load').css('opacity', '1');
 	if($('#load').css('opacity') == 1){
@@ -16,7 +17,6 @@ $(document).ready(function() {
 		});
 	}
 	
-
 	var home_slider =$('.home_slider');
 	home_slider.owlCarousel({
 		items:1,
