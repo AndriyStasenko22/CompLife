@@ -19,6 +19,13 @@ img{
 	height: auto;
 	max-width: 100%;
 }
+
+.section_base{
+	padding: 100px 0;
+	@media only screen and (max-width : 767px){
+		padding: 50px 0;
+	}
+}
 // соціальні мережі
 .social_icon{
 	display: inline-block;
@@ -70,6 +77,13 @@ img{
 		color: @base_color;
 		background-color: transparent;
 		text-shadow: 1px 1px 1px rgba(231, 76, 60, 1);
+	}
+	&.title_center{
+		text-align: center;
+		&::after{
+			left: 50%;
+			margin-left: -25px;
+		}
 	}
 	@media only screen and (max-width : 767px){
 		font-size: 28px;
@@ -273,24 +287,77 @@ img{
 	align-items: center;
 	z-index: 9999;
 	overflow: hidden;
-	// display: none;
+	display: none;
 	// opacity: 1;
 	// transition: opacity 3s;
 }
-#load, #mac{
+#load, #mac,  #mac_complife{
 	opacity: 0;
 }
 
-#load * {
+#mac{
+	width: 100%;
+}
+
+#mac_complife * {
 	fill-opacity: 0;
 	transition: fill-opacity 1s;
 }
 
-#load.finished * {
+#mac_complife.finished * {
 	fill-opacity: 1;
 }
 
 .preloader_img{
 	position: absolute;
 	opacity: 0;
+}
+
+.breadcrumb{
+	padding: 80px 0;
+	margin: 0;
+	background: #000 url(../img/baners/breadcrumb_img.png) top center no-repeat;
+	background-size: cover;
+	color: #fff;
+	line-height: 1;
+	.breadcrumb_title{
+		margin: 0 0 20px;
+		font-family: @Roboto;
+	}
+	.bread_crumb{
+		li{
+			display: block;
+			float: left;
+			margin-right: 15px;
+			position: relative;
+			&::after{
+				color: #fff;
+				content: "\f105";
+				font-family: "FontAwesome";
+				position: absolute;
+				right: 0;
+				display: block;
+				transform: translateX(50%);
+				top: 0;
+			}
+			&:last-child{
+				margin-right: 0;
+				&::after{
+					content: "";
+				}
+				a{
+					pointer-events: none;
+					cursor: default;
+				}
+			}
+			a{
+				color: #fff;
+				margin-right: 15px;
+				transition: all 0.3s;
+				&:hover{
+					color: @base_color;
+				}
+			}
+		}
+	}
 }

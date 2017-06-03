@@ -142,7 +142,7 @@ $(document).ready(function() {
 
 	// таби 'Портфоліо'
 	$('.menu li a, .portfolio .portfolio_filter li a').click(function(event) {
-		event.preventDefault();
+		// event.preventDefault();
 		AddActive(this);
 	});
 
@@ -174,9 +174,12 @@ $(document).ready(function() {
 			flagproc=0;
 		}
 		if($(window).scrollTop() >= $('.call').offset().top-200 && flagcall){
-			$('#mac').css('opacity', '1');
+			$('#mac, #mac_complife').css('opacity', '1');
 			if($('#mac').css('opacity') == 1){
 				var obt2 = new Vivus('mac', {start: 'autostart', duration: 100});
+				var obt3 = new Vivus('mac_complife', {start: 'autostart', duration: 100}, function (obj) {
+					obj.el.classList.add('finished');
+				});
 			}
 			flagcall=0;
 		}
