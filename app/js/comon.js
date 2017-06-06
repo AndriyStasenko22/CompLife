@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
 	$('#Grid').mixItUp();
-	
-	// var obt1 = new Vivus('load', {type: 'delayed', duration: 150});
 
 	var home_slider =$('.home_slider');
 	home_slider.owlCarousel({
