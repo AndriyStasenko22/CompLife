@@ -1,16 +1,5 @@
 .contact_block{
 	text-align: center;
-	// &::after{
-	// 	content: "";
-	// 	position: absolute;
-	// 	top: 0;
-	// 	right: 0;
-	// 	display: block;
-	// 	width: 1px;
-	// 	height: 200px;
-	// 	border-radius: 3px;
-	// 	background-color: #ebebeb;
-	// }
 	.contact_title{
 		color: @title_color;
 		font-weight: bold;
@@ -19,13 +8,15 @@
 	.contact-info{
 		color: #3f3f3f;
 	}
+	@media only screen and (max-width : 767px){
+		margin-bottom: 30px;
+	}
 }
 
 .contacts_call{
 	padding-bottom: 100px;
 	.contact_form{
 		width: 100%;
-		padding: 40px 0;
 		position: relative;
 		input, textarea{
 			width: 100%;
@@ -33,18 +24,25 @@
 			outline: none;
 			display: block;
 			padding: 10px;
+			margin-bottom: 40px;
 		}
 		input{
-			height: 50px;
+			height: 55px;
 			font-size: 16px;
 		}
 		textarea{
-			margin-top: 25px;
 			height: 150px;
 		}
 	}
 	.contacts_call_button{
 		display: block;
 		text-align: center;
+	}
+}
+
+.map{
+	height: 450px;
+	iframe{
+		width: 100%;
 	}
 }

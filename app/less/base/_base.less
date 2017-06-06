@@ -110,6 +110,7 @@ img{
 	text-transform: uppercase;
 	border: 1px solid;
 	font-size: 14px;
+	outline: none;
 }
 // кнопка з фоном
 .button_color{
@@ -252,7 +253,7 @@ img{
 }
 
 .mob_menu{
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: -260px;
 	width: 260px;
@@ -260,7 +261,8 @@ img{
 	background-color: @base_color;
 	border-right: 4px solid  rgba(0,0,0, 0.3);
 	z-index: 100;
-	box-shadow: inset hoff voff blur color;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 .overlay{
 	position: absolute;
@@ -320,6 +322,9 @@ img{
 	background-size: cover;
 	color: #fff;
 	line-height: 1;
+	@media only screen and (max-width : 767px){
+		padding: 40px 0;
+	}
 	.breadcrumb_title{
 		margin: 0 0 20px;
 		font-family: @Roboto;
@@ -357,6 +362,141 @@ img{
 				&:hover{
 					color: @base_color;
 				}
+			}
+		}
+	}
+}
+
+// головне меню
+.menu{
+	display: inline-block;
+	float: right;
+	&>li{
+		display: inline-block;
+		position: relative;
+		&.active>a{
+			color: @title_color;
+			&::before{
+				width: 100%;
+				left: 0;
+			}
+		}
+		&.li_dropdown>a::after{
+			content: '\f0d7';
+			font-family: 'FontAwesome';
+			margin-left: 5px;
+			line-height: 1;
+		}
+		&.li_dropdown:hover,  &.li_dropdown:active,{
+			.dropdown_menu{
+				opacity: 1;
+				li{
+					height: 50px;
+					overflow: visible;
+				}
+			}
+		}
+		a{
+			margin: 0 15px;
+			display: inline-block;
+			color: #fff;
+			text-transform: uppercase;
+			font-family: 'Roboto-Medium';
+			transition: all 0.3s;
+			position: relative;
+			&::before{
+				content: "";
+				position: absolute;
+				left: 50%;
+				bottom: 15px;
+				display: block;
+				width: 0;
+				height: 1px;
+				background-color: @title_color;
+				transition: all 0.3s;
+			}
+			&:hover{
+				color: @title_color;
+				&::before{
+					left: 0;
+					right: 0;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+.dropdown_menu{
+	background-color: @base_color;
+	position: absolute;
+	z-index: 10;
+	min-width: 250px;
+	opacity: 0;
+	transition: opacity 0.3s ease 0.1s; 
+	li{
+		display: block;
+		height: 0;
+		overflow: hidden;
+		padding: 0 15px;
+		transition: height 0.3s ease 0.1s;
+		&:last-child a{
+			border-bottom:0;
+		}
+		&:hover{
+			background-color: rgba(0,0,0, 0.1);
+		}
+		a{
+			line-height: 50px;
+			display: block;
+			margin: 0;
+			border-bottom: 1px solid  #fff;
+			&:hover{
+				color: #fff;
+				&::before{
+					width: 0;
+				}
+			}
+		}
+	}
+}
+
+// мобільне меню
+.mob_menu{
+	padding: 25px 0;
+	overflow: auto;
+	.menu{
+		float: none;
+		display: block;
+		li{
+			display: block;
+			&:hover, &:active{
+				background-color: rgba(0,0,0, 0.1);
+			}
+			a{
+				display: block;
+				height: 50px;
+				line-height: 50px;
+				border-bottom: 1px solid  #fff;
+				&::before{
+					width: 0;
+				}
+			}
+		}
+	}
+}
+.mob_dropdown_menu{
+	padding-left: 15px;
+	display: none;
+	background-color: @base_color;
+	li{
+		display: block;
+		a{
+			height: 50px;
+			line-height: 50px;
+			font-size: 12px;
+			border-bottom: 1px solid  #fff;
+			&::before{
+				width: 0;
 			}
 		}
 	}

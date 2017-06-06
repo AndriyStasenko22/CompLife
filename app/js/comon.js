@@ -124,24 +124,36 @@ $(document).ready(function() {
 	});
 
 	// однакова висота блоків "Послуги"
-	var max_height=[];
-	$('.service  .service_item').each(function() {
-		max_height.push($(this).height());
-	});
-	var maxh=Math.max.apply(Math,max_height);
+	// var max_height=[];
+	// $('.service  .service_item').each(function() {
+	// 	max_height.push($(this).height());
+	// });
+	// var maxh=Math.max.apply(Math,max_height);
 
-	if($(window).width()>768){
-		$('.service  .service_item').height(maxh);
-	}
+	// if($(window).width()>768){
+	// 	$('.service  .service_item').height(MaxHeight('.service  .service_item'));
+	// 	$('.services-block .services-caption').height(MaxHeight('.services-block .services-caption'));
+	// }
 
 	// кнопка 'на верх' 
 	$('.button_up').click(function(event) {
 		$('html, body').animate({ scrollTop: 0 }, 800)
 	});
 
+	// головне меню
+	$('.menu li a').click(function(event) {
+		AddActive(this);
+	});
+
+	$('.mob_menu li.li_dropdown' ).click(function(event) {
+		event.preventDefault();
+		$('.mob_dropdown_menu').slideToggle();
+	});
+
+
 	// таби 'Портфоліо'
-	$('.menu li a, .portfolio .portfolio_filter li a').click(function(event) {
-		// event.preventDefault();
+	$('.portfolio .portfolio_filter li a').click(function(event) {
+		event.preventDefault();
 		AddActive(this);
 	});
 
@@ -189,6 +201,7 @@ $(document).ready(function() {
 		$('.overlay').css({
 			'visibility': 'visible'
 		});
+		$('body').css('overflow', 'hidden');
 
 	});
 	$('.overlay').click(function() {
@@ -196,13 +209,14 @@ $(document).ready(function() {
 		$('.overlay').css({
 			'visibility': 'hidden'
 		});
+		$('body').css('overflow', 'visible');
 	});
 
-	$('.menu_go_to').click(function(event) {
-		event.preventDefault();
-		var block = $(this).data('block');
-		$('html, body').animate({scrollTop: $(block).offset().top}, 800)
-	});
+	// $('.menu_go_to').click(function(event) {
+	// 	event.preventDefault();
+	// 	var block = $(this).data('block');
+	// 	$('html, body').animate({scrollTop: $(block).offset().top}, 800)
+	// });
 
 	$(window).resize(function() {
 		if($(window).width()>768){
@@ -210,7 +224,6 @@ $(document).ready(function() {
 		}
 	});
 });
-
 
 //  функція додавання класу .active в елементах списку li
 function AddActive(elem){
@@ -230,4 +243,13 @@ function ProgresLine(el){
 			clearInterval(intervar);
 		}
 	},5);
+}
+
+function MaxHeight(elem){
+	var max_height=[];
+	$(elem).each(function() {
+		max_height.push($(this).height());
+	});
+	var maxh=Math.max.apply(Math,max_height);
+	return maxh;
 }

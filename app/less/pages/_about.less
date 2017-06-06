@@ -1,0 +1,55 @@
+.about{
+	padding-bottom: 70px;
+}
+.about_content{
+	display: flex;
+	@media only screen and (max-width : 767px){
+		& {
+			flex-direction: column;
+			.about_img, .about_description{
+				width: 100%;
+				margin-right: 0;
+			}
+			.title{
+				font-size: 20px;
+			}	
+		}
+	}
+}
+.about_img{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 53%;
+	margin-right: 2%;
+}
+.about_description{
+	width: 45%;
+	.title{
+		font-style: italic;
+		color: @title_color;
+	}
+}
+
+.about_comand{
+	color: @base_color_text;
+	background-color: transparent;
+	.section_title{
+		color: @title_color;
+		display: block;
+	}
+	.comand_slider{
+		margin-top: 35px;
+	}
+	.comand_person_name{
+		color: @title_color;
+		font-weight: bold;
+	}
+	.comand_person_post{
+		font-style: italic;
+	}
+	.comand_person_description{
+		text-align: left;
+		margin-top: 20px;
+	}
+}

@@ -8,6 +8,26 @@
 </head>
 <body>
 	<div class="mob_menu">
+		<ul class="menu">
+			<li class="active"><a href="index.html">главная</a></li>
+			<li><a href="about.html">о нас</a></li>
+			<li class="li_dropdown">
+				<a href="services.html">услуги</a>
+				<ul class="mob_dropdown_menu">
+					<li><a href="#">Разработка WEB-сайтов</a></li>
+					<li><a href="#">Автоматизация учета</a></li>
+					<li><a href="#">Печатная техника</a></li>
+					<li><a href="#">Компьютерная техника</a></li>
+					<li><a href="#">Программное обеспечение</a></li>
+					<li><a href="#">Торговое оборудование</a></li>
+					<li><a href="#">Компьютерная техника</a></li>
+					<li><a href="#">Программное обеспечение</a></li>
+					<li><a href="#">Торговое оборудование</a></li>
+				</ul>
+			</li>
+			<li><a href="#" class="menu_go_to" data-block='.portfolio'>портфолио</a></li>
+			<li><a href="contacts.html">контакты</a></li>
+		</ul>
 	</div>
 
 	<div class="overlay"></div>
@@ -45,10 +65,10 @@
 						</div>
 						<a href="index.html" class="logo"><img src="img/icon/logo.png" alt=""></a>
 						<ul class="menu hidden-xs">
-							<li class="active"><a href="#">главная</a></li>
-							<li><a href="#">о нас</a></li>
+							<li class="active"><a href="index.html">главная</a></li>
+							<li><a href="about.html">о нас</a></li>
 							<li class="li_dropdown">
-								<a href="#">услуги</a>
+								<a href="services.html">услуги</a>
 								<ul class="dropdown_menu">
 									<li><a href="#">Разработка WEB-сайтов</a></li>
 									<li><a href="#">Автоматизация учета</a></li>
@@ -74,7 +94,7 @@
 						Контактная информация
 					</h1>
 					<ul class="bread_crumb">
-						<li><a href="#">Главная</a></li>
+						<li><a href="index.html">Главная</a></li>
 						<li><a href="#">Контакты</a></li>
 					</ul>
 				</div>
@@ -86,7 +106,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-4">
 					<div class="contact_block">
-						<div class="contact_img"><img src="img/icon/computer.png" alt=""></div>
+						<div class="contact_img"><img src="img/icon/location.png" alt=""></div>
 						<h4 class="contact_title">АДРЕС</h4>
 						<div class="contact-info">
 							<p>29000, Украина, г. Хмельницкий, ул. Пересипкина 8 .</p>
@@ -95,7 +115,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-4">
 					<div class="contact_block">
-						<div class="contact_img"><img src="img/icon/computer.png" alt=""></div>
+						<div class="contact_img"><img src="img/icon/contact_phone.png" alt=""></div>
 						<h4 class="contact_title">ТЕЛЕФОН</h4>
 						<div class="contact-info">
 							<p>+38 (0382) 65-41-05</p>
@@ -106,7 +126,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-4">
 					<div class="contact_block">
-						<div class="contact_img"><img src="img/icon/computer.png" alt=""></div>
+						<div class="contact_img"><img src="img/icon/mail.png" alt=""></div>
 						<h4 class="contact_title">EMAIL</h4>
 						<div class="contact-info">
 							<p>office@complife.ua</p>
@@ -119,36 +139,37 @@
 	<section class="contacts_call">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12 col-sm-12">
+				<div class="col-xs-12 col-sm-10 col-sm-offset-1">
 					<h1 class="section_title title_center">СВЯЗАТЬСЯ</h1>
 					<div class="row">
 						<form action="" class="contact_form clearfix">
-							<div class="col-xs-12 col-sm-6">
-								<input type="text" placeholder='Ваше имя'>
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-xs-12 col-sm-12">
+										<input type="text" placeholder='Ваше имя'>
+									</div>
+									<div class="col-xs-12 col-sm-12">
+										<input type="text" placeholder='Ваш e-mai'>
+									</div>
+								</div>
 							</div>
+
 							<div class="col-xs-12 col-sm-6">
-								<input type="text" placeholder='Ваш e-mai'>
-							</div>
-							<div class="col-xs-12 col-sm-12">
 								<textarea name="" id="" cols="30" rows="10" placeholder='Сообщение'></textarea>
 							</div>
-						</form>
-					</div>
+						</div>
+					</form>
+
 					<div class="contacts_call_button">
-						<a href="#" class="base_button button_color">Отправить</a>
+						<!-- <a href="#" class="base_button button_color">Отправить</a> -->
+						<button type='submit' class="base_button button_color">Отправить</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="map">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12">
-					
-				</div>
-			</div>
-		</div>
+	<section class="map clearfix">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.625552880163!2d26.995279916044208!3d49.41598647934606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47320644d645f977%3A0x19fdb65cb1c08b54!2z0LLRg9C70LjRhtGPINCf0LXRgNC10YHQuNC_0LrRltC90LAsIDgsINCl0LzQtdC70YzQvdC40YbRjNC60LjQuSwg0KXQvNC10LvRjNC90LjRhtGM0LrQsCDQvtCx0LvQsNGB0YLRjA!5e0!3m2!1sru!2sua!4v1496738088506" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</section>
 
 
