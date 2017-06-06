@@ -1,6 +1,5 @@
 // О нас
 .about_us{
-	padding: 6.3% 0;
 	.section_title{
 		margin-bottom: 60px;
 		@media only screen and (max-width : 768px){
@@ -48,7 +47,6 @@
 
 // Наши услуги
 .service{
-	padding: 6.3% 0;
 	.service_item{
 		margin-top: 40px;
 	}
@@ -68,7 +66,7 @@
 		color: @title_color;
 		h4{
 			text-align: center;
-			margin: 15px 0;
+			margin: 25px 0;
 			font-weight: bold;
 		}
 	}
@@ -80,12 +78,21 @@
 		ul, li{
 			list-style: square;
 		}
+		@media only screen and (max-width : 768px){
+			text-align: center;
+			ul{
+				display: inline-block;
+				margin-left: 15px;
+				li{
+					text-align: left;
+				}
+			}
+		}
 	}
 }
 
 // Портфолио
 .portfolio{
-	padding: 6.3% 0;
 	background-color: @portfolio_color;
 	.portfolio_filter{
 		text-align: center;
@@ -169,13 +176,15 @@
 }
 
 .progres{
-	padding: 110px 0;
 	.section_title{
 		margin-bottom: 80px;
 	}
 	.short_info{
 		text-align: justify;
 		text-indent: 15px;
+		@media only screen and (max-width : 767px){
+			margin-bottom: 50px;
+		}
 	}
 	.progres_name{
 		margin-bottom: 20px;
@@ -220,7 +229,6 @@
 // Наша команда
 .comand{
 	background-color: @comand_color;
-	padding: 100px 0;
 	color: #fff;
 	.section_title{
 		color: #fff;
@@ -262,14 +270,6 @@
 
 // Отзывы
 .say{
-	padding: 100px 0;
-	.section_title{
-		text-align: center;
-		&::after{
-			left: 50%;
-			margin-left: -25px;
-		}
-	}
 	.say_slider{
 		margin-top: 80px;
 	}
@@ -315,7 +315,6 @@
 
 // Наши клиенты
 .clients{
-	padding: 100px 0;
 	.section_title{
 		margin-bottom: 60px;
 	}
@@ -323,10 +322,38 @@
 
 // Связатса
 .call{
+	position: relative;
 	text-align: center;
-	padding: 90px 0;
 	background: transparent url(../img/baners/call.png) top center no-repeat;
 	background-size: cover;
+	.mac{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0%;
+		width: 35%;
+	}
+	.svg{
+		position: relative;
+		#mac_complife{
+			position: absolute;
+			top: -35px;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			margin: auto;
+			transform: rotate(-7deg);
+			width: 45%;
+
+		}
+	}
+	.mac_complife{
+		position: absolute;
+		top: 50%;
+		right: 10%;
+		transform: translateY(-50%) rotate(-8%);
+
+	}
 	.section_title{
 		margin-bottom: 60px;
 		color: #fff;
@@ -359,19 +386,14 @@
 			&:last-child{
 				margin-bottom: 0;
 			}
-			// &:hover{
-			// 	transform: rotate(360deg);
-			// 	transition: all 0.5s;
-			// }
-			// &.active{
-			// 	// transform: rotate(360deg);
-			// 	transition: all 0.5s;
-			// }
+			&.active{
+				animation: rotate-btn .5s linear;
+			}
+		}
+		@media only screen and (max-width : 660px){
+			width: 16%;
 		}
 	}
-	// .block_forma{
-	// 	margin-bottom: 50px;
-	// }
 	.call_form{
 		vertical-align: top;
 		display: block;
@@ -399,6 +421,10 @@
 			&:focus {
 				background-color: rgba(179,179,179,1);
 			}
+			@media only screen and (max-width : 440px){
+				height: 13vw;
+				font-size: 16px;
+			}
 		}
 		.button_color{
 			width: 100%;
@@ -406,6 +432,9 @@
 				background-color: #fff;
 				color: @base_color;
 			}
+		}
+		@media only screen and (max-width : 660px){
+			width: 62%;
 		}
 	}
 	// .button_color{
@@ -417,13 +446,11 @@
 	// }
 }
 
-// Загальний стиль заголовків
-.clients, .portfolio, .service, .call{
-	.section_title{
-		text-align: center;
-		&::after{
-			left: 50%;
-			margin-left: -25px;
-		}
+@keyframes rotate-btn {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }

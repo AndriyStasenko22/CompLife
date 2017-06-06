@@ -1,7 +1,21 @@
 $(document).ready(function() {
+	
+	new WOW().init();
 
 	$('#Grid').mixItUp();
 
+	// перлоадер
+	$('#load').css('opacity', '1');
+	if($('#load').css('opacity') == 1){
+		var obt1 = new Vivus('load', {start: 'autostart', duration: 100},function (obj) {
+			obj.el.classList.add('finished');
+			$('.preloader_img').animate({'opacity': '1'},3000);
+			$('#load').animate({'opacity': '0'},2000);
+			$('.preloader').delay(2300).fadeOut(2000);
+
+		});
+	}
+	
 	var home_slider =$('.home_slider');
 	home_slider.owlCarousel({
 		items:1,
@@ -127,7 +141,7 @@ $(document).ready(function() {
 
 	// таби 'Портфоліо'
 	$('.menu li a, .portfolio .portfolio_filter li a').click(function(event) {
-		event.preventDefault();
+		// event.preventDefault();
 		AddActive(this);
 	});
 
@@ -144,36 +158,29 @@ $(document).ready(function() {
 
 	// анімація картинок "Оставить заявку"
 	$('.call_form input').focus(function() {
-		// $('.call_icon img').css({
-		// 	"-webkit-transform": "rotate(0deg)",
-		// 	"-moz-transform": "rotate(0deg)",
-		// 	"transform": "rotate(0deg)"
-		// });
-		// var rad=
-		$('.call_icon img').eq($(this).index()).css({
-			"-webkit-transform": "rotate(360deg)",
-			"-moz-transform": "rotate(360deg)",
-			"transform": "rotate(360deg)"
-		});
+		$('.call_icon img').removeClass('active');
+		$('.call_icon img').eq($(this).index()).addClass('active');
 	});
-	// $('.call_form input').focusout(function() {
-	// 	$('.call_icon img').removeAttr('style');
-	// });
-
-	// $('.li_dropdown').hover(function() {
-	// 	$('.dropdown_menu').slideDown('500');
-	// }, function() {
-	// 	$('.dropdown_menu').slideUp('500');
-	// });
 
 	// малювання процентних ліній
-	var flag=1;
+	var flagproc=1;
+	var flagcall=1;
 	$(document).scroll(function() {
-		if($(window).scrollTop() >= $('.progres').offset().top-200 && flag){
+		if($(window).scrollTop() >= $('.progres').offset().top-200 && flagproc){
 			$('.progres_bar').each(function() {
 				ProgresLine(this);
 			});
-			flag=0;
+			flagproc=0;
+		}
+		if($(window).scrollTop() >= $('.call').offset().top-200 && flagcall){
+			$('#mac, #mac_complife').css('opacity', '1');
+			if($('#mac').css('opacity') == 1){
+				var obt2 = new Vivus('mac', {start: 'autostart', duration: 100});
+				var obt3 = new Vivus('mac_complife', {start: 'autostart', duration: 100}, function (obj) {
+					obj.el.classList.add('finished');
+				});
+			}
+			flagcall=0;
 		}
 	});
 
@@ -189,6 +196,12 @@ $(document).ready(function() {
 		$('.overlay').css({
 			'visibility': 'hidden'
 		});
+	});
+
+	$('.menu_go_to').click(function(event) {
+		event.preventDefault();
+		var block = $(this).data('block');
+		$('html, body').animate({scrollTop: $(block).offset().top}, 800)
 	});
 
 	$(window).resize(function() {
