@@ -1,20 +1,21 @@
 $(document).ready(function() {
 	
+	// initialize();
+
 	new WOW().init();
 
 	$('#Grid').mixItUp();
 
 	// перлоадер
-	$('#load').css('opacity', '1');
-	if($('#load').css('opacity') == 1){
-		var obt1 = new Vivus('load', {start: 'autostart', duration: 100},function (obj) {
-			obj.el.classList.add('finished');
-			$('.preloader_img').animate({'opacity': '1'},3000);
-			$('#load').animate({'opacity': '0'},2000);
-			$('.preloader').delay(2300).fadeOut(2000);
-
-		});
-	}
+	// $('#load').css('opacity', '1');
+	// if($('#load').css('opacity') == 1){
+	// 	var obt1 = new Vivus('load', {start: 'autostart', duration: 100},function (obj) {
+	// 		obj.el.classList.add('finished');
+	// 		$('.preloader_img').animate({'opacity': '1'},3000);
+	// 		$('#load').animate({'opacity': '0'},2000);
+	// 		$('.preloader').delay(2300).fadeOut(2000);
+	// 	});
+	// }
 	
 	var home_slider =$('.home_slider');
 	home_slider.owlCarousel({
@@ -97,9 +98,8 @@ $(document).ready(function() {
 	clients_slider.owlCarousel({
 		loop:true, 
 		autoplay:true,
-		autoplayTimeout:3000,
 		autoplaySpeed: 1000,
-		margin:90,
+		margin:65,
 		smartSpeed:550,
 		responsiveClass:true,
 		responsive:{
@@ -123,6 +123,14 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.clients_slider .client_block').mouseover(function(){
+		clients_slider.trigger('stop.owl.autoplay');
+	})
+
+	$('.clients_slider .client_block').mouseleave(function(){
+		clients_slider.trigger('play.owl.autoplay');
+	})
+
 	// однакова висота блоків "Послуги"
 	// var max_height=[];
 	// $('.service  .service_item').each(function() {
@@ -130,10 +138,10 @@ $(document).ready(function() {
 	// });
 	// var maxh=Math.max.apply(Math,max_height);
 
-	// if($(window).width()>768){
-	// 	$('.service  .service_item').height(MaxHeight('.service  .service_item'));
-	// 	$('.services-block .services-caption').height(MaxHeight('.services-block .services-caption'));
-	// }
+	if($(window).width()>768){
+		$('.service  .service_item').height(MaxHeight('.service  .service_item'));
+		$('.services-block .services-caption').height(MaxHeight('.services-block .services-caption'));
+	}
 
 	// кнопка 'на верх' 
 	$('.button_up').click(function(event) {
@@ -169,12 +177,13 @@ $(document).ready(function() {
 	});
 
 	// анімація картинок "Оставить заявку"
-	$('.call_form input').focus(function() {
+	$('.call_form input , .call_form textarea').focus(function() {
 		$('.call_icon img').removeClass('active');
 		$('.call_icon img').eq($(this).index()).addClass('active');
 	});
 
 	// малювання процентних ліній
+	if($('.progres').length >0){
 	var flagproc=1;
 	var flagcall=1;
 	$(document).scroll(function() {
@@ -195,6 +204,7 @@ $(document).ready(function() {
 			flagcall=0;
 		}
 	});
+}
 
 	$('.mobile_menu_button').click(function() {
 		$('.mob_menu').animate({'left': '0'}, 300);
@@ -212,17 +222,17 @@ $(document).ready(function() {
 		$('body').css('overflow', 'visible');
 	});
 
-	// $('.menu_go_to').click(function(event) {
-	// 	event.preventDefault();
-	// 	var block = $(this).data('block');
-	// 	$('html, body').animate({scrollTop: $(block).offset().top}, 800)
-	// });
-
-	$(window).resize(function() {
-		if($(window).width()>768){
-			$('.service  .service_item').height(maxh);
-		}
+	$('.menu_go_to').click(function(event) {
+		event.preventDefault();
+		var block = $(this).data('block');
+		$('html, body').animate({scrollTop: $(block).offset().top}, 800)
 	});
+
+	// $(window).resize(function() {
+	// 	if($(window).width()>768){
+	// 		$('.service  .service_item').height(maxh);
+	// 	}
+	// });
 });
 
 //  функція додавання класу .active в елементах списку li

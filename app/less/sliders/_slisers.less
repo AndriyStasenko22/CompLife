@@ -73,3 +73,45 @@
 		}
 	}
 }
+
+.clients_slider{
+	.client_block{
+		position: relative;	
+		padding: 10px;
+		img{
+			filter: grayscale(100%);
+		}
+		&:hover{
+			img{
+				filter: grayscale(0%);
+			}
+			.tab_layout_T, .tab_layout_B{
+				width: 100%;
+				transition-delay: 0.3s;
+			}
+			.tab_layout_L, .tab_layout_R{
+				height: 100%;
+				transition-delay: 0.6s;
+			}
+		}
+	}
+	.tab_layout_line{
+		background-color: #eee;	
+	}
+	.tab_layout_T{
+		top: 0;
+		left: 0;
+	}
+	.tab_layout_B{
+		bottom: 0;
+		right: 0;
+	}
+	.tab_layout_L{
+		bottom: 0;
+		left: 0;
+	}
+	.tab_layout_R{
+		top: 0;
+		right: 0;
+	}
+}
