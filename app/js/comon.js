@@ -5,7 +5,7 @@ $(document).ready(function() {
 	new WOW().init();
 
 	$('#Grid').mixItUp();
-
+	$(".open_fancykbox").fancybox();
 	// перлоадер
 	// $('#load').css('opacity', '1');
 	// if($('#load').css('opacity') == 1){
@@ -68,10 +68,10 @@ $(document).ready(function() {
 		}
 	});
 		// кнопки слайдер "Наша команда"
-		$('.btn_next').click(function() {
+		$('.comand .btn_next').click(function() {
 			comand_slider.trigger('next.owl.carousel');
 		});
-		$('.btn_prev').click(function() {
+		$('.comand .btn_prev').click(function() {
 			comand_slider.trigger('prev.owl.carousel');
 		});
 
@@ -122,24 +122,46 @@ $(document).ready(function() {
 			}
 		}
 	});
-
+	// призупинка слайдера "Наши клиенты"
 	$('.clients_slider .client_block').mouseover(function(){
 		clients_slider.trigger('stop.owl.autoplay');
-	})
+	});
 
 	$('.clients_slider .client_block').mouseleave(function(){
 		clients_slider.trigger('play.owl.autoplay');
-	})
+	});
 
-	// однакова висота блоків "Послуги"
-	// var max_height=[];
-	// $('.service  .service_item').each(function() {
-	// 	max_height.push($(this).height());
-	// });
-	// var maxh=Math.max.apply(Math,max_height);
+	var project_slider=$('.project_slider');
+	project_slider.owlCarousel({
+		loop:true, 
+		autoplay:true,
+		autoplaySpeed: 1000,
+		margin:30,
+		smartSpeed:550,
+		responsiveClass:true,
+		responsive:{
+			0:{
+				items:2,
+			},
+			992:{
+				items:3,
+			}
+		}
+	});
+	// кнопки слайдер "Проект"
+	$('.project .btn_next').click(function() {
+		project_slider.trigger('next.owl.carousel');
+	});
+	$('.project .btn_prev').click(function() {
+		project_slider.trigger('prev.owl.carousel');
+	});
 
-	if($(window).width()>768){
+	// однакова висота блоків
+	if($('.service  .service_item').length > 0 && $(window).width()>768){
 		$('.service  .service_item').height(MaxHeight('.service  .service_item'));
+	}
+
+	if($('.services-block .services-caption').length > 0 && $(window).width()>768){
 		$('.services-block .services-caption').height(MaxHeight('.services-block .services-caption'));
 	}
 
@@ -163,6 +185,9 @@ $(document).ready(function() {
 	$('.portfolio .portfolio_filter li a').click(function(event) {
 		event.preventDefault();
 		AddActive(this);
+		if($(window).width()<768){
+			$(this).siblings('.mob_collapse').slideToggle('slow');
+		}
 	});
 
 	// анімація tab_layout "Портфоліо"
@@ -182,30 +207,37 @@ $(document).ready(function() {
 		$('.call_icon img').eq($(this).index()).addClass('active');
 	});
 
-	// малювання процентних ліній
+	// процентні лінії
 	if($('.progres').length >0){
-	var flagproc=1;
-	var flagcall=1;
-	$(document).scroll(function() {
-		if($(window).scrollTop() >= $('.progres').offset().top-200 && flagproc){
-			$('.progres_bar').each(function() {
-				ProgresLine(this);
-			});
-			flagproc=0;
-		}
-		if($(window).scrollTop() >= $('.call').offset().top-200 && flagcall){
-			$('#mac, #mac_complife').css('opacity', '1');
-			if($('#mac').css('opacity') == 1){
-				var obt2 = new Vivus('mac', {start: 'autostart', duration: 100});
-				var obt3 = new Vivus('mac_complife', {start: 'autostart', duration: 100}, function (obj) {
-					obj.el.classList.add('finished');
+		var flagproc=1;
+		$(document).scroll(function() {
+			if($(window).scrollTop() >= $('.progres').offset().top-200 && flagproc){
+				$('.progres_bar').each(function() {
+					ProgresLine(this);
 				});
+				flagproc=0;
 			}
-			flagcall=0;
-		}
-	});
-}
+		});
+	}
 
+	// монітор svg
+	if($('#mac').length >0){
+		var flagcall=1;
+		$(document).scroll(function() {
+			if($(window).scrollTop() >= $('.call').offset().top-200 && flagcall){
+				$('#mac, #mac_complife').css('opacity', '1');
+				if($('#mac').css('opacity') == 1){
+					var obt2 = new Vivus('mac', {start: 'autostart', duration: 100});
+					var obt3 = new Vivus('mac_complife', {start: 'autostart', duration: 100}, function (obj) {
+						obj.el.classList.add('finished');
+					});
+				}
+				flagcall=0;
+			}
+		});
+	}
+
+	//мобільне бокове меню
 	$('.mobile_menu_button').click(function() {
 		$('.mob_menu').animate({'left': '0'}, 300);
 		$('.overlay').css({
@@ -222,17 +254,12 @@ $(document).ready(function() {
 		$('body').css('overflow', 'visible');
 	});
 
+	// якорь
 	$('.menu_go_to').click(function(event) {
 		event.preventDefault();
 		var block = $(this).data('block');
 		$('html, body').animate({scrollTop: $(block).offset().top}, 800)
 	});
-
-	// $(window).resize(function() {
-	// 	if($(window).width()>768){
-	// 		$('.service  .service_item').height(maxh);
-	// 	}
-	// });
 });
 
 //  функція додавання класу .active в елементах списку li
@@ -241,20 +268,25 @@ function AddActive(elem){
 	$(elem).parent().addClass('active');
 }
 
-// 
+// процентні лінії
 function ProgresLine(el){
-	var line_width=0;
+	var line_width = 0;
+	var line_size = $(el).data('size');
+	var line = $(el).children('.progres_line');
+	var point = $(el).children('.progres_point');
+	var procent = $(el).find('.procent');
 	var intervar=setInterval(function(){
 		line_width++;
-		$(el).children('.progres_line').width(line_width+'%');
-		$(el).children('.progres_point').css('left', line_width+'%');
+		line.width(line_width+'%');
+		point.css('left', line_width+'%');
 		$(el).find('.procent').html(line_width);
-		if(line_width == $(el).data('size')){
+		if(line_width == line_size){
 			clearInterval(intervar);
 		}
 	},5);
 }
 
+// максимальна висота блоків
 function MaxHeight(elem){
 	var max_height=[];
 	$(elem).each(function() {

@@ -47,7 +47,7 @@
 	}
 }
 
-.comand{
+.project, .comand{
 	.slider_btn{
 		float: right;
 		vertical-align: top;
@@ -70,6 +70,7 @@
 		&:hover{
 			background-color: @base_color;
 			border-color: @base_color;
+			color: #fff;
 		}
 	}
 }
@@ -78,13 +79,7 @@
 	.client_block{
 		position: relative;	
 		padding: 10px;
-		img{
-			filter: grayscale(100%);
-		}
 		&:hover{
-			img{
-				filter: grayscale(0%);
-			}
 			.tab_layout_T, .tab_layout_B{
 				width: 100%;
 				transition-delay: 0.3s;

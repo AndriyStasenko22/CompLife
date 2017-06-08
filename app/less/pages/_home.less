@@ -82,6 +82,13 @@
 			text-align: center;
 			margin: 25px 0;
 			font-weight: bold;
+			a{
+				color: @title_color;
+				transition: all 0.3s;
+				&:hover{
+					opacity: 0.7;
+				}
+			}
 		}
 	}
 	.service_content{
@@ -111,23 +118,27 @@
 	.portfolio_filter{
 		text-align: center;
 		margin-bottom: 50px;
-		ul{
+		.mob_collapse{
+			display: none;
+		}
+		.filter_list{
 			display: inline-block;
-			li{
+			&>li{
 				display: block;
 				float: left;
 				margin-right: 40px;
+				height: auto;
 				&:last-child{
 					margin-right: 0;
 				}
-				&.active a{
+				&.active > a{
 					color: @base_color;
 					&::before{
 						width: 100%;
 						left: 0;
 					}
 				}
-				a{
+				& > a{
 					color:@title_color;
 					text-transform: uppercase;
 					font-size: 16px;
@@ -154,6 +165,29 @@
 						bottom: 0;
 						left: 50%;
 						transition: all 0.3s;
+					}
+				}
+			}
+			@media only screen and (max-width : 767px){
+				margin: 0 15px;
+				display: block;
+				&>li{
+					float: none;
+					width: 100%;
+					background-color: #f8f8f8;
+					border: 1px solid  #f0f0f0;
+					display: block;
+					margin-top: 10px;
+					&.active>a{
+						background-color: @base_color;
+						color: #fff;
+						&::before{
+							display: none;
+						}
+					}
+					a{
+						font-size: 14px;
+						display: block;
 					}
 				}
 			}
@@ -553,27 +587,27 @@
 	// 	@media only screen and (max-width : 660px){
 	// 		width: 16%;
 	// 	}
-	}
-	.call_form{
-		vertical-align: top;
-		display: block;
-		float: left;
+}
+.call_form{
+	vertical-align: top;
+	display: block;
+	float: left;
+	width: 100%;
+	position: relative;
+	input, textarea{
 		width: 100%;
-		position: relative;
-		input, textarea{
-			width: 100%;
-			display: block;
-			border-radius: 3px;
-			padding: 0 20px;
-			font-size: 18px;
-			color: #000;
-			margin-bottom: 20px;
-			outline: none;
-			border: 0;
-			background-color: rgba(179,179,179,.7);
-			&:focus {
-				background-color: rgba(179,179,179,1);
-			}
+		display: block;
+		border-radius: 3px;
+		padding: 0 20px;
+		font-size: 18px;
+		color: #000;
+		margin-bottom: 20px;
+		outline: none;
+		border: 0;
+		background-color: rgba(179,179,179,.7);
+		&:focus {
+			background-color: rgba(179,179,179,1);
+		}
 			// @media only screen and (max-width : 440px){
 			// 	height: 13vw;
 			// 	font-size: 16px;

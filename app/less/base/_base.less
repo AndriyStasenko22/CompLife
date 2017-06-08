@@ -252,18 +252,6 @@ img{
 	}
 }
 
-.mob_menu{
-	position: fixed;
-	top: 0;
-	left: -260px;
-	width: 260px;
-	height: 100%;
-	background-color: @base_color;
-	border-right: 4px solid  rgba(0,0,0, 0.3);
-	z-index: 100;
-	overflow-y: auto;
-	overflow-x: hidden;
-}
 .overlay{
 	position: absolute;
 	top: 0;
@@ -462,7 +450,25 @@ img{
 
 // мобільне меню
 .mob_menu{
-	padding: 25px 0;
+	position: fixed;
+	top: 0;
+	left: -260px;
+	width: 260px;
+	height: 100%;
+	background-color: @base_color;
+	border-right: 4px solid  rgba(0,0,0, 0.3);
+	z-index: 100;
+	overflow-y: auto;
+	overflow-x: hidden;
+	.mob_header{
+		display: block;
+		text-align: center;
+	}
+	.logo{
+		background-color: rgba(255,255,255, 0.3);
+		display: inline-block;
+		padding: 20px;
+	}
 	overflow: auto;
 	.menu{
 		float: none;
@@ -476,7 +482,7 @@ img{
 				display: block;
 				height: 50px;
 				line-height: 50px;
-				border-bottom: 1px solid  #fff;
+				border-bottom: 1px solid #ddd;
 				&::before{
 					width: 0;
 				}
@@ -485,15 +491,20 @@ img{
 	}
 }
 .mob_dropdown_menu{
-	padding-left: 15px;
 	display: none;
 	background-color: @base_color;
 	li{
 		display: block;
+		padding: 0 15px 0 25px;
+		img{
+				height: 35px;
+				display: inline-block;
+			}
 		a{
 			height: 50px;
 			line-height: 50px;
-			font-size: 12px;
+			font-size: 11px;
+			margin: 0;
 			border-bottom: 1px solid  #fff;
 			&::before{
 				width: 0;
