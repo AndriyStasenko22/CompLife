@@ -5,27 +5,38 @@
 		font-size: 18px;
 	}
 }
+
 .service_section_image, .project_image{
 	display: flex;
 	justify-content: center;
+	@media only screen and (max-width : 767px){
+		flex-direction: column;
+	}
 }
+
 .project_title{
 	color: @title_color;
 	font-family: 'Roboto';
 	text-transform: uppercase;
 	margin: 45px 0 30px;
 	font-weight: 500;
+	@media only screen and (max-width : 767px){
+		text-align: center;
+	}
 }
+
 .project_text, .project_details{
 	line-height: 28px;
 	p{
 		margin-bottom: 20px;
 	}
 }
+
 .block-center{
 	display: flex;
 	justify-content: center;
 }
+
 .project_details{
 	font-family: 'Ubuntu-Light';
 	span{
@@ -42,13 +53,29 @@
 	.base_button{
 		margin-top: 20px;
 	}
+	@media only screen and (max-width : 767px){
+		&{
+			.social_icon{
+				display: block;
+			}
+		}	
+	}
 }
+
 .project_slider_title{
 	margin-top: 100px;
 	.section_title{
 		display: inline-block;
 	}
+	@media only screen and (max-width : 767px){
+		&{
+			.section_title{
+				display: block;
+			}
+		}	
+	}
 }
+
 .project_item{
 	position: relative;
 	.tab_layout{

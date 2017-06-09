@@ -19,16 +19,16 @@
 		</div>
 		<ul class="menu">
 			<li class="active"><a href="index.html">главная</a></li>
-			<li><a href="about.html">о нас</a></li>
+			<li><a href="#" class="menu_go_to" data-block='.about_us'>о нас</a></li>
 			<li class="li_dropdown">
 				<a href="services.html">услуги</a>
 				<ul class="mob_dropdown_menu">
-					<li><a href="#"><img src="img/icon/web.png" alt=""> Разработка WEB-сайтов</a></li>
-					<li><a href="#"><img src="img/icon/automatizet.png" alt=""> Автоматизация учета</a></li>
-					<li><a href="#"><img src="img/icon/printer.png" alt=""> Печатная техника</a></li>
-					<li><a href="#"><img src="img/icon/computer.png" alt=""> Компьютерная техника</a></li>
-					<li><a href="#"><img src="img/icon/software.png" alt=""> Программное обеспечение</a></li>
-					<li><a href="#"><img src="img/icon/cash.png" alt=""> Торговое оборудование</a></li>
+					<li><a href="service.html"><img src="img/icon/web.png" alt=""> Разработка WEB-сайтов</a></li>
+					<li><a href="service.html"><img src="img/icon/automatizet.png" alt=""> Автоматизация учета</a></li>
+					<li><a href="service.html"><img src="img/icon/printer.png" alt=""> Печатная техника</a></li>
+					<li><a href="service.html"><img src="img/icon/computer.png" alt=""> Компьютерная техника</a></li>
+					<li><a href="service.html"><img src="img/icon/software.png" alt=""> Программное обеспечение</a></li>
+					<li><a href="service.html"><img src="img/icon/cash.png" alt=""> Торговое оборудование</a></li>
 				</ul>
 			</li>
 			<li><a href="#" class="menu_go_to" data-block='.portfolio'>портфолио</a></li>
@@ -42,7 +42,7 @@
 		<div class="header_contacts">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-sm-6">
+					<div class="col-xs-12 col-sm-8">
 						<div class="contact">
 							<ul>
 								<li><i class="fa fa-phone" aria-hidden="true"></i><span>Телефон: </span><a href="#">+38 (097) 745-29-82</a></li>
@@ -50,7 +50,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="hidden-xs col-sm-6">
+					<div class="hidden-xs col-sm-4">
 						<div class="social_block">
 							<ul class='social_icon'>
 								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -76,12 +76,12 @@
 							<li class="li_dropdown">
 								<a href="services.html">услуги</a>
 								<ul class="dropdown_menu">
-									<li><a href="#">Разработка WEB-сайтов</a></li>
-									<li><a href="#">Автоматизация учета</a></li>
-									<li><a href="#">Печатная техника</a></li>
-									<li><a href="#">Компьютерная техника</a></li>
-									<li><a href="#">Программное обеспечение</a></li>
-									<li><a href="#">Торговое оборудование</a></li>
+									<li><a href="service.html">Разработка WEB-сайтов</a></li>
+									<li><a href="service.html">Автоматизация учета</a></li>
+									<li><a href="service.html">Печатная техника</a></li>
+									<li><a href="service.html">Компьютерная техника</a></li>
+									<li><a href="service.html">Программное обеспечение</a></li>
+									<li><a href="service.html">Торговое оборудование</a></li>
 								</ul>
 							</li>
 							<li><a href="#" class="menu_go_to" data-block='.portfolio'>портфолио</a></li>
@@ -121,7 +121,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-sm-push-6">
-					<img src="img/icon/about_us_img.jpg" alt="">
+					<div class="about_us_image">
+						<img src="img/icon/about_us_img.jpg" alt="">
+					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-sm-pull-6">
 					<h2 class="section_title">О <span>нас</span></h2>
@@ -139,13 +141,15 @@
 	<section class="experience">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12 col-sm-9">
-					<p>
-						Мы имеем более чем <span>10-летний опыт работы.</span>
-					</p>
-					<p>Вы всегда получите качественное обслуживание.</p>
+				<div class="col-xs-12 col-sm-8 col-md-9">
+					<div class="experience_info">
+						<p>
+							Мы имеем более чем <span>10-летний опыт работы.</span>
+						</p>
+						<p>Вы всегда получите качественное обслуживание.</p>
+					</div>
 				</div>
-				<div class="col-xs-12 col-sm-3">
+				<div class="col-xs-12 col-sm-4 col-md-3">
 					<a href="#" class="base_button button_transparent">Свяжитесь с нами</a>
 				</div>
 			</div>
@@ -171,7 +175,7 @@
 							<img src="img/icon/web.png" alt="">
 						</div>
 						<div class="service_title">
-							<h4><a href="#">Разработка WEB-сайтов</a></h4>
+							<h4><a href="service.html">Разработка WEB-сайтов</a></h4>
 						</div>
 						<div class="service_content">
 							<ul>
@@ -191,7 +195,7 @@
 							<img src="img/icon/printer.png" alt="">
 						</div>
 						<div class="service_title">
-							<h4><a href="#">Печатная техника</a></h4>
+							<h4><a href="service.html">Печатная техника</a></h4>
 						</div>
 						<div class="service_content">
 							<ul>
@@ -210,7 +214,7 @@
 							<img src="img/icon/automatizet.png" alt="">
 						</div>
 						<div class="service_title">
-							<h4><a href="#">Автоматизация учета</a></h4>
+							<h4><a href="service.html">Автоматизация учета</a></h4>
 						</div>
 						<div class="service_content">
 							<ul>
@@ -229,7 +233,7 @@
 							<img src="img/icon/computer.png" alt="">
 						</div>
 						<div class="service_title">
-							<h4><a href="#">Компьютерная техника</a></h4>
+							<h4><a href="service.html">Компьютерная техника</a></h4>
 						</div>
 						<div class="service_content">
 							<ul>
@@ -248,7 +252,7 @@
 							<img src="img/icon/software.png" alt="">
 						</div>
 						<div class="service_title">
-							<h4><a href="#">Программное обеспечение</a></h4>
+							<h4><a href="service.html">Программное обеспечение</a></h4>
 						</div>
 						<div class="service_content">
 							<ul>
@@ -265,7 +269,7 @@
 							<img src="img/icon/cash.png" alt="">
 						</div>
 						<div class="service_title">
-							<h4><a href="#">Торговое оборудование</a></h4>
+							<h4><a href="service.html">Торговое оборудование</a></h4>
 						</div>
 						<div class="service_content">
 							<ul>
@@ -294,535 +298,126 @@
 						</div>
 						<div class="portfolio_filter">
 							<ul class='filter_list'>
-								<li class="active"><a href="#" class='filter' data-filter='all'>Все</a>
-									<div class="mob_collapse">
-										<div class="col-sm-6 col-md-4 Print branding design"  data-myorder="1">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/luxik.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Luxik"</strong><br>Интернет магазин детской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 branding design Development"  data-myorder="2">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/alvina.png" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Alvina"</strong><br>Интернет магазин женской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 Print Development branding">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/junior.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Юніор"</strong><br>Интернет магазин детской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 Print Development design">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/prety.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Pretty-Kids"</strong><br>Интернет магазин</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 Development design" data-myorder="2">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/das.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Das-Elite"</strong><br>Интернет магазин женской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 Print branding">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/mevis.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Mevis"</strong><br>Интернет магазин</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li><a href="#" class='filter' data-filter='.branding'>Web-сайты</a>
-									<div class="mob_collapse">
-										<div class="col-sm-6 col-md-4 Print branding design"  data-myorder="1">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/luxik.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Luxik"</strong><br>Интернет магазин детской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 branding design Development"  data-myorder="2">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/alvina.png" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Alvina"</strong><br>Интернет магазин женской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 Print Development branding">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/junior.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Юніор"</strong><br>Интернет магазин детской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 Print branding">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/mevis.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Mevis"</strong><br>Интернет магазин</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li><a href="#" class='filter' data-filter='.design'>android приложения</a>
-									<div class="mob_collapse">
-										<div class="col-sm-6 col-md-4 mix Print branding design"  data-myorder="1">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/luxik.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Luxik"</strong><br>Интернет магазин детской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 mix branding design Development"  data-myorder="2">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/alvina.png" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Alvina"</strong><br>Интернет магазин женской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 mix Print Development design">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/prety.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Pretty-Kids"</strong><br>Интернет магазин</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 mix Development design" data-myorder="2">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/das.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Das-Elite"</strong><br>Интернет магазин женской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li><a href="#" class='filter' data-filter='.Development'>автоматизация</a>
-									<div class="mob_collapse">
-										<div class="col-sm-6 col-md-4 mix branding design Development"  data-myorder="2">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/alvina.png" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Alvina"</strong><br>Интернет магазин женской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 mix Print Development branding">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/junior.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Юніор"</strong><br>Интернет магазин детской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 mix Print Development design">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/prety.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Pretty-Kids"</strong><br>Интернет магазин</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 mix Development design" data-myorder="2">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/das.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Das-Elite"</strong><br>Интернет магазин женской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li><a href="#" class='filter' data-filter='.Print'>Проекты</a>
-									<div class="mob_collapse">
-										<div class="col-sm-6 col-md-4 mix Print branding design"  data-myorder="1">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/luxik.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Luxik"</strong><br>Интернет магазин детской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 mix Print Development branding">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/junior.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Юніор"</strong><br>Интернет магазин детской одежды</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 mix Print Development design">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/prety.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Pretty-Kids"</strong><br>Интернет магазин</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4 mix Print branding">
-											<div class="row">
-												<div class="tab_item">
-													<img src="img/portfolio/mevis.jpg" alt="">
-													<div class="tab_layout">
-														<span class="tab_layout_line tab_layout_T"></span>
-														<span class="tab_layout_line tab_layout_R"></span>
-														<span class="tab_layout_line tab_layout_B"></span>
-														<span class="tab_layout_line tab_layout_L"></span>
-														<ul class="layout_icon">
-															<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-															<li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-														</ul>
-														<a href="#" class="layout_info"><strong>"Mevis"</strong><br>Интернет магазин</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
+								<li class="active"><a href="#" class='filter' data-filter='all'>Все</a></li>
+								<li><a href="#" class='filter' data-filter='.branding'>Web-сайты</a></li>
+								<li><a href="#" class='filter' data-filter='.design'>android приложения</a></li>
+								<li><a href="#" class='filter' data-filter='.Development'>автоматизация</a></li>
+								<li><a href="#" class='filter' data-filter='.Print'>Проекты</a></li>
 							</ul>
 						</div>
 					</div>
-					<div id="Grid" class="row hidden-xs">
-						<div class="col-sm-6 col-md-4 mix Print branding design"  data-myorder="1">
-							<div class="row">
-								<div class="tab_item">
-									<img src="img/portfolio/luxik.jpg" alt="">
-									<div class="tab_layout">
-										<span class="tab_layout_line tab_layout_T"></span>
-										<span class="tab_layout_line tab_layout_R"></span>
-										<span class="tab_layout_line tab_layout_B"></span>
-										<span class="tab_layout_line tab_layout_L"></span>
-										<ul class="layout_icon">
-											<li><a href="img/portfolio/luxik.jpg" class="open_fancykbox"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-											<li><a href="project.html"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-										</ul>
-										<a href="#" class="layout_info"><strong>"Luxik"</strong><br>Интернет магазин детской одежды</a>
+					<div class="portfolio_desktop">
+						<div id="Grid" class="row">
+							<div class="col-sm-6 col-md-4 mix Print branding design"  data-myorder="1">
+								<div class="row">
+									<div class="tab_item">
+										<img src="img/portfolio/luxik.jpg" alt="">
+										<div class="tab_layout">
+											<span class="tab_layout_line tab_layout_T"></span>
+											<span class="tab_layout_line tab_layout_R"></span>
+											<span class="tab_layout_line tab_layout_B"></span>
+											<span class="tab_layout_line tab_layout_L"></span>
+											<ul class="layout_icon">
+												<li><a href="img/portfolio/luxik.jpg" class="open_fancykbox"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+												<li><a href="project.html"><i class="fa fa-link" aria-hidden="true"></i></a></li>
+											</ul>
+											<a href="#" class="layout_info"><strong>"Luxik"</strong><br>Интернет магазин детской одежды</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-4 mix branding design Development"  data-myorder="2">
+								<div class="row">
+									<div class="tab_item">
+										<img src="img/portfolio/alvina.png" alt="">
+										<div class="tab_layout">
+											<span class="tab_layout_line tab_layout_T"></span>
+											<span class="tab_layout_line tab_layout_R"></span>
+											<span class="tab_layout_line tab_layout_B"></span>
+											<span class="tab_layout_line tab_layout_L"></span>
+											<ul class="layout_icon">
+												<li><a href="img/portfolio/alvina.png" class="open_fancykbox"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+												<li><a href="project.html"><i class="fa fa-link" aria-hidden="true"></i></a></li>
+											</ul>
+											<a href="#" class="layout_info"><strong>"Alvina"</strong><br>Интернет магазин женской одежды</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-4 mix Print Development branding">
+								<div class="row">
+									<div class="tab_item">
+										<img src="img/portfolio/junior.jpg" alt="">
+										<div class="tab_layout">
+											<span class="tab_layout_line tab_layout_T"></span>
+											<span class="tab_layout_line tab_layout_R"></span>
+											<span class="tab_layout_line tab_layout_B"></span>
+											<span class="tab_layout_line tab_layout_L"></span>
+											<ul class="layout_icon">
+												<li><a href="img/portfolio/junior.jpg" class="open_fancykbox"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+												<li><a href="project.html"><i class="fa fa-link" aria-hidden="true"></i></a></li>
+											</ul>
+											<a href="#" class="layout_info"><strong>"Юніор"</strong><br>Интернет магазин детской одежды</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-4 mix Print Development design">
+								<div class="row">
+									<div class="tab_item">
+										<img src="img/portfolio/prety.jpg" alt="">
+										<div class="tab_layout">
+											<span class="tab_layout_line tab_layout_T"></span>
+											<span class="tab_layout_line tab_layout_R"></span>
+											<span class="tab_layout_line tab_layout_B"></span>
+											<span class="tab_layout_line tab_layout_L"></span>
+											<ul class="layout_icon">
+												<li><a href="img/portfolio/prety.jpg" class="open_fancykbox"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+												<li><a href="project.html"><i class="fa fa-link" aria-hidden="true"></i></a></li>
+											</ul>
+											<a href="#" class="layout_info"><strong>"Pretty-Kids"</strong><br>Интернет магазин</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-4 mix Development design" data-myorder="2">
+								<div class="row">
+									<div class="tab_item">
+										<img src="img/portfolio/das.jpg" alt="">
+										<div class="tab_layout">
+											<span class="tab_layout_line tab_layout_T"></span>
+											<span class="tab_layout_line tab_layout_R"></span>
+											<span class="tab_layout_line tab_layout_B"></span>
+											<span class="tab_layout_line tab_layout_L"></span>
+											<ul class="layout_icon">
+												<li><a href="img/portfolio/das.jpg" class="open_fancykbox"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+												<li><a href="project.html"><i class="fa fa-link" aria-hidden="true"></i></a></li>
+											</ul>
+											<a href="#" class="layout_info"><strong>"Das-Elite"</strong><br>Интернет магазин женской одежды</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-4 mix Print branding">
+								<div class="row">
+									<div class="tab_item">
+										<img src="img/portfolio/mevis.jpg" alt="">
+										<div class="tab_layout">
+											<span class="tab_layout_line tab_layout_T"></span>
+											<span class="tab_layout_line tab_layout_R"></span>
+											<span class="tab_layout_line tab_layout_B"></span>
+											<span class="tab_layout_line tab_layout_L"></span>
+											<ul class="layout_icon">
+												<li><a href="img/portfolio/mevis.jpg" class="open_fancykbox"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+												<li><a href="project.html"><i class="fa fa-link" aria-hidden="true"></i></a></li>
+											</ul>
+											<a href="#" class="layout_info"><strong>"Mevis"</strong><br>Интернет магазин</a>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-4 mix branding design Development"  data-myorder="2">
-							<div class="row">
-								<div class="tab_item">
-									<img src="img/portfolio/alvina.png" alt="">
-									<div class="tab_layout">
-										<span class="tab_layout_line tab_layout_T"></span>
-										<span class="tab_layout_line tab_layout_R"></span>
-										<span class="tab_layout_line tab_layout_B"></span>
-										<span class="tab_layout_line tab_layout_L"></span>
-										<ul class="layout_icon">
-											<li><a href="img/portfolio/alvina.png" class="open_fancykbox"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-											<li><a href="project.html"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-										</ul>
-										<a href="#" class="layout_info"><strong>"Alvina"</strong><br>Интернет магазин женской одежды</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 mix Print Development branding">
-							<div class="row">
-								<div class="tab_item">
-									<img src="img/portfolio/junior.jpg" alt="">
-									<div class="tab_layout">
-										<span class="tab_layout_line tab_layout_T"></span>
-										<span class="tab_layout_line tab_layout_R"></span>
-										<span class="tab_layout_line tab_layout_B"></span>
-										<span class="tab_layout_line tab_layout_L"></span>
-										<ul class="layout_icon">
-											<li><a href="img/portfolio/junior.jpg" class="open_fancykbox"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-											<li><a href="project.html"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-										</ul>
-										<a href="#" class="layout_info"><strong>"Юніор"</strong><br>Интернет магазин детской одежды</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 mix Print Development design">
-							<div class="row">
-								<div class="tab_item">
-									<img src="img/portfolio/prety.jpg" alt="">
-									<div class="tab_layout">
-										<span class="tab_layout_line tab_layout_T"></span>
-										<span class="tab_layout_line tab_layout_R"></span>
-										<span class="tab_layout_line tab_layout_B"></span>
-										<span class="tab_layout_line tab_layout_L"></span>
-										<ul class="layout_icon">
-											<li><a href="img/portfolio/prety.jpg" class="open_fancykbox"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-											<li><a href="project.html"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-										</ul>
-										<a href="#" class="layout_info"><strong>"Pretty-Kids"</strong><br>Интернет магазин</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 mix Development design" data-myorder="2">
-							<div class="row">
-								<div class="tab_item">
-									<img src="img/portfolio/das.jpg" alt="">
-									<div class="tab_layout">
-										<span class="tab_layout_line tab_layout_T"></span>
-										<span class="tab_layout_line tab_layout_R"></span>
-										<span class="tab_layout_line tab_layout_B"></span>
-										<span class="tab_layout_line tab_layout_L"></span>
-										<ul class="layout_icon">
-											<li><a href="img/portfolio/das.jpg" class="open_fancykbox"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-											<li><a href="project.html"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-										</ul>
-										<a href="#" class="layout_info"><strong>"Das-Elite"</strong><br>Интернет магазин женской одежды</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 mix Print branding">
-							<div class="row">
-								<div class="tab_item">
-									<img src="img/portfolio/mevis.jpg" alt="">
-									<div class="tab_layout">
-										<span class="tab_layout_line tab_layout_T"></span>
-										<span class="tab_layout_line tab_layout_R"></span>
-										<span class="tab_layout_line tab_layout_B"></span>
-										<span class="tab_layout_line tab_layout_L"></span>
-										<ul class="layout_icon">
-											<li><a href="img/portfolio/mevis.jpg" class="open_fancykbox"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-											<li><a href="project.html"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-										</ul>
-										<a href="#" class="layout_info"><strong>"Mevis"</strong><br>Интернет магазин</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					</div>				
 				</div>
 			</div>
 		</div>
@@ -1124,9 +719,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12">
-				<!-- <h2 class="section_title title_center">Оставьте заявку на<br><span>бесплатную консультацию</span></h2> -->
 				<h2 class="section_title title_center"><span>СВЯЖИТЕСЬ</span> С НАМИ</span></h2>
-
 			</div>
 			<div class="col-xs-3 col-sm-2 col-md-1">
 				<div class="footer_center">

@@ -1,20 +1,7 @@
 header{
 	.header_contacts{
-		height: 50px;
 		background-color: #fff;
 		line-height: 49px;
-		@media only screen and (max-width : 768px){
-			// line-height: 30px;
-			.contact{
-				float: none;
-				ul{
-					text-align: center;
-					li{
-						float: none;
-					}
-				}
-			}
-		}
 		@media only screen and (max-width : 393px){
 			line-height: 25px;
 		}
@@ -22,46 +9,39 @@ header{
 	.social_icon{
 		float: right;
 	}
-	// .contact{
-	// 	font-size: 12px;
-	// 	li{
-	// 		display: inline-block;
-	// 		// float: left;
-	// 		margin-right: 15px;
-	// 		&:last-child{
-	// 			margin-right: 0;
-	// 		}
-	// 		a{
-	// 			color: @base_color_text;
-	// 			transition: all 0.3s;
-	// 			&:hover{
-	// 				color: @base_color;
-	// 			}
-	// 		}
-	// 	}
-	// 	.fa{
-	// 		margin-right: 10px;
-	// 		color: @base_color;
-	// 	}
-	// }
 	.header_menu{
 		background-color: @base_color;
 		line-height: 69px;
 		box-shadow: 0px -1px 9px 0px rgba(50, 50, 50, 0.64);
-		@media only screen and (max-width : 768px){
-			line-height: 55px;
-			text-align: center;
-		}
 	}
 	.logo{
 		float: left;
 		img{
 			height: 50px;
 		}
-		@media only screen and (max-width : 768px){
-			float: none;
-			img{
-				height: 40px;
+	}
+	@media only screen and (max-width : 767px){
+		&{
+			.contact{
+				float: none;
+				padding: 5px 0;
+				ul{
+					text-align: center;
+					li{
+						float: none;
+						margin: 0;
+					}
+				}
+			}
+			.header_menu{
+				line-height: 60px;
+				text-align: center;
+			}
+			.logo{
+				float: none;
+				img{
+					height: 40px;
+				}
 			}
 		}
 	}

@@ -14,8 +14,8 @@ footer{
 	padding: 6.3% 0;
 	background: url(../img/baners/slider-bg6.jpg) top center no-repeat;
 	background-size: cover;
-	position: relative;
 	background-attachment: fixed;
+	position: relative;
 	&::before{
 		content: "";
 		position: absolute;
@@ -30,18 +30,12 @@ footer{
 		font-weight: bold;
 		color: #fff;
 		margin-top: 30px;
-		@media only screen and (max-width : 768px){
-			font-size: 18px;
-		}
 	}
 	.short_info{
 		text-align: justify;
 		margin: 15px 0 20px;
 		font-size: 16px;
 		text-indent: 15px;
-		@media only screen and (max-width : 768px){
-			padding-right: 0;
-		}
 	}
 	.footer_coments, .footer_services{
 		display: block;
@@ -67,7 +61,7 @@ footer{
 		}
 	}
 	.footer_form{
-		input{
+		input, button{
 			height: 40px;
 			border: 0;
 			&:focus, &:active{
@@ -76,13 +70,10 @@ footer{
 			}
 		}
 		button{
-			height: 40px;
 			background-color: @base_color;
-			border: 0;
 			color: #fff;
 			font-size: 16px;
 		}
-
 	}
 	.form_title{
 		font-size: 15px;
@@ -90,6 +81,19 @@ footer{
 			font-size: 16px;
 			font-weight: bold;
 			color: @base_color;
+		}
+	}
+	@media only screen and (max-width : 767px){
+		&{
+			.section_title{
+				font-size: 18px;
+			}
+			.short_info{
+				padding-right: 0;
+			}
+			.footer_center{
+				justify-content: flex-start;
+			}
 		}
 	}
 }
@@ -100,23 +104,11 @@ footer{
 	background-color: @footer_color;
 	color: #fff;
 	line-height: 69px;
-	@media only screen and (max-width : 768px){
-		padding: 20px 0;
-		line-height: 24px;
-		text-align: center;
-	}
 	.footer_logo{
 		text-align: center;
-		@media only screen and (max-width : 768px){
-			margin-bottom: 10px;
-		}
 	}
 	.footer_social{
 		text-align: right;
-		@media only screen and (max-width : 768px){
-			text-align: center;
-			margin-top: 10px;
-		}
 		li{
 			display: inline-block;
 			margin-right: 10px;
@@ -125,13 +117,23 @@ footer{
 			}
 		}
 	}
+	@media only screen and (max-width : 767px){
+		&{
+			padding: 20px 0;
+			line-height: 24px;
+			text-align: center;
+			.footer_logo{
+				margin-bottom: 10px;
+			}
+			.footer_social{
+				text-align: center;
+				margin-top: 10px;
+			}
+		}
+	}
 }
-
 
 .footer_center{
 	display: flex;
 	justify-content: center;
-	@media only screen and (max-width : 767px){
-		justify-content: flex-start;
-	}
 }

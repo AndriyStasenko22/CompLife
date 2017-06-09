@@ -3,9 +3,10 @@ $(document).ready(function() {
 	// initialize();
 
 	new WOW().init();
-
 	$('#Grid').mixItUp();
+
 	$(".open_fancykbox").fancybox();
+
 	// перлоадер
 	// $('#load').css('opacity', '1');
 	// if($('#load').css('opacity') == 1){
@@ -16,6 +17,21 @@ $(document).ready(function() {
 	// 		$('.preloader').delay(2300).fadeOut(2000);
 	// 	});
 	// }
+
+	// мобільне портфоліо
+	if($('.portfolio').length>0 && $(window).width()<768){
+		$('.portfolio .filter_list > li').append('<div class="grid"></div>');
+		$('.portfolio .filter_list > li:not(.active) .grid').css('display', 'none');	
+		$('.portfolio .filter_list > li > a').each(function(index, el) {
+			var data = $(this).data('filter');
+			if(data != 'all'){
+				$('#Grid').find(data).clone().appendTo($(this).siblings('.grid'));
+			}
+			else{
+				$('#Grid .mix').clone().appendTo($(this).siblings('.grid'));
+			}
+		});
+	}
 	
 	var home_slider =$('.home_slider');
 	home_slider.owlCarousel({
@@ -157,11 +173,11 @@ $(document).ready(function() {
 	});
 
 	// однакова висота блоків
-	if($('.service  .service_item').length > 0 && $(window).width()>768){
+	if($('.service  .service_item').length > 1 && $(window).width()>768){
 		$('.service  .service_item').height(MaxHeight('.service  .service_item'));
 	}
 
-	if($('.services-block .services-caption').length > 0 && $(window).width()>768){
+	if($('.services-block .services-caption').length > 1 && $(window).width()>768){
 		$('.services-block .services-caption').height(MaxHeight('.services-block .services-caption'));
 	}
 
@@ -175,20 +191,21 @@ $(document).ready(function() {
 		AddActive(this);
 	});
 
-	$('.mob_menu li.li_dropdown' ).click(function(event) {
+	$('.mob_menu li.li_dropdown > a').click(function(event) {
 		event.preventDefault();
 		$('.mob_dropdown_menu').slideToggle();
 	});
 
 
 	// таби 'Портфоліо'
-	$('.portfolio .portfolio_filter li a').click(function(event) {
+	$('.portfolio .filter_list > li > a').click(function(event) {
 		event.preventDefault();
 		AddActive(this);
-		if($(window).width()<768){
-			$(this).siblings('.mob_collapse').slideToggle('slow');
+		if($(window).width()<767){
+			$(this).siblings('.grid').slideToggle('slow');
 		}
 	});
+
 
 	// анімація tab_layout "Портфоліо"
 	$('.tab_item').hover(function() {
@@ -256,9 +273,9 @@ $(document).ready(function() {
 
 	// якорь
 	$('.menu_go_to').click(function(event) {
-		event.preventDefault();
 		var block = $(this).data('block');
-		$('html, body').animate({scrollTop: $(block).offset().top}, 800)
+		event.preventDefault();
+		$('html, body').animate({scrollTop: $(block).offset().top}, 800);
 	});
 });
 
