@@ -196,6 +196,11 @@ $(document).ready(function() {
 		$('.mob_dropdown_menu').slideToggle();
 	});
 
+	$('.menu .catalog > a').click(function(event) {
+		event.preventDefault();
+		$('.dropdown_menu').slideToggle();
+	});
+
 
 	// таби 'Портфоліо'
 	$('.portfolio .filter_list > li > a').click(function(event) {
@@ -276,6 +281,15 @@ $(document).ready(function() {
 		var block = $(this).data('block');
 		event.preventDefault();
 		$('html, body').animate({scrollTop: $(block).offset().top}, 800);
+	});
+
+	$('.category-list > li > a').click(function(event) {
+		event.preventDefault();
+		AddActive(this);
+	});
+	$('.category-list > li.li_dropdown > a').click(function(event) {
+		$(this).parent().toggleClass('open');
+		$(this).siblings('.category_dropdown').slideToggle();
 	});
 });
 
