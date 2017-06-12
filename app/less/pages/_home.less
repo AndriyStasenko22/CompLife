@@ -70,6 +70,7 @@
 // Наши услуги
 .service{
 	.service_item{
+		width: 33%;
 		margin-top: 40px;
 	}
 	.service_icon{
@@ -108,8 +109,18 @@
 			list-style: square;
 		}
 	}
+	@media only screen and (max-width : 992px){
+		&{
+			.service_item{
+				width: 50%;
+			}
+		}
+	}
 	@media only screen and (max-width : 767px){
 		&{
+			.service_item{
+				width: 45%;
+			}
 			.service_content{
 				text-align: center;
 				ul{
@@ -119,6 +130,13 @@
 						text-align: left;
 					}
 				}
+			}
+		}
+	}
+	@media only screen and (max-width : 480px){
+		&{
+			.service_item{
+				width: 100%;
 			}
 		}
 	}

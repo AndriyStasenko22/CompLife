@@ -173,13 +173,13 @@ $(document).ready(function() {
 	});
 
 	// однакова висота блоків
-	if($('.service  .service_item').length > 1 && $(window).width()>768){
-		$('.service  .service_item').height(MaxHeight('.service  .service_item'));
-	}
+	// if($('.service  .service_item').length > 1 && $(window).width()>768){
+	// 	$('.service  .service_item').height(MaxHeight('.service  .service_item'));
+	// }
 
-	if($('.services-block .services-caption').length > 1 && $(window).width()>768){
-		$('.services-block .services-caption').height(MaxHeight('.services-block .services-caption'));
-	}
+	// if($('.services-block .services-caption').length > 1 && $(window).width()>768){
+	// 	$('.services-block .services-caption').height(MaxHeight('.services-block .services-caption'));
+	// }
 
 	// кнопка 'на верх' 
 	$('.button_up').click(function(event) {
