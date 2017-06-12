@@ -607,42 +607,32 @@ img{
 		color: @base_color;
 	}
 }
-.checkbox_base{
-	width: 24px;
-	height: 24px;
-	border: 1px solid #ebebeb;
-	position: relative;
-	display: inline-block;
-	margin-right: 5px;
-	&>input[type='checkbox']{
-		margin: 0 !important;
-		padding-right: 0 !important;
-		visibility: hidden;
-		&:checked + label:before{
-			opacity: 1;
-			background-color: @base_color;
-			color: #fff;
+
+.paginator{
+	margin: 40px 0;
+	text-align: center;
+	ul li{
+		display: inline-block;
+		border: 2px solid #eee;
+		margin: 0 5px;
+		&:last-child{
+			padding: 0 10px;
 		}
-	}
-	&>label{
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		margin: 0 !important;
-		padding: 0 !important;
-		text-align: center;
-		line-height: 22px;
-		font-size: 16px;
-		cursor: pointer;
-		&::before{
-			height:22px;
-			width: 22px;
+		&:hover, &.active{
+			background-color: @base_color;
+			border-color: @base_color;
+			a{
+				color: #fff;
+			}
+		}
+		a{
+			height: 33px;
+			min-width: 33px;
+			color:initial;
+			font-weight: 700;
+			font-size: 12px;
 			display: inline-block;
-			content: '\f00c';
-			font-family: 'FontAwesome';
-			opacity: 0;
+			line-height: 32px;
 		}
 	}
 }

@@ -28,6 +28,7 @@ gulp.task('scripts', function() {
         'app/libs/jquery-mixitup/dist/mixitup.min.js', //MixitUp
         'app/libs/vivus/dist/vivus.min.js', //SVG drowin
         'app/libs/wow/dist/wow.min.js',
+        'app/libs/jquery-ui/jquery-ui.min.js'
         ])
         .pipe(concat('libs.min.js')) // Собираем их в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл

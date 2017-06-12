@@ -164,12 +164,19 @@ $(document).ready(function() {
 			}
 		}
 	});
+
 	// кнопки слайдер "Проект"
 	$('.project .btn_next').click(function() {
 		project_slider.trigger('next.owl.carousel');
 	});
 	$('.project .btn_prev').click(function() {
 		project_slider.trigger('prev.owl.carousel');
+	});
+
+	var card_slider = $('.card-slider');
+	card_slider.slick({
+		slidesToShow: 3,
+		vertical: true
 	});
 
 	// однакова висота блоків
@@ -283,14 +290,55 @@ $(document).ready(function() {
 		$('html, body').animate({scrollTop: $(block).offset().top}, 800);
 	});
 
-	$('.category-list > li > a').click(function(event) {
+	$('.category-list > li > a, .paginator li:not(.next) a').click(function(event) {
 		event.preventDefault();
 		AddActive(this);
 	});
+
 	$('.category-list > li.li_dropdown > a').click(function(event) {
 		$(this).parent().toggleClass('open');
 		$(this).siblings('.category_dropdown').slideToggle();
 	});
+
+	if($('#slider-range').length>0){
+		$( "#slider-range" ).slider({
+			range: true,
+			min: 1000,
+			max: 30000,
+			values: [ 1000, 30000 ],
+			slide: function( event, ui ) {
+				$( "#price_min" ).val( ui.values[ 0 ] );
+				$( "#price_max" ).val( ui.values[ 1 ] );
+			}
+		});
+		$( "#price_min" ).val( $( "#slider-range" ).slider( "values", 0 ) );
+		$( "#price_max" ).val($( "#slider-range" ).slider( "values", 1 ) );
+
+		$('input#price_min').change(function() {
+			var value1 = $('#price_min').val();
+			var value2 = $('#price_max').val();
+			if(parseInt(value1)>parseInt(value2)){
+				value1=value2;
+				$('input#price_min').val(value1);
+			}
+			if(parseInt(value1) < $("#slider-range").slider("option", "min")){
+				value1=$("#slider-range").slider("option", "min");
+				$('input#price_min').val(value1);
+			}
+			$( "#slider-range" ).slider( "values", 0,  value1);
+		});
+
+		$('input#price_max').change(function() {
+			var value1 = $('#price_min').val();
+			var value2 = $('#price_max').val();
+			if(parseInt(value1)>parseInt(value2)){
+				value2=value1;
+				$('input#price_max').val(value2);
+			}
+			$( "#slider-range" ).slider( "values", 1,  value2);
+		});
+	}
+
 });
 
 //  функція додавання класу .active в елементах списку li
@@ -326,3 +374,7 @@ function MaxHeight(elem){
 	var maxh=Math.max.apply(Math,max_height);
 	return maxh;
 }
+
+function proverka(input) {
+    input.value = input.value.replace(/[^\d]/g, '');
+};
