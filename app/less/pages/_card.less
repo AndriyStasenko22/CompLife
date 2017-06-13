@@ -23,29 +23,33 @@
 		}
 	}
 	.block_stars{
+		line-height: 24px;
 		.stars_list{
-			display: inline-block;
-			font-size: 0;
 			margin-right: 15px;
 			direction: rtl;
-			unicode-bidi: bidi-override;
-
-			li{
+			display: inline-block;
+			font-size: 0;
+			span{
 				display: inline-block;
-				a{
-					font-size: 20px;
-					color: @base_color;
-					font-size: 25px;
-					line-height: 1;
-					display: inline-block;
-					position: relative;
-
-					&:hover::before, &:hover ~ a::before{
-						content: "\2605";
-						position: absolute;
-						color: @base_color;
-					}
-				}
+				font-size: 24px;
+				color: @base_color;
+				position: relative;
+				cursor: pointer;
+			}
+			&>span:hover::before, &>span:hover ~ span::before 
+			{
+				content: "\2605";
+				position: absolute;
+				color: @base_color;
+			}
+		}
+		.card_coment{
+			vertical-align: top;
+			display: inline-block;
+			&::before{
+				content: "\f0e5";
+				font-family: 'FontAwesome';
+				margin-right: 5px;
 			}
 		}
 	}
@@ -67,7 +71,7 @@
 
 	.card-slider{
 		max-height: 475px;
-		width: 17%;
+		width: 18%;
 		overflow: auto;
 		direction: rtl;
 		&::-webkit-scrollbar{
@@ -84,20 +88,28 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 100%;
-			height: 105px;
+			width: 95%;
+			height: 28.5%;
 			margin-bottom: 20px;
 			padding: 0 7px;
+			border: 1px solid #fff;
+			&.active{
+				border: 1px solid @base_color;
+			}
 			&:last-child{
 				margin-bottom: 0;
 			}
 		}
 	}
 	.card-image-place{
-		width: 77%;
+		width: 78%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		a:visited, a:link{
+			outline: none;
+			border: none;
+		}
 	}
 }
 .card_tab{
@@ -183,7 +195,29 @@
 .special-offer{
 	margin-bottom: 50px;
 	.products_tab_item{
-		width: 100%;
+		width: 99%;
 		margin-right: 35px;
+		height: 345px;
+		&::before{
+			height: 0;
+		}
+		&:hover .product-wrap{
+			bottom: 3px;
+		}
+	}
+	.product-wrap{
+		padding-bottom: 0;
+	}
+	.products_tab_name{
+		max-height: 50px;
+		min-height: 50px;
+		overflow: hidden;
+	}
+	.products_tab_options{
+		flex-direction: column;
+		align-items: center;
+	}
+	.products_tab_price{
+		margin-bottom: 15px;
 	}
 }

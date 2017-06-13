@@ -174,24 +174,21 @@ $(document).ready(function() {
 	});
 
 	var special_offer_slider = $('.special-offer-slider');
-	special_offer_slider.slick({
-		infinite: true,
-		slidesToShow: 4,
-		slidesToScroll: 1
-		// loop:true, 
-		// autoplay:true,
-		// autoplaySpeed: 1000,
-		// margin: 40,
-		// smartSpeed:550,
-		// responsiveClass:true,
-		// responsive:{
-		// 	0:{
-		// 		items:2,
-		// 	},
-		// 	992:{
-		// 		items:4,
-		// 	}
-		// }
+	special_offer_slider.owlCarousel({
+		loop:true, 
+		autoplay:true,
+		autoplaySpeed: 1000,
+		margin: 30,
+		smartSpeed:550,
+		responsiveClass:true,
+		responsive:{
+			0:{
+				items:2,
+			},
+			992:{
+				items:5,
+			}
+		}
 	});
 
 	// кнопка 'на верх' 
@@ -347,6 +344,8 @@ $(document).ready(function() {
 
 	$('.card-slider-img>a').click(function(event) {
 		event.preventDefault();
+		$(this).parent().siblings('.card-slider-img').removeClass('active');
+		$(this).parent().addClass('active');
 		var img = $(this).data('image');
 		$('.card-image-place img').attr('src', img);
 	});
@@ -369,8 +368,8 @@ $(document).ready(function() {
 			$.fancybox.open(
 				srcimg,
 				{
-					type: "image",
-					live: false
+					// type: "image",
+					// live: false
 				});
 		}
 	});
