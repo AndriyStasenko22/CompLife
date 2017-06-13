@@ -38,7 +38,7 @@
 						<div class="contact">
 							<ul>
 								<li><i class="fa fa-phone" aria-hidden="true"></i><span>Телефон: </span><a href="#">+38 (097) 745-29-82</a></li>
-								<li><i class="fa fa-phone" aria-hidden="true"></i><span>Email: </span><a href="#">office@complife.ua</a></li>
+								<li><i class="fa fa-envelope" aria-hidden="true"></i><span>Email: </span><a href="#">office@complife.ua</a></li>
 							</ul>
 						</div>
 					</div>
@@ -63,8 +63,7 @@
 						</div>
 						<a href="index.html" class="logo"><img src="img/icon/logo.png" alt=""></a>
 						<ul class="menu hidden-xs">
-							<li class="active"><a href="index.html">главная</a></li>
-							<li><a href="about.html">о нас</a></li>
+							<li class="active"><a href="#">главная</a></li>
 							<li class="li_dropdown">
 								<a href="services.html">услуги</a>
 								<ul class="dropdown_menu">
@@ -76,7 +75,28 @@
 									<li><a href="service.html">Торговое оборудование</a></li>
 								</ul>
 							</li>
-							<li><a href="portfolio.html">портфолио</a></li>
+							<li class="li_dropdown catalog">
+								<a href="#">Каталог</a>
+								<ul class="dropdown_catalog_menu">
+									<div class="product-menu-block">
+										<a href="#">
+											<img src="img/icon/product_menu.jpg">
+											<span class="product-title">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</span>
+										</a>
+									</div>
+									<div class="category_menu">
+										<p class="category_menu_title">Категории</p>
+										<ul class="category_menu_list">
+											<li><a href="catalog.html">Ноутбуки и Компьютеры</a></li>
+											<li><a href="catalog.html">Планшеты</a></li>
+											<li><a href="catalog.html">Принтера</a></li>
+											<li><a href="catalog.html">Торговое оборудование</a></li>
+										</ul>
+									</div>
+								</ul>
+							</li>
+							<li><a href="#" class="menu_go_to" data-block='.portfolio'>портфолио</a></li>
+							<li><a href="#" class="menu_go_to" data-block='.about_us'>о нас</a></li>
 							<li><a href="contacts.html">контакты</a></li>
 						</ul>
 					</div>
@@ -117,133 +137,147 @@
 					<h2 class="section_title">Ноутбуки и Компьютеры</h2>
 					<div class="shop_categories_tabs">
 						<div class="shop_tab_item">
-							<div class="shop_tab_img">
-								<img src="img/icon/product_menu.jpg" alt="">
+							<div class="shop_tab_wrap">
+								<div class="shop_tab_img">
+									<img src="img/icon/product_menu.jpg" alt="">
+								</div>
+								<div class="shop_tab_title">
+									<a href="#"><h4>Ноутбуки</h4></a>
+								</div>
+								<div class="shop_tab_property">
+									<ul class="tab_property_list">
+										<li><a href="#">Asus</a></li>
+										<li><a href="#">Acer</a></li>
+										<li><a href="#">Apple</a></li>
+										<li><a href="#">Dell</a></li>
+										<li><a href="#">Lenovo</a></li>
+										<li><a href="#">HP (Hewlett Packard)</a></li>
+									</ul>
+								</div>
+								<a href="products.html" class="show_all">Все ноутбуки</a>
 							</div>
-							<div class="shop_tab_title">
-								<a href="#"><h4>Ноутбуки</h4></a>
-							</div>
-							<div class="shop_tab_property">
-								<ul class="tab_property_list">
-									<li><a href="#">Asus</a></li>
-									<li><a href="#">Acer</a></li>
-									<li><a href="#">Apple</a></li>
-									<li><a href="#">Dell</a></li>
-									<li><a href="#">Lenovo</a></li>
-									<li><a href="#">HP (Hewlett Packard)</a></li>
-								</ul>
-							</div>
-							<a href="products.html" class="show_all">Все ноутбуки</a>
 						</div>
 						<div class="shop_tab_item">
-							<div class="shop_tab_img">
-								<img src="img/icon/mause.jpg" alt="">
+							<div class="shop_tab_wrap">
+								<div class="shop_tab_img">
+									<img src="img/icon/mause.jpg" alt="">
+								</div>
+								<div class="shop_tab_title">
+									<a href="#"><h4>Аксессуары для ноутбуков и ПК</h4></a>
+								</div>
+								<div class="shop_tab_property">
+									<ul class="tab_property_list">
+										<li><a href="#">Сумки и рюкзаки для ноутбуков</a></li>
+										<li><a href="#">Флеш память USB</a></li>
+										<li><a href="#">Подставки для ноутбуков</a></li>
+										<li><a href="#">Веб-камеры</a></li>
+									</ul>
+								</div>
+								<a href="#" class="show_all">Все aксессуары</a>
 							</div>
-							<div class="shop_tab_title">
-								<a href="#"><h4>Аксессуары для ноутбуков и ПК</h4></a>
-							</div>
-							<div class="shop_tab_property">
-								<ul class="tab_property_list">
-									<li><a href="#">Сумки и рюкзаки для ноутбуков</a></li>
-									<li><a href="#">Флеш память USB</a></li>
-									<li><a href="#">Подставки и столики для ноутбуков</a></li>
-									<li><a href="#">Веб-камеры</a></li>
-								</ul>
-							</div>
-							<a href="#" class="show_all">Все aксессуары</a>
 						</div>
 						<div class="shop_tab_item">
-							<div class="shop_tab_img">
-								<img src="img/icon/dispaly.jpg" alt="">
+							<div class="shop_tab_wrap">
+								<div class="shop_tab_img">
+									<img src="img/icon/dispaly.jpg" alt="">
+								</div>
+								<div class="shop_tab_title">
+									<a href="#"><h4>Мониторы</h4></a>
+								</div>
+								<div class="shop_tab_property">
+									<ul class="tab_property_list">
+										<li><a href="#">Acer</a></li>
+										<li><a href="#">Apple</a></li>
+										<li><a href="#">Dell</a></li>
+										<li><a href="#">Lenovo</a></li>
+										<li><a href="#">HP (HP (Hewlett Packard))</a></li>
+									</ul>
+								</div>
+								<a href="#" class="show_all">Все мониторы</a>
 							</div>
-							<div class="shop_tab_title">
-								<a href="#"><h4>Мониторы</h4></a>
-							</div>
-							<div class="shop_tab_property">
-								<ul class="tab_property_list">
-									<li><a href="#">Acer</a></li>
-									<li><a href="#">Apple</a></li>
-									<li><a href="#">Dell</a></li>
-									<li><a href="#">Lenovo</a></li>
-									<li><a href="#">HP (HP (Hewlett Packard))</a></li>
-								</ul>
-							</div>
-							<a href="#" class="show_all">Все мониторы</a>
 						</div>
 						<div class="shop_tab_item">
-							<div class="shop_tab_img">
-								<img src="img/icon/monoblok_acer.jpg" alt="">
+							<div class="shop_tab_wrap">
+								<div class="shop_tab_img">
+									<img src="img/icon/monoblok_acer.jpg" alt="">
+								</div>
+								<div class="shop_tab_title">
+									<a href="#"><h4>Моноблокы</h4></a>
+								</div>
+								<div class="shop_tab_property">
+									<ul class="tab_property_list">
+										<li><a href="#">Asus</a></li>
+										<li><a href="#">Acer</a></li>
+										<li><a href="#">Apple</a></li>
+										<li><a href="#">Dell</a></li>
+										<li><a href="#">Lenovo</a></li>
+										<li><a href="#">HP (HP (Hewlett Packard))</a></li>
+									</ul>
+								</div>
+								<a href="#" class="show_all">Все моноблокы</a>
 							</div>
-							<div class="shop_tab_title">
-								<a href="#"><h4>Моноблокы</h4></a>
-							</div>
-							<div class="shop_tab_property">
-								<ul class="tab_property_list">
-									<li><a href="#">Asus</a></li>
-									<li><a href="#">Acer</a></li>
-									<li><a href="#">Apple</a></li>
-									<li><a href="#">Dell</a></li>
-									<li><a href="#">Lenovo</a></li>
-									<li><a href="#">HP (HP (Hewlett Packard))</a></li>
-								</ul>
-							</div>
-							<a href="#" class="show_all">Все моноблокы</a>
 						</div>
 						<div class="shop_tab_item">
-							<div class="shop_tab_img">
-								<img src="img/icon/servers-molvers-dell.jpg" alt="">
+							<div class="shop_tab_wrap">
+								<div class="shop_tab_img">
+									<img src="img/icon/servers-molvers-dell.jpg" alt="">
+								</div>
+								<div class="shop_tab_title">
+									<a href="#"><h4>Серверное оборудование</h4></a>
+								</div>
+								<div class="shop_tab_property">
+									<ul class="tab_property_list">
+										<li><a href="#">Серверы</a></li>
+										<li><a href="#">Сетевые карты</a></li>
+										<li><a href="#">Кабели</a></li>
+										<li><a href="#">WI-FI роутеры</a></li>
+										<li><a href="#">Маршрутизаторы SMB</a></li>
+									</ul>
+								</div>
+								<a href="#" class="show_all">Все серверное оборудование</a>
 							</div>
-							<div class="shop_tab_title">
-								<a href="#"><h4>Серверное оборудование</h4></a>
-							</div>
-							<div class="shop_tab_property">
-								<ul class="tab_property_list">
-									<li><a href="#">Серверы</a></li>
-									<li><a href="#">Сетевые карты</a></li>
-									<li><a href="#">Кабели</a></li>
-									<li><a href="#">WI-FI роутеры</a></li>
-									<li><a href="#">Маршрутизаторы SMB</a></li>
-								</ul>
-							</div>
-							<a href="#" class="show_all">Все серверное оборудование</a>
 						</div>
 						<div class="shop_tab_item">
-							<div class="shop_tab_img">
-								<img src="img/icon/product_menu.jpg" alt="">
+							<div class="shop_tab_wrap">
+								<div class="shop_tab_img">
+									<img src="img/icon/product_menu.jpg" alt="">
+								</div>
+								<div class="shop_tab_title">
+									<a href="#"><h4>Ноутбуки</h4></a>
+								</div>
+								<div class="shop_tab_property">
+									<ul class="tab_property_list">
+										<li><a href="#">Asus</a></li>
+										<li><a href="#">Acer</a></li>
+										<li><a href="#">Apple</a></li>
+										<li><a href="#">Dell</a></li>
+										<li><a href="#">Lenovo</a></li>
+										<li><a href="#">HP (HP (Hewlett Packard))</a></li>
+									</ul>
+								</div>
+								<a href="#" class="show_all">Все ноутбуки</a>
 							</div>
-							<div class="shop_tab_title">
-								<a href="#"><h4>Ноутбуки</h4></a>
-							</div>
-							<div class="shop_tab_property">
-								<ul class="tab_property_list">
-									<li><a href="#">Asus</a></li>
-									<li><a href="#">Acer</a></li>
-									<li><a href="#">Apple</a></li>
-									<li><a href="#">Dell</a></li>
-									<li><a href="#">Lenovo</a></li>
-									<li><a href="#">HP (HP (Hewlett Packard))</a></li>
-								</ul>
-							</div>
-							<a href="#" class="show_all">Все ноутбуки</a>
 						</div>
 						<div class="shop_tab_item">
-							<div class="shop_tab_img">
-								<img src="img/icon/product_menu.jpg" alt="">
+							<div class="shop_tab_wrap">
+								<div class="shop_tab_img">
+									<img src="img/icon/product_menu.jpg" alt="">
+								</div>
+								<div class="shop_tab_title">
+									<a href="#"><h4>Ноутбуки</h4></a>
+								</div>
+								<div class="shop_tab_property">
+									<ul class="tab_property_list">
+										<li><a href="#">Asus</a></li>
+										<li><a href="#">Acer</a></li>
+										<li><a href="#">Apple</a></li>
+										<li><a href="#">Dell</a></li>
+										<li><a href="#">Lenovo</a></li>
+										<li><a href="#">HP (HP (Hewlett Packard))</a></li>
+									</ul>
+								</div>
+								<a href="#" class="show_all">Все ноутбуки</a>
 							</div>
-							<div class="shop_tab_title">
-								<a href="#"><h4>Ноутбуки</h4></a>
-							</div>
-							<div class="shop_tab_property">
-								<ul class="tab_property_list">
-									<li><a href="#">Asus</a></li>
-									<li><a href="#">Acer</a></li>
-									<li><a href="#">Apple</a></li>
-									<li><a href="#">Dell</a></li>
-									<li><a href="#">Lenovo</a></li>
-									<li><a href="#">HP (HP (Hewlett Packard))</a></li>
-								</ul>
-							</div>
-							<a href="#" class="show_all">Все ноутбуки</a>
 						</div>
 					</div>
 				</div>

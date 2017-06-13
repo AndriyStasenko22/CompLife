@@ -1,66 +1,189 @@
-.services-block{
-	margin-top: 30px;
-	position: relative;
-	box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.15);
-}
-.services-image{
-	position: relative;
-	overflow: hidden;
-	img{
-		transition: all 0.3s;
-	}
-	&:hover{
-		img{
-			transform: scale(1.1);
+.card{
+	margin: 40px;
+	.section_title{
+		font-weight: bold;
+		margin-bottom: 25px;
+		&::after{
+			width: 0;
 		}
-		.services_layout{
-			opacity: 1;
-			img{
-				transform: scale(1);
+	}
+	.article_block, .card-status, .block_stars{
+		margin-bottom: 10px;
+	}
+	.article_block{
+		font-size: 16px;
+	}
+	.card-status{
+		font-size: 16px;
+		.in-stock{
+			color: green;
+		}
+		.not-stock{
+			color:red;
+		}
+	}
+	.block_stars{
+		.stars_list{
+			display: inline-block;
+			font-size: 0;
+			margin-right: 15px;
+			direction: rtl;
+			unicode-bidi: bidi-override;
+
+			li{
+				display: inline-block;
+				a{
+					font-size: 20px;
+					color: @base_color;
+					font-size: 25px;
+					line-height: 1;
+					display: inline-block;
+					position: relative;
+
+					&:hover::before, &:hover ~ a::before{
+						content: "\2605";
+						position: absolute;
+						color: @base_color;
+					}
+				}
+			}
+		}
+	}
+	.card_button{
+		text-align: center;
+		margin-top: 25px;
+	}
+	.card_products_price{
+		font-size: 45px;
+		color: @title_color;
+		.currency{
+			font-size: 35px;
+		}
+	}
+	.card-image{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.card-slider{
+		max-height: 475px;
+		width: 17%;
+		overflow: auto;
+		direction: rtl;
+		&::-webkit-scrollbar{
+			width: 5px;
+			height: 8px;
+			background-color: #eee;
+			left:-20%;
+		}
+		&::-webkit-scrollbar-thumb{
+			background: @base_color;
+			height: 15px;
+		}
+		.card-slider-img{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 105px;
+			margin-bottom: 20px;
+			padding: 0 7px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+	.card-image-place{
+		width: 77%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+.card_tab{
+	margin-bottom: 50px;
+	.card_tab_list{
+		background: #e0e3e4;
+		display: block;
+		width: 100%;
+		font-size: 0;
+		li{
+			display: inline-block;
+			&.active  a{
+				background-color: @base_color;
+				color: #fff;
+				pointer-events: none;
+				&:hover{
+					background-color: @base_color;
+					color: #fff;
+				}
+				&::after{
+					display: block;
+				}
+			}
+			a{
+				padding: 0 34px;
+				line-height: 50px;
+				display: inline-block;
+				color: @title_color;
+				text-align: center;
+				font-size: 18px;
+				border-right: 1px solid #fff;
+				position: relative;
+				transition: all 0.3s;
+				&:hover{
+					background-color: rgba(255,255,255, .5);
+					color: @base_color;
+				}
+				&::after{
+					position: absolute;
+					content: '\f0d7';
+					font-family: 'FontAwesome';
+					left: 50%;
+					bottom:-6px;
+					margin-left: -2.5px;
+					color: @base_color;
+					line-height: 6px;
+					display: none;
+				}
+			}
+		}
+	}
+	.tab-content{
+		padding: 20px 15px;
+		border: 1px solid #eee;
+		color: @color_catalog_text;
+	}
+	.description_title, strong{
+		color: @title_color;
+	}
+	.description_title{
+		margin-top: 20px;
+	}
+	.features_table{
+		table{
+			width: 100%;
+			border-collapse:collapse;
+			tr{
+				border-top: 1px solid  #eee;
+				border-bottom: 1px solid  #eee;
+			}
+			td{
+				padding: 10px 0;
+				width: 50%;
+				&.feature_name{
+					font-weight: bold;
+					color: @title_color;
+				}
 			}
 		}
 	}
 }
-.services_layout{
-	.tab_layout();
-	transform: none;
-	background-color: rgba(231,76,60,.5);
-	img{
-		border: 3px solid  #fff;
-		border-radius: 50%;
-		transform: scale(0.7);
-		transition: all 0.3s;
-	}
-}
-.services-caption{
-	text-align: center;
-	background-color: #1c2a32;
-	padding: 30px 40px;
-	vertical-align: middle;
-	.section_title{
-		margin: 0 0 40px;
-		color: #fff;
-		span{
-			color: @base_color;
-		}
-	}
-}
-.services_short_info{
-	color: #fff;
-	font-size: 16px;
-}
 
-.services_link{
-	position: absolute;
-	bottom: 5px;
-	right: 10px;
-	transition: all 0.2s;
-	color: @base_color;
-	&:hover{
-		color: #fff;
-	}
-	.fa{
-		font-size: 40px;
-		line-height: 1;
+.special-offer{
+	margin-bottom: 50px;
+	.products_tab_item{
+		width: 100%;
+		margin-right: 35px;
 	}
 }

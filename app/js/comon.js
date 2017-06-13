@@ -173,20 +173,26 @@ $(document).ready(function() {
 		project_slider.trigger('prev.owl.carousel');
 	});
 
-	var card_slider = $('.card-slider');
-	card_slider.slick({
-		slidesToShow: 3,
-		vertical: true
+	var special_offer_slider = $('.special-offer-slider');
+	special_offer_slider.slick({
+		infinite: true,
+		slidesToShow: 4,
+		slidesToScroll: 1
+		// loop:true, 
+		// autoplay:true,
+		// autoplaySpeed: 1000,
+		// margin: 40,
+		// smartSpeed:550,
+		// responsiveClass:true,
+		// responsive:{
+		// 	0:{
+		// 		items:2,
+		// 	},
+		// 	992:{
+		// 		items:4,
+		// 	}
+		// }
 	});
-
-	// однакова висота блоків
-	// if($('.service  .service_item').length > 1 && $(window).width()>768){
-	// 	$('.service  .service_item').height(MaxHeight('.service  .service_item'));
-	// }
-
-	// if($('.services-block .services-caption').length > 1 && $(window).width()>768){
-	// 	$('.services-block .services-caption').height(MaxHeight('.services-block .services-caption'));
-	// }
 
 	// кнопка 'на верх' 
 	$('.button_up').click(function(event) {
@@ -339,6 +345,43 @@ $(document).ready(function() {
 		});
 	}
 
+	$('.card-slider-img>a').click(function(event) {
+		event.preventDefault();
+		var img = $(this).data('image');
+		$('.card-image-place img').attr('src', img);
+	});
+	// fancybox товару
+	$(".card-image .card-image-place>a").click(function (e) {
+		e.preventDefault();
+		if ($(window).width() >= 992) {
+
+			var srcimg = [];
+			var firts_src=$(this).data('image');
+			href = {src: firts_src};
+			srcimg.push(href);
+			$('.card-image .card-slider-img>a').each(function () {
+				if (firts_src != $(this).data('image')) {
+					href = {src: $(this).data('image')};
+					srcimg.push(href);
+				}
+			});
+			console.log(srcimg);
+			$.fancybox.open(
+				srcimg,
+				{
+					type: "image",
+					live: false
+				});
+		}
+	});
+	$('.block_stars>a').click(function(event) {
+		var element = $(this).attr('href');
+		var pos = $(element).parents('.card_tab').offset().top;
+		$('.card_tab_list li.active').removeClass('active');
+		$(".card_tab_list a[href='"+ element +"']").parent().addClass('active');
+		$("html, body").animate({'scrollTop': pos-50}, 500);
+
+	});
 });
 
 //  функція додавання класу .active в елементах списку li
@@ -376,5 +419,5 @@ function MaxHeight(elem){
 }
 
 function proverka(input) {
-    input.value = input.value.replace(/[^\d]/g, '');
+	input.value = input.value.replace(/[^\d]/g, '');
 };
