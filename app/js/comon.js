@@ -191,6 +191,13 @@ $(document).ready(function() {
 		}
 	});
 
+	$('#product_fancybox .btn_next').click(function() {
+		model_slider.trigger('next.owl.carousel');
+	});
+	$('#product_fancybox .btn_prev').click(function() {
+		model_slider.trigger('prev.owl.carousel');
+	});
+
 	// кнопка 'на верх' 
 	$('.button_up').click(function(event) {
 		$('html, body').animate({ scrollTop: 0 }, 800)
@@ -348,31 +355,43 @@ $(document).ready(function() {
 		$(this).parent().addClass('active');
 		var img = $(this).data('image');
 		$('.card-image-place img').attr('src', img);
+		$('.card-image-place a').attr('data-image', img);
 	});
-	// fancybox товару
-	$(".card-image .card-image-place>a").click(function (e) {
-		e.preventDefault();
-		if ($(window).width() >= 992) {
+	var model_slider= $('.model_slider');
 
-			var srcimg = [];
-			var firts_src=$(this).data('image');
-			href = {src: firts_src};
-			srcimg.push(href);
-			$('.card-image .card-slider-img>a').each(function () {
-				if (firts_src != $(this).data('image')) {
-					href = {src: $(this).data('image')};
-					srcimg.push(href);
-				}
-			});
-			console.log(srcimg);
-			$.fancybox.open(
-				srcimg,
-				{
-					// type: "image",
-					// live: false
+	// fancybox товару
+	$(".card-image .card-image-place>a").click(function () {
+		var active_img;
+		active_img=$(this).data('image');
+		var slide=model_slider.children('img[src="'+active_img+'"]').index();
+		console.log(active_img);
+		console.log(slide);
+		model_slider.owlCarousel({
+			loop:true,
+			items:1,
+			dots: true,
+			dotsData: true,
+			startPosition: slide,
+			// mouseDrag: false,
+			onInitialized: function(event){
+				$.fancybox({
+					content:   $('#product_fancybox'),
+					'afterClose': function() { 
+						model_slider.trigger('destroy.owl.carousel');
+					}
 				});
-		}
+			}
+		});
+		active_img=0;
 	});
+	// кнопки fancybox товару
+	model_slider.children('.btn_next').click(function() {
+		model_slider.trigger('next.owl.carousel');
+	});
+	model_slider.children('.btn_prev').click(function() {
+		model_slider.trigger('prev.owl.carousel');
+	});
+
 	$('.block_stars>a').click(function(event) {
 		var element = $(this).attr('href');
 		var pos = $(element).parents('.card_tab').offset().top;

@@ -23,7 +23,9 @@ gulp.task('scripts', function() {
         'app/libs/bootstrap/js/bootstrap.min.js', // Bootsrap
         'app/libs/slick-carousel/slick/slick.min.js', //SlickSlider
         'app/libs/owl.carousel/dist/owl.carousel.min.js', //OwlCarousel
-        'app/libs/jquery-fancyBox/dist/jquery.fancybox.min.js', //FancyBox
+        // 'app/libs/jquery-fancyBox/dist/jquery.fancybox.min.js', //FancyBox
+        'app/libs/fancybox-2.1.7/source/jquery.fancybox.js', //FancyBox
+
         'app/libs/jquery-mousewheel/jquery.mousewheel.min.js',
         'app/libs/jquery-mixitup/dist/mixitup.min.js', //MixitUp
         'app/libs/vivus/dist/vivus.min.js', //SVG drowin
