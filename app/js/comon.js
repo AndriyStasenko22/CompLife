@@ -181,6 +181,7 @@ $(document).ready(function() {
 		margin: 30,
 		smartSpeed:550,
 		responsiveClass:true,
+		stagePadding: 20,
 		responsive:{
 			0:{
 				items:2,

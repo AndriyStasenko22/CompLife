@@ -1,5 +1,5 @@
 .card{
-	margin: 50px;
+	margin: 50px 0;
 	.section_title{
 		font-weight: bold;
 		margin-bottom: 25px;
@@ -226,77 +226,88 @@
 #product_fancybox{
 	display: none;
 	// visibility: hidden;
-	padding: 25px;
+	padding: 25px 0;
 	position: relative;
 	// width: 70vw;
 	// height: 70vh;
 	// .model_slider{
 	// 	width: 80%;
 	// }
-	.product_fancybox_wrap{
-		width: 60%;
-		margin: 0 auto;
+	// .product_fancybox_wrap{
+		// width: 60%;
+		// margin: 0 auto;
 		// position: relative;
-	}
+	// }
 // .model_slider{
 // 	width: 60%;
 // }
-	.btn_prev, .btn_next{
-		cursor: pointer;
+.btn_prev, .btn_next{
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	z-index: 100;
+	.fa{
+		font-size: 60px;
+	}
+	transition: color 0.3s;
+	&:hover{
+		color: @base_color;
+	}	
+}
+.btn_prev{
+	left: 18%;
+}
+.btn_next{
+	right: 8%;
+}
+.owl-carousel{
+	.owl-stage-outer{
+		margin: 0 15% 0 25%;
+		img{
+			width: 60%;
+		}
+	}
+	.owl-dot{
+		width: 100%;
+		display: block;
+		padding: 10px;
+		border: 1px solid #fff;
+		&.active{
+			border: 1px solid @base_color;
+		}
+	}
+	.owl-dots{
+		direction: rtl;
 		position: absolute;
-		top: 50%;
-		margin-top: -30px;
-		z-index: 100;
-		.fa{
-			font-size: 60px;
-		}
-		transition: color 0.3s;
-		&:hover{
-			color: @base_color;
-		}	
+		top: 0;
+		left: 0;
+		max-height: 100%;
+		overflow-x: auto;
+		width: 10%;
 	}
-	.btn_prev{
-		left: 8%;
-	}
-	.btn_next{
-		right: 8%;
-	}
-	.owl-carousel{
-		width: 90%;
-		margin: 0 auto;
-		.owl-dot{
-			width: 15%;
-			padding: 10px;
-			border: 1px solid #fff;
-			&.active{
-				border: 1px solid @base_color;
-			}
-		}
-		.owl-dots{
-			margin-top: 30px;
+}
+.model_title{
+	position: relative;
+	.section_title{
+		width: 75%;
+		display: inline-block;
+		&::after{
+			width: 0;
 		}
 	}
-	.model_title{
-		position: relative;
-		.section_title{
-			width: 75%;
-			display: inline-block;
-			&::after{
-				width: 0;
-			}
+	.product_price{
+		display: inline-block;
+		text-align: right;
+		width: 24%;
+		span{
+			font-size: 24px;
+			vertical-align: middle;
+			margin-right: 15px;
+			color:@title_color;
 		}
-		.product_price{
-			display: inline-block;
-			text-align: right;
-			width: 24%;
-			span{
-				font-size: 24px;
-				vertical-align: middle;
-				margin-right: 15px;
-				color:@title_color;
-			}
-		}
-		.base_button{
+	}
+	.base_button{
 			// float: right;
 		}
 	}
