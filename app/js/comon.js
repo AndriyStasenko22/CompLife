@@ -142,7 +142,6 @@ $(document).ready(function() {
 	$('.clients_slider .client_block').mouseover(function(){
 		clients_slider.trigger('stop.owl.autoplay');
 	});
-
 	$('.clients_slider .client_block').mouseleave(function(){
 		clients_slider.trigger('play.owl.autoplay');
 	});
@@ -173,6 +172,7 @@ $(document).ready(function() {
 		project_slider.trigger('prev.owl.carousel');
 	});
 
+	// слайдер 'ВАС МОЖЕТ ЗАИНТЕРЕСОВАТЬ'
 	var special_offer_slider = $('.special-offer-slider');
 	special_offer_slider.owlCarousel({
 		loop:true, 
@@ -189,13 +189,6 @@ $(document).ready(function() {
 				items:5,
 			}
 		}
-	});
-
-	$('#product_fancybox .btn_next').click(function() {
-		model_slider.trigger('next.owl.carousel');
-	});
-	$('#product_fancybox .btn_prev').click(function() {
-		model_slider.trigger('prev.owl.carousel');
 	});
 
 	// кнопка 'на верх' 
@@ -293,7 +286,7 @@ $(document).ready(function() {
 		$('body').css('overflow', 'visible');
 	});
 
-	// якорь
+	// якор
 	$('.menu_go_to').click(function(event) {
 		var block = $(this).data('block');
 		event.preventDefault();
@@ -310,6 +303,7 @@ $(document).ready(function() {
 		$(this).siblings('.category_dropdown').slideToggle();
 	});
 
+	// діапазон цін
 	if($('#slider-range').length>0){
 		$( "#slider-range" ).slider({
 			range: true,
@@ -349,6 +343,7 @@ $(document).ready(function() {
 		});
 	}
 
+	// змінна картинок товара в картці товара, додавання data-image
 	$('.card-slider-img>a').click(function(event) {
 		event.preventDefault();
 		$(this).parent().siblings('.card-slider-img').removeClass('active');
@@ -357,22 +352,20 @@ $(document).ready(function() {
 		$('.card-image-place img').attr('src', img);
 		$('.card-image-place a').attr('data-image', img);
 	});
+
 	var model_slider= $('.model_slider');
 
 	// fancybox товару
-	$(".card-image .card-image-place>a").click(function () {
-		var active_img;
-		active_img=$(this).data('image');
+	$(".card-image .card-image-place a").click(function () {
+		var active_img = $(this).attr('data-image');
 		var slide=model_slider.children('img[src="'+active_img+'"]').index();
-		console.log(active_img);
-		console.log(slide);
+		// слайдер товару
 		model_slider.owlCarousel({
 			loop:true,
 			items:1,
 			dots: true,
 			dotsData: true,
 			startPosition: slide,
-			// mouseDrag: false,
 			onInitialized: function(event){
 				$.fancybox({
 					content:   $('#product_fancybox'),
@@ -384,14 +377,15 @@ $(document).ready(function() {
 		});
 		active_img=0;
 	});
-	// кнопки fancybox товару
-	model_slider.children('.btn_next').click(function() {
+	// кнопки слайдер товару fancybox
+	$('#product_fancybox .btn_next').click(function() {
 		model_slider.trigger('next.owl.carousel');
 	});
-	model_slider.children('.btn_prev').click(function() {
+	$('#product_fancybox .btn_prev').click(function() {
 		model_slider.trigger('prev.owl.carousel');
 	});
 
+	// додати "отзив"
 	$('.block_stars>a').click(function(event) {
 		var element = $(this).attr('href');
 		var pos = $(element).parents('.card_tab').offset().top;
@@ -399,6 +393,36 @@ $(document).ready(function() {
 		$(".card_tab_list a[href='"+ element +"']").parent().addClass('active');
 		$("html, body").animate({'scrollTop': pos-50}, 500);
 
+	});
+
+	// блок "Войти"
+	$('.header_login .fa').click(function(event) {
+		$('.authorization-box').slideToggle();
+	});
+
+	// форми "Реєстрація", "Авторизація", "Відновлення пароля"
+	$('.registration, .login, .password-recovery').click(function(event) {
+		$('.authorization-box').css('display', 'none');
+		$.fancybox({
+			content: $($(this).attr('href'))
+		});
+	});
+	$('.checkout-product-quantity button').click(function(event) {
+		var val = $(this).siblings('.product-quantity').val();
+		console.log(val);
+		if($(this).hasClass('product-more')){
+			val++;
+			$(this).siblings('.product-quantity').val(val);
+		}
+		else{
+			if(val <=1){
+				$(this).siblings('.product-quantity').val('1');
+			}
+			else{
+				val--;
+				$(this).siblings('.product-quantity').val(val);
+			}
+		}
 	});
 });
 

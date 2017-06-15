@@ -1,0 +1,27 @@
+.fancybox-skin{
+	background-color: #fff;
+	.fancybox-close{
+		background-image: none;
+		display: inline-block;
+		border-radius: 50%;
+		background-color: @base_color;
+		color: #fff;
+		width: 28px;
+		height: 28px;
+		top: -14px;
+		right: -14px;
+		border: 1px solid  #fff;
+		text-align: center;
+		line-height: 26px;
+		&::after{
+			position: absolute;
+			top: -3px;
+			left: 5px;
+			line-height: 1;
+			font-size: 28px;
+			color: #fff;
+			display: block;
+			content: '\00d7';
+		}
+	}
+}

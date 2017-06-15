@@ -1,0 +1,87 @@
+.checkout{
+	margin: 50px 0;
+}
+.checkout-table{
+	width: 100%;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	th, td{
+		text-align: center;
+		padding: 15px 10px;
+		border: 1px solid  #eee;
+
+	}
+	th{
+		background-color: #f8f8f8;
+		color: #666;
+		text-transform: uppercase;
+	}
+	.td-price, .td-quantity, .td-sum{
+		width: 14%;
+	}
+	.td-options{
+		width: 20%;
+	}
+	.td-product{
+		width: 30%;
+		text-align: left;
+		.checkout-product-image{
+			float: left;
+			width: 25%;
+			margin-right: 15px;
+		}
+		.checkout-product-info{
+			width: 70%;
+			float: left;
+		}
+		.checkout-product-name{
+			color: @title_color;
+			margin-bottom: 5px;
+		}
+	}
+	.checkout-product-quantity{
+		display: flex;
+		justify-content: space-between;
+		.product-less, .product-quantity, .product-more{
+			display: inline-block;
+		}
+		.product-quantity{
+			width: 35%;
+			height: 26px;
+			text-align: center;
+			outline-color: @base_color;
+		}
+		.product-more, .product-less{
+			width: 26px;
+			height: 26px;
+			text-align: center;
+			border-radius: 50%;
+			border: 1px solid #cfcfcf;
+			background-color: transparent;
+			font-size: 18px;
+			font-weight: bold;
+			cursor: pointer;
+			vertical-align: top;
+			padding: 0;
+			margin: 0;
+			outline: none;
+			&:hover{
+				color: @base_color;
+			}
+		}
+	}
+	.checkout-product-options{
+		font-size: 12px;
+	}
+	.checkout-product-delete{
+		font-size: 18px;
+		font-weight: bold;
+		color: @color_catalog_text;
+		transition: all 0.3s;
+		&:hover{
+			color: @base_color;
+		}
+	}
+}

@@ -1,0 +1,49 @@
+#user_login, #user_registration, #password-recovery{
+	display: none;
+}
+.ui-common-form{
+	width: 270px;
+	margin-top: 20px;
+	label{
+		margin-bottom: 5px;
+	}
+	.form_row{
+		margin-bottom: 15px;
+		label, input{
+			display: block;
+			width: 100%;
+		}
+		input{
+			padding: 0 15px;
+			border-radius: 3px;
+			outline-color: #e74c3c;
+			border: 1px solid #ccc;
+			height: 40px;
+		}
+	}
+	.user-form-checkbox{
+		.checkbox_style(15px, 15px, 10px); // стилі checkbox
+	}
+	.form-header-title{
+		text-align: center;
+		margin: 0 0 20px;
+		color: @title_color;
+	}
+	.help-block{
+		color: #a94442;
+	}
+	.registration-block{
+		display: flex;
+		justify-content: space-between;
+		a{
+			color: initial;
+			transition: all 0.3s;
+			&:hover{
+				color: @base_color;
+			}
+		}
+	}
+	.form_button{
+		text-align: center;
+	}
+}

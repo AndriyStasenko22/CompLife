@@ -2,37 +2,7 @@
 	margin: 40px 0;
 }
 .shop-list-categories{
-	label{
-		display: inline-block;
-		cursor: pointer;
-		position: relative;
-		padding-left: 34px;
-		font-weight: normal;
-	}
-	input[type=checkbox] {
-		display: none;
-	}
-	label:before {
-		content: "";
-		display: inline-block;
-		border-radius: 3px;
-		width: 24px;
-		height: 24px;
-		position: absolute;
-		left: 0;
-		border: 1px solid #ebebeb;
-		font-weight: bold;
-	}
-	input[type=checkbox]:checked + label:before {
-		content: "\2713";
-		font-size: 15px;
-		color: #f3f3f3;
-		text-align: center;
-		line-height: 22px;
-		background-color: @base_color;
-		color: #fff;
-	}
-
+	.checkbox_style(24px, 24px); // стилі checkbox
 	.shop_categories_header{
 		color: #fff;
 		display: block;

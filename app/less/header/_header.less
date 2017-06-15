@@ -7,8 +7,31 @@ header{
 		}
 	}
 	.social_icon{
+		.social_icon(28px, 5px, @base_color, @base_color, #fff, @base_color);
 		float: right;
 	}
+	.login_block{
+		float: right;
+		.base_button{
+			height: 35px;
+			line-height: 35px;
+			padding: 0 20px;
+			color: @base_color;
+			border-color: @base_color;
+			margin-right: 10px;
+			&:hover{
+				background-color: @base_color;
+				color: #fff;
+			}
+		}
+		.login, .registration{
+			color: @title_color;
+			&:hover{
+				color: @base_color;
+			}
+		}
+	}
+	
 	.header_menu{
 		background-color: @base_color;
 		line-height: 69px;
@@ -41,6 +64,186 @@ header{
 				float: none;
 				img{
 					height: 40px;
+				}
+			}
+		}
+	}
+}
+.header_busket{
+	display: inline-block;
+	position: relative;
+	padding: 0 15px;
+	&:hover{
+		.hidden-busket{
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	.fa{
+		font-size: 25px;
+		color: #fff;
+		vertical-align: middle;
+		position: relative;
+		cursor: pointer;
+	}
+	.header_busket_quantity{
+		position: absolute;
+		text-align: center;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		color: #fff;
+		line-height: 18px;
+		font-size: 10px;
+		background-color: #63150d;
+		border: 1px solid  #fff;
+		bottom: -10px;
+		right: -10px;
+		border-radius: 50%;
+		font-weight: bold;
+	}
+	.hidden-busket{
+		box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+		border: 2px solid @base_color;
+		border-top: 0;
+		position: absolute;
+		width: 350px;
+		min-height: 100px;
+		left: -160px;
+		right: 0;
+		z-index: 10;
+		background-color: #fff;
+		padding: 10px 20px 15px;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s;
+	}
+	.empty_busket{
+		text-align: center;
+		line-height: 24px;
+		h4{
+			color: @title_color;
+		}
+	}
+}
+.busket_wrap{
+	height: 185px;
+	overflow-y: auto;
+	&::-webkit-scrollbar{
+		width: 5px;
+		height: 8px;
+		background-color: #eee;
+	}
+	&::-webkit-scrollbar-thumb{
+		background: @base_color;
+		height: 15px;
+	}
+	.busket_wrap_item{
+		border-bottom: 1px solid  #eee;
+		position: relative;
+		padding-top: 10px;
+	}
+	.busket_item_image, .busket_item_info{
+		display: inline-block;
+		vertical-align: top;
+		line-height: 1;
+		// font-size: 0;
+	}
+	.busket_item_image{
+		width: 30%;
+		float: left;
+		margin-right: 3%;
+	}
+	.busket_item_info{
+		width: 67%;
+	}
+	.busket_item_name{
+		width: 100%;
+		color: @title_color;
+		font-size: 16px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.busket_item_article{
+		font-size: 14px;
+	}
+	.busket_item_price{
+		font-size: 20px;
+		color: @base_color;
+		text-align: right;
+		font-weight: bold;
+		margin-right: 5px;
+		.curency{
+			font-size: 14px;
+		}
+	}
+	.busket_item_delete{
+		position: absolute;
+		top: 3px;
+		left: 0px;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		color: #fff;
+		text-align: center;
+		line-height: 1;
+		vertical-align: middle;
+		border: 1px solid  #fff;
+		background-color: #000;
+		transition: all 0.3s;
+		&:hover{
+			background-color: @base_color;
+		}
+	}
+}
+.busket_wrap_sum{
+	padding: 15px 0;
+	margin-bottom: 15px;
+	line-height: 1;	
+	font-size: 24px;
+	display: flex;
+	justify-content: space-between;
+	color: @title_color;
+	border-bottom: 1px solid  #eee;
+	.busket_item_price{
+		font-weight: bold;
+	}
+}
+.busket_button{
+	text-align: center;
+	line-height: 1;
+}
+.header_login{
+	display: inline-block;
+	position: relative;
+	.fa{
+		font-size: 25px;
+		vertical-align: middle;
+		color: #fff;
+		transition: all 0.3s;
+		cursor: pointer;
+		&:hover{
+			color: @title_color;
+		}
+	}
+	padding:0 15px;
+	.authorization-box{
+		display: none;
+		position: absolute;
+		width: 150px;
+		right: 0;
+		padding: 10px;
+		background-color: #fff;
+		li{
+			line-height: 28px;
+			a{
+				line-height: 28px;
+				color: @title_color;
+				display: inline-block;
+				transition: all 0.3s;
+				&:hover{
+					color: @base_color;
 				}
 			}
 		}
