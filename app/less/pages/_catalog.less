@@ -1,124 +1,13 @@
 .shop{
 	margin: 40px 0;
 }
-.shop-list-categories{
-	.checkbox_style(24px, 24px); // стилі checkbox
-	.shop_categories_header{
-		color: #fff;
-		display: block;
-		width: 100%;
-		text-align: center;
-		line-height: 60px;
-		font-size: 21px;
-		background-color: @base_color;
-		border-top-right-radius: 3px;
-		border-top-left-radius: 3px;
-	}
-	.categories-list{
-		padding: 25px 10px;
-		border: 1px solid  #eee;
-		border-width: 0 1px 1px 1px;
-	}
-	.category-list{
-		display: block;
-		&>li{
-			display: block;
-			&.active > a{
-				color: @base_color;
-			}
-			&.li_dropdown{
-				padding-bottom: 5px;
-				margin-bottom: 5px;
-				border-bottom: 1px solid  #eee;
-				&:last-child{
-					border-bottom: 0;
-					margin-bottom: 0;
-					padding-bottom: 0;
-				}
-				&>a::after{
-					content: '\f054';
-					font-family: 'FontAwesome';
-					display: inline-block;
-					position: absolute;
-					right: 0;
-					font-size: 13px;
-					transition: opacity, transform 0.3s;
-				}
-
-			}
-			&.open > a::after{
-				transform: rotate(90deg);
-			}
-			&>a{
-				font-size: 16px;
-				color: @color_catalog_text;
-				line-height: 35px;
-				display: block;
-				position: relative;
-				transition: all 0.3s;
-				&:hover{
-					color: @base_color;
-					background-color: #eee;
-				}
-			}
-		}
-	}
-	.category_dropdown{
-		display: none;
-		padding: 10px 0 10px 10px;
-		li{
-			display: block;
-			line-height: 24px;
-			a{
-				font-size: 12px;
-				color: @color_catalog_text;
-				line-height: 24px;
-				display: block;
-				&:hover{
-					color: @base_color;
-				}
-			}
-		}
-		.category_number{
-			font-size: 13px;
-		}
-	}
-	.category_number{
-		float: right;
-		font-size: 14px;
-	}
-	@media only screen and (max-width : 767px){
-		margin-bottom: 30px;
-	}
-}
-.product_price{
-	input{
-		display: inline-block;
-		width: 40%;
-		text-align: center;
-		&:focus{
-			outline-color: @base_color;
-		}
-	}
-	.ui-state-default, .ui-widget-content .ui-state-default{
-		background-color: @base_color;
-		border: none;
-		border-radius: 50%;
-		width: 1.3em;
-		height: 1.3em;
-		outline: none;
-	}
-	#slider-range{
-		margin-top: 20px;
-		max-width: 95%;
-	}
-}
-
-.products_categories_tabs,.shop_categories_tabs{
+// таблиця товарів "католог", 'товари'
+.products_categories_tabs, .shop_categories_tabs{
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
+// блок товару
 .products_tab_item, .shop_tab_item{
 	width: 32%;
 	margin: 20px 0 20px;
@@ -184,6 +73,7 @@
 		width: 100%;
 	}
 }
+// силка всі товари
 .show_all{
 	display: block;
 	color: @base_color;

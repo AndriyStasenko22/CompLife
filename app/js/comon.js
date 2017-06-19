@@ -184,10 +184,21 @@ $(document).ready(function() {
 		stagePadding: 20,
 		responsive:{
 			0:{
+				items:1,
+				margin: 50
+			},
+			400:{
 				items:2,
 			},
-			992:{
-				items:5,
+			650:{
+				items:3,
+				margin: 30
+			},
+			// 992:{
+			// 	items:3,
+			// },
+			1200:{
+				items:4
 			}
 		}
 	});
@@ -280,6 +291,7 @@ $(document).ready(function() {
 		}
 		$('.overlay').addClass('active')
 		$('body').addClass('fixed');
+		$('html, body').css('overflow', 'hidden');
 	});
 	$('.overlay').click(function() {
 		$('.mob_menu.active, .sidebar-cart.active').removeClass('active');
