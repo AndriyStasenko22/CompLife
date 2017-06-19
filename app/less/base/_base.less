@@ -2,6 +2,13 @@ body{
 	font-family: @Ubuntu;
 	color: @base_color_text;
 	position: relative;
+	&.fixed{
+		overflow-y: hidden;
+		padding-right: 16px;
+		@media only screen and (max-width : 767px){
+			padding-right: 0;
+		}
+	}
 }
 
 ul, li{
@@ -83,8 +90,21 @@ img{
 	}
 }
 
+// бокові вікна
+.mob_menu, .sidebar-cart{
+	position: fixed;
+	top: 0;
+	height: 100%;
+	background-color: #fff;
+	border: 4px solid @base_color;
+	z-index: 100;
+	overflow-y: auto;
+	overflow-x: hidden;
+	transition: all 0.3s;
+}
+
 // соціальні мережі
-.social_icon(@size:35px, @margin-right:15px, @color:#fff, @border_color:#fff, @color_hover: @base_color, @bgc_color:#fff){
+.social_icon(@size:35px){
 	display: inline-block;
 	li{
 		display: inline-block;
@@ -94,47 +114,48 @@ img{
 		}
 		a{
 			border-radius: 50%;
-			border: 1px solid  @border_color;
+			border: 1px solid  @base_color;
 			height: @size;
 			width: @size;
 			text-align: center;
-			line-height: @size - 2;
+			line-height: @size - 2px;
 			display: inline-block;
-			color: @color;
+			color: @base_color;
 			transition: all 0.3s;
 			&:hover{
-				color: @color_hover;
-				background-color: @bgc_color;
+				color: #fff;
+				background-color: @base_color;
 			}
 		}
 	}
 }
 
-// .social_icon(@size:35px, @margin-right:15px, @color:#fff, @border_color:#fff, @color_hover:@base_color, ){
-// 	display: inline-block;
-// 	li{
-// 		display: inline-block;
-// 		margin-right: 5px;
-// 		&:last-child{
-// 			margin-right: 0;
-// 		}
-// 		a{
-// 			border-radius: 50%;
-// 			border: 1px solid  @base_color;
-// 			height: 28px;
-// 			width: 28px;
-// 			text-align: center;
-// 			line-height: 26px;
-// 			display: inline-block;
-// 			color: @base_color;
-// 			transition: all 0.3s;
-// 			&:hover{
-// 				color: #fff;
-// 				background-color: @base_color;
-// 			}
-// 		}
-// 	}
-// }
+// стилі таблиці
+.form_row{
+	margin-bottom: 15px;
+	textarea, input, label, select{
+		display: block;
+		width: 100%;
+		max-width: 100%;
+	}
+	textarea, input, select{
+		padding: 0 15px;
+		border-radius: 3px;
+		outline-color: @base_color;
+		border: 1px solid #ccc;
+		height: 40px;
+		color: @title_color;
+	}
+	label{
+		margin-bottom: 5px;
+		color: @title_color;
+		font-size: 13px;
+	}
+	textarea{
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+}
 
 // заголовок секцій
 .section_title{
@@ -144,7 +165,6 @@ img{
 	font-family: @Roboto;
 	margin: 0 0 40px;
 	position: relative;
-	// text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
 	&::after{
 		content: "";
 		position: absolute;
@@ -157,7 +177,6 @@ img{
 	span{
 		color: @base_color;
 		background-color: transparent;
-		// text-shadow: 1px 1px 1px rgba(231, 76, 60, 1);
 	}
 	&.title_center{
 		text-align: center;
@@ -180,26 +199,26 @@ img{
 }
 
 // основні кнопки
-.base_button{
-	height: 48px;
-	padding: 0 34px;
+.base_button(@height:48px, @pading:34px){
+	height: @height;
+	padding: 0 @pading;
 	display: inline-block;
-	line-height: 46px;
+	line-height: @height - 2px; 
 	border-radius: 3px;
 	text-align: center;
 	font-weight: bold;
 	transition: all 0.3s;
 	text-transform: uppercase;
 	border: 1px solid;
-	font-size: 14px;
 	outline: none;
+	color: #fff;
 }
 
 // кнопка з фоном
 .button_color{
+	.base_button();
 	background-color: @base_color;
 	border-color: @base_color;
-	color: #fff;
 	&:hover{
 		background-color: transparent;
 		color: @base_color;
@@ -209,8 +228,8 @@ img{
 
 // кнопка без фона
 .button_transparent{
+	.base_button();
 	background-color: transparent;
-	color: #fff;
 	border-color: #fff;
 	&:hover{
 		background-color: #fff;
@@ -221,17 +240,17 @@ img{
 
 // кнопка "На верх"
 .mobile_menu_button, .button_up{
-	height: 35px;
+	.base_button(35px, 0px);
 	width: 35px;
-	display: inline-block;
-	text-align: center;
-	line-height: 33px;
 	border: 1px solid  #fff;
+	border-radius: 0px;
 	background-color: @base_color;
-	color: #fff;
 	cursor: pointer;
 	&::visited{
 		color: #fff !important;
+	}
+	&:hover{
+		background: darken(@base_color, 15%); // затемнення кольора
 	}
 	.fa{
 		font-size: 16px;
@@ -292,8 +311,7 @@ img{
 }
 
 .layout_icon{
-	.social_icon();
-	margin-bottom: 15px;
+	.social_icon(35px);
 }
 
 .layout_info{
@@ -313,36 +331,43 @@ img{
 	}
 }
 
-.overlay{
-	position: absolute;
+.overlay, .preloader{
+	position: fixed;
+	display: block;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0, 0.5);
-	z-index: 99;
-	// opacity: 0;
-	visibility: hidden;
+	overflow: hidden;
 }
 
+.overlay{
+	background-color: rgba(0,0,0, 0.5);
+	z-index: 99;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .3s;
+	cursor: url(../img/icon/cursor.png),progress;
+	&.active{
+		opacity: 1;
+		visibility: visible;
+	}
+}
 .preloader{
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
 	background-color: #f2f2f2;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	z-index: 9999;
-	overflow: hidden;
 	display: none;
 	// opacity: 1;
 	// transition: opacity 3s;
 }
-#load, #mac,  #mac_complife{
+.preloader_img{
+	opacity: 0;
+}
+#load, #mac,  #mac_complife, .preloader_img{
 	opacity: 0;
 }
 
@@ -359,70 +384,9 @@ img{
 	fill-opacity: 1;
 }
 
-.preloader_img{
-	position: absolute;
-	opacity: 0;
-}
-
-.breadcrumb{
-	padding: 80px 0;
-	margin: 0;
-	background: #000 url(../img/baners/breadcrumb_img.png) top center no-repeat;
-	background-size: cover;
-	color: #fff;
-	line-height: 1;
-	border-radius: 0px;
-	@media only screen and (max-width : 767px){
-		padding: 40px 0;
-	}
-	.breadcrumb_title{
-		margin: 0 0 20px;
-		font-family: @Roboto;
-	}
-	.bread_crumb{
-		li{
-			display: block;
-			float: left;
-			margin-right: 15px;
-			position: relative;
-			&::after{
-				color: #fff;
-				content: "\f105";
-				font-family: "FontAwesome";
-				position: absolute;
-				right: 0;
-				display: block;
-				transform: translateX(50%);
-				top: 0;
-			}
-			&:last-child{
-				margin-right: 0;
-				&::after{
-					content: "";
-				}
-				a{
-					pointer-events: none;
-					cursor: default;
-				}
-			}
-			a{
-				color: #fff;
-				margin-right: 15px;
-				transition: all 0.3s;
-				&:hover{
-					color: @base_color;
-				}
-			}
-		}
-	}
-}
-
 // головне меню
 .menu{
 	display: inline-block;
-	// display: block;
-	// display: flex;
-	// justify-content: center;
 	&>li{
 		display: inline-block;
 		position: relative;
@@ -439,7 +403,7 @@ img{
 			margin-left: 5px;
 			line-height: 1;
 		}
-		&.li_dropdown:hover,  &.li_dropdown:active{
+		&.li_dropdown:hover, &.li_dropdown:active{
 			.dropdown_menu{
 				opacity: 1;
 				li{
@@ -533,7 +497,7 @@ img{
 	height: 0;
 	overflow: hidden;
 	opacity: 0;
-	transition: all 1s ;
+	transition: all 1s;
 	a{
 		color: @color_catalog_text;
 		font-size: 16px;
@@ -543,10 +507,10 @@ img{
 	}
 	.product-menu-block, .category_menu{
 		padding: 35px 0;
+		padding-left: 5%;
 	}
 	.product-menu-block{
 		width: 40%;
-		padding-left: 5%;
 		margin-right: 5%;
 		text-align: center;
 		background-color: #fff;
@@ -558,7 +522,6 @@ img{
 	.category_menu{
 		width: 60%;
 		padding-right: 5%;
-		padding-left: 5%;
 		background-color: rgba(238,238,238, 0.4);
 	}
 	.category_menu_title{
@@ -566,71 +529,6 @@ img{
 		line-height: 1;
 		font-weight: bold;
 		margin-bottom: 20px;
-	}
-}
-
-// мобільне меню
-.mob_menu{
-	position: fixed;
-	top: 0;
-	left: -260px;
-	width: 260px;
-	height: 100%;
-	background-color: @base_color;
-	border-right: 4px solid  rgba(0,0,0, 0.3);
-	z-index: 100;
-	overflow-y: auto;
-	overflow-x: hidden;
-	.mob_header{
-		display: block;
-		text-align: center;
-	}
-	.logo{
-		background-color: rgba(255,255,255, 0.3);
-		display: inline-block;
-		padding: 20px;
-	}
-	overflow: auto;
-	.menu{
-		float: none;
-		display: block;
-		li{
-			display: block;
-			&:hover, &:active{
-				background-color: rgba(0,0,0, 0.1);
-			}
-			a{
-				display: block;
-				height: 50px;
-				line-height: 50px;
-				border-bottom: 1px solid #ddd;
-				&::before{
-					width: 0;
-				}
-			}
-		}
-	}
-}
-.mob_dropdown_menu{
-	display: none;
-	background-color: @base_color;
-	li{
-		display: block;
-		padding: 0 15px 0 25px;
-		img{
-			height: 35px;
-			display: inline-block;
-		}
-		a{
-			height: 50px;
-			line-height: 50px;
-			font-size: 11px;
-			margin: 0;
-			border-bottom: 1px solid  #fff;
-			&::before{
-				width: 0;
-			}
-		}
 	}
 }
 

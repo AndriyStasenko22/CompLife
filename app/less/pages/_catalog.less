@@ -58,6 +58,7 @@
 				transition: all 0.3s;
 				&:hover{
 					color: @base_color;
+					background-color: #eee;
 				}
 			}
 		}
@@ -86,6 +87,9 @@
 		float: right;
 		font-size: 14px;
 	}
+	@media only screen and (max-width : 767px){
+		margin-bottom: 30px;
+	}
 }
 .product_price{
 	input{
@@ -110,7 +114,6 @@
 	}
 }
 
-
 .products_categories_tabs,.shop_categories_tabs{
 	display: flex;
 	justify-content: space-between;
@@ -118,7 +121,7 @@
 }
 .products_tab_item, .shop_tab_item{
 	width: 32%;
-	margin-top: 40px;
+	margin: 20px 0 20px;
 	border-right: 1px solid #eee;
 	border-bottom: 1px solid #eee;
 	.shop_tab_wrap, .product-wrap{
@@ -179,7 +182,6 @@
 	}
 	@media only screen and (max-width : 480px){
 		width: 100%;
-		margin: 40px 10% 0;
 	}
 }
 .show_all{

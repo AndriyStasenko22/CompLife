@@ -7,13 +7,21 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+	<!-- мобільне меню -->
 	<div class="mob_menu">
-		<div class="mob_header">
-			<a href="#" class="logo"><img src="img/icon/preloader.png" alt=""></a>
+		<div class="mob_header clearfix">
+			<!-- <a href="#" class="logo"><img src="img/icon/preloader.png" alt=""></a> -->
+			<div class="user-profile">
+				<h4 class="user_name">Андрій Стасенко</h4>
+			</div>
+			<div class="mob_button">
+				<a class='login button_transparent' href="#user_login">Вход</a>
+				<a class='registration button_transparent' href="#user_registration">Регистрация</a>
+			</div>
 		</div>
 		<ul class="menu">
 			<li class="active"><a href="index.html">главная</a></li>
-			<li><a href="about.html">о нас</a></li>
+			<li><a href="#" class="menu_go_to" data-block='.about_us'>о нас</a></li>
 			<li class="li_dropdown">
 				<a href="services.html">услуги</a>
 				<ul class="mob_dropdown_menu">
@@ -25,7 +33,16 @@
 					<li><a href="service.html"><img src="img/icon/cash.png" alt=""> Торговое оборудование</a></li>
 				</ul>
 			</li>
-			<li><a href="portfolio.html">портфолио</a></li>
+			<li class="li_dropdown">
+				<a href="services.html">каталог</a>
+				<ul class="mob_dropdown_menu">
+					<li><a href="catalog.html">Ноутбуки и Компьютеры</a></li>
+					<li><a href="catalog.html">Планшеты</a></li>
+					<li><a href="catalog.html">Принтера</a></li>
+					<li><a href="catalog.html">Торговое оборудование</a></li>
+				</ul>
+			</li>
+			<li><a href="#" class="menu_go_to" data-block='.portfolio'>портфолио</a></li>
 			<li><a href="contacts.html">контакты</a></li>
 		</ul>
 	</div>
@@ -45,13 +62,20 @@
 						</div>
 					</div>
 					<div class="hidden-xs col-sm-4">
-						<div class="social_block">
+						<!-- <div class="social_block">
 							<ul class='social_icon'>
 								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
 								<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true""></i></a></li>
 							</ul>
+						</div> -->
+						<div class="login_block">
+							<!-- <a href="#" class="base_button">Вход</a>
+							<a href="#" class="base_button">Регистрация</a> -->
+							<a href="#" class="login">УКР</a> | 
+							<a href="#" class="registration">РУС</a>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -64,43 +88,57 @@
 							<i class="fa fa-bars" aria-hidden="true"></i>
 						</div>
 						<a href="index.html" class="logo"><img src="img/icon/logo.png" alt=""></a>
-						<ul class="menu hidden-xs">
-							<li class="active"><a href="#">главная</a></li>
-							<li class="li_dropdown">
-								<a href="services.html">услуги</a>
-								<ul class="dropdown_menu">
-									<li><a href="service.html">Разработка WEB-сайтов</a></li>
-									<li><a href="service.html">Автоматизация учета</a></li>
-									<li><a href="service.html">Печатная техника</a></li>
-									<li><a href="service.html">Компьютерная техника</a></li>
-									<li><a href="service.html">Программное обеспечение</a></li>
-									<li><a href="service.html">Торговое оборудование</a></li>
+						<div class="pull-right">
+							<ul class="menu hidden-xs">
+								<li class="active"><a href="#">главная</a></li>
+								<li class="li_dropdown">
+									<a href="services.html">услуги</a>
+									<ul class="dropdown_menu">
+										<li><a href="service.html">Разработка WEB-сайтов</a></li>
+										<li><a href="service.html">Автоматизация учета</a></li>
+										<li><a href="service.html">Печатная техника</a></li>
+										<li><a href="service.html">Компьютерная техника</a></li>
+										<li><a href="service.html">Программное обеспечение</a></li>
+										<li><a href="service.html">Торговое оборудование</a></li>
+									</ul>
+								</li>
+								<li class="li_dropdown catalog">
+									<a href="#">Каталог</a>
+									<ul class="dropdown_catalog_menu">
+										<div class="product-menu-block">
+											<a href="#">
+												<img src="img/product/product_menu.jpg">
+												<span class="product-title">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</span>
+											</a>
+										</div>
+										<div class="category_menu">
+											<p class="category_menu_title">Категории</p>
+											<ul class="category_menu_list">
+												<li><a href="catalog.html">Ноутбуки и Компьютеры</a></li>
+												<li><a href="catalog.html">Планшеты</a></li>
+												<li><a href="catalog.html">Принтера</a></li>
+												<li><a href="catalog.html">Торговое оборудование</a></li>
+											</ul>
+										</div>
+									</ul>
+								</li>
+								<li><a href="#" class="menu_go_to" data-block='.portfolio'>портфолио</a></li>
+								<li><a href="#" class="menu_go_to" data-block='.about_us'>о нас</a></li>
+								<li><a href="contacts.html">контакты</a></li>
+							</ul>
+							<div class="header_busket">
+								<i class="fa fa-shopping-cart" aria-hidden="true">
+									<span class="header_busket_quantity">1</span>
+								</i>
+							</div>
+							<div class="header_login">
+								<i class="fa fa-user" aria-hidden="true"></i>
+								<ul class="authorization-box">
+									<li><a class='login' href="#user_login">Вход</a></li>
+									<li><a class='registration' href="#user_registration">Регистрация</a></li>
 								</ul>
-							</li>
-							<li class="li_dropdown catalog">
-								<a href="#">Каталог</a>
-								<ul class="dropdown_catalog_menu">
-									<div class="product-menu-block">
-										<a href="#">
-											<img src="img/icon/product_menu.jpg">
-											<span class="product-title">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</span>
-										</a>
-									</div>
-									<div class="category_menu">
-										<p class="category_menu_title">Категории</p>
-										<ul class="category_menu_list">
-											<li><a href="catalog.html">Ноутбуки и Компьютеры</a></li>
-											<li><a href="catalog.html">Планшеты</a></li>
-											<li><a href="catalog.html">Принтера</a></li>
-											<li><a href="catalog.html">Торговое оборудование</a></li>
-										</ul>
-									</div>
-								</ul>
-							</li>
-							<li><a href="#" class="menu_go_to" data-block='.portfolio'>портфолио</a></li>
-							<li><a href="#" class="menu_go_to" data-block='.about_us'>о нас</a></li>
-							<li><a href="contacts.html">контакты</a></li>
-						</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -123,7 +161,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12">
-					<h2 class="section_title title_center">Корзина</h2>
 					<table class="checkout-table">
 						<tr>
 							<th class="th-product">Товар</th>
@@ -136,7 +173,7 @@
 						<tr>
 							<td class="td-product">
 								<div class="checkout-product-image">
-									<img src="img/icon/product_menu.jpg" alt="">
+									<img src="img/product/product_menu.jpg" alt="">
 								</div>
 								<div class="checkout-product-info">
 									<p class="checkout-product-name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</p>
@@ -170,7 +207,7 @@
 						<tr>
 							<td class="td-product">
 								<div class="checkout-product-image">
-									<img src="img/icon/product_menu.jpg" alt="">
+									<img src="img/product/product_menu.jpg" alt="">
 								</div>
 								<div class="checkout-product-info">
 									<p class="checkout-product-name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</p>
@@ -204,7 +241,7 @@
 						<tr>
 							<td class="td-product">
 								<div class="checkout-product-image">
-									<img src="img/icon/product_menu.jpg" alt="">
+									<img src="img/product/product_menu.jpg" alt="">
 								</div>
 								<div class="checkout-product-info">
 									<p class="checkout-product-name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</p>
@@ -233,10 +270,112 @@
 							</td>
 							<td class="td-delete">
 								<a href="#" class="checkout-product-delete"><i class="fa fa-times" aria-hidden="true"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3" class="td_outline"></td>
+							<td colspan="3" class='td_sumtotal'>
+								<div class="checkout_sumtotal">
+									<span class="sumtotal-title">Сумма:</span>
+									<span class="sumtotal-value">27 000<span class="currency">грн</span></span>
+								</div>
 							</td>
 						</tr>
 					</table>
 				</div>
+			</div>
+		</div>
+	</section>
+	<section class="checkout_form">
+		<div class="container">
+			<div class="row">
+				<form action="">
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<div class="checkout_user_info">
+							<h4 class="section_title">
+								АНКЕТА ПОЛУЧАТЕЛЯ
+							</h4>
+							<div class="form_row">
+								<label class="label-require" for="">ФИО</label>
+								<input type="text" placeholder="ФИО">
+								<div class="help-block"></div>
+							</div>
+							<div class="form_row">
+								<label class="label-require" for="">Телефон</label>
+								<input type="text" placeholder="Телефон">
+								<div class="help-block"></div>
+							</div>
+							<div class="form_row">
+								<label class="label-require" for="">E-mail</label>
+								<input type="text" placeholder="E-mail">
+								<div class="help-block"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<h4 class="section_title">
+							ДОСТАВКА
+						</h4>
+						<div class="checkout_delivery_info">
+							<div class="form_row">
+								<div class="checkout_delivery_chekbox">
+									<input type="checkbox" id="checkbox52">
+									<label for="checkbox52">Доставка "Новая Почта"</label>
+								</div>
+							</div>
+							<div class="form_row">
+								<label class="label-require" for="">Город</label>
+								<select>
+									<option>Хмельницький</option>
+									<option>Київ</option>
+									<option>Одеса</option>
+								</select>
+							</div>
+							<div class="form_row">
+								<label class="label-require" for="">Склад</label>
+								<select>
+									<option>Віділ 1</option>
+									<option>Віділ 2</option>
+									<option>Віділ 3</option>
+								</select>
+							</div>
+							<div class="form_row">
+								<label class="label-require" for="">Укажите свой метод доставки</label>
+								<input type="text" placeholder="Укажите свой метод доставки" id='checkoutform'>
+								<div class="help-block"></div>
+							</div>
+							<div class="form_row">
+								<label class="label-require" for="">Информация</label>
+								<textarea placeholder="Информация"></textarea>
+								<div class="help-block"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<h4 class="section_title">
+							К ОПЛАТЕ
+						</h4>
+						<div class="checkout_price_list">
+							<ul class="price_list">
+								<li>
+									<p>Всего за товар</p>
+									<span>2700 грн</span>
+								</li>
+								<li>
+									<p>Доставка</p>
+									<span>2700 грн</span>
+								</li>
+								<li>
+									<p>Всего</p>
+									<span>2700 грн</span>
+								</li>
+							</ul>
+							<div class="checkout_button">
+								<button class="base_button button_color"><i class="fa fa-check" aria-hidden="true"></i>Подтвердить заказ</button>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</section>

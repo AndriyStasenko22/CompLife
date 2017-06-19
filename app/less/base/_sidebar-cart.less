@@ -1,0 +1,130 @@
+// бокова корзина
+.sidebar-cart{
+	right: -350px;
+	width: 350px;
+	border-width: 0 0 0 4px;
+	padding: 40px;
+	&.active{
+		right: 0;
+	}
+	.sidebar-cart-icon{
+		height: 110px;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.sidebar-cart-content{
+		margin: 25px 0;
+	}
+	.sidebar-cart-sum{
+		display: flex;
+		justify-content: space-between;
+		margin-top: 25px;
+		font-size: 24px;
+		color: @title_color;
+		span:first-child{
+			color: gray;
+		}
+		span:last-child{
+			font-weight: bold;
+		}
+	}
+	.base_button{
+		width: 100%;
+	}
+	@media only screen and (max-width : 480px){
+		&{
+			width: 260px;
+			right: -260px;
+		}
+	}
+}
+
+.sidebar-cart-list{
+	overflow-y: auto;
+	max-height: 33%;
+	&::-webkit-scrollbar{
+		width: 5px;
+		height: 8px;
+		background-color: #eee;
+		left:-20%;
+	}
+	&::-webkit-scrollbar-thumb{
+		background: @base_color;
+		height: 15px;
+	}
+	.cart_item{
+		width: 100%;
+		border-bottom: 1px solid  #eee;
+		position: relative;
+		margin-bottom: 15px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	.cart_item_image, .cart_item_info{
+		display: inline-block;
+		vertical-align: top;
+		line-height: 1;
+	}
+	.cart_item_image{
+		width: 40%;
+		margin-right: 5px;
+	}
+	.cart_item_info{
+		width: 56%;
+	}
+	.cart_item_name{
+		width: 100%;
+		color: @title_color;
+		font-size: 16px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		transition: all 0.3s;
+		margin-bottom: 10px;
+		display: inline-block;
+		&:hover{
+			color: @base_color;
+		}
+	}
+	.cart_item_article{
+		font-size: 14px;
+	}
+	.cart_item_price{
+		font-size: 20px;
+		color: @base_color;
+		text-align: right;
+		font-weight: bold;
+		margin-right: 5px;
+		margin-bottom: 10px;
+		.curency{
+			font-size: 14px;
+		}
+	}
+	.cart-item-quantity{
+		float: left;
+		display: inline-block;	
+		line-height: 20px;
+		font-weight: normal;
+		font-size: 14px;
+		color: initial;
+	}
+	.cart_item_delete{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		color: #fff;
+		text-align: center;
+		line-height: 1;
+		vertical-align: middle;
+		border: 1px solid  #fff;
+		background-color: #000;
+		transition: all 0.3s;
+		&:hover{
+			background-color: @base_color;
+		}
+	}
+}

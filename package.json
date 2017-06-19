@@ -18,7 +18,8 @@
     "gulp-html-tag-include": "^1.0.1",
     "gulp-less": "^3.3.0",
     "gulp-uglifyjs": "^0.6.2",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "inputmask": "^3.3.7"
   },
   "dependencies": {
     "owl.carousel": "^2.2.0"

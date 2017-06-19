@@ -12,10 +12,69 @@
 		<img  src="img/icon/preloader1.png" alt="" class='preloader_img'>
 		<object id="load" type="image/svg+xml" data="img/preloader1.svg"></object>
 	</div>	
-
+	<!-- бокова корзина -->
+	<div class="sidebar-cart">
+		<div class="sidebar-cart-block">
+			<div class="sidebar-cart-header">
+				<div class="sidebar-cart-icon"><img src="img/icon/shopping-cart.png" alt=""></div>
+				<div class="sidebar-cart-title clearfix">
+					<h2 class="section_title title_center">ВАША КОРЗИНА</h2>
+				</div>
+			</div>
+			<div class="sidebar-cart-content">
+				<div class="sidebar-cart-list">
+					<div class="cart_item">
+						<a href="#" class="cart_item_delete">x</a>
+						<div class="cart_item_image"><img src="img/product/product_menu.jpg" alt=""></div>
+						<div class="cart_item_info">
+							<a href="card.html" class="cart_item_name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</a>
+							<p class="cart_item_article">Код: 99999</p>
+							<div class="cart_item_price">
+								<span class="cart-item-quantity">x1 шт</span>27000<span class="curency">грн</span>
+							</div>
+						</div>
+					</div>
+					<div class="cart_item">
+						<a href="#" class="cart_item_delete">x</a>
+						<div class="cart_item_image"><img src="img/product/product_menu.jpg" alt=""></div>
+						<div class="cart_item_info">
+							<a href="card.html" class="cart_item_name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</a>
+							<p class="cart_item_article">Код: 99999</p>
+							<div class="cart_item_price">
+								<span class="cart-item-quantity">x1 шт</span>27000<span class="curency">грн</span>
+							</div>
+						</div>
+					</div>
+					<div class="cart_item">
+						<a href="#" class="cart_item_delete">x</a>
+						<div class="cart_item_image"><img src="img/product/product_menu.jpg" alt=""></div>
+						<div class="cart_item_info">
+							<a href="card.html" class="cart_item_name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</a>
+							<p class="cart_item_article">Код: 99999</p>
+							<div class="cart_item_price">
+								<span class="cart-item-quantity">x1 шт</span>27000<span class="curency">грн</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sidebar-cart-sum">
+					<span>Сумма:</span><span>27000 грн</span>
+				</div>
+			</div>
+			<div class="sidebar-cart-button"><a href="" class="button_color">Оформить</a></div>
+		</div>
+	</div>
+	<!-- мобільне меню -->
 	<div class="mob_menu">
-		<div class="mob_header">
-			<a href="#" class="logo"><img src="img/icon/preloader.png" alt=""></a>
+		<div class="mob_header clearfix">
+			<!-- <a href="#" class="logo"><img src="img/icon/preloader.png" alt=""></a> -->
+			<div class="user-profile">
+				<h4 class="user_name">Андрій Стасенко</h4>
+			</div>
+			<div class="mob_button">
+				<a class='login button_transparent' href="#user_login">Вход</a>
+				<a class='registration button_transparent' href="#user_registration">Регистрация</a>
+			</div>
 		</div>
 		<ul class="menu">
 			<li class="active"><a href="index.html">главная</a></li>
@@ -29,6 +88,15 @@
 					<li><a href="service.html"><img src="img/icon/computer.png" alt=""> Компьютерная техника</a></li>
 					<li><a href="service.html"><img src="img/icon/software.png" alt=""> Программное обеспечение</a></li>
 					<li><a href="service.html"><img src="img/icon/cash.png" alt=""> Торговое оборудование</a></li>
+				</ul>
+			</li>
+			<li class="li_dropdown">
+				<a href="services.html">каталог</a>
+				<ul class="mob_dropdown_menu">
+					<li><a href="catalog.html">Ноутбуки и Компьютеры</a></li>
+					<li><a href="catalog.html">Планшеты</a></li>
+					<li><a href="catalog.html">Принтера</a></li>
+					<li><a href="catalog.html">Торговое оборудование</a></li>
 				</ul>
 			</li>
 			<li><a href="#" class="menu_go_to" data-block='.portfolio'>портфолио</a></li>
@@ -51,13 +119,20 @@
 						</div>
 					</div>
 					<div class="hidden-xs col-sm-4">
-						<div class="social_block">
+						<!-- <div class="social_block">
 							<ul class='social_icon'>
 								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
 								<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true""></i></a></li>
 							</ul>
+						</div> -->
+						<div class="login_block">
+							<!-- <a href="#" class="base_button">Вход</a>
+							<a href="#" class="base_button">Регистрация</a> -->
+							<a href="#" class="login">УКР</a> | 
+							<a href="#" class="registration">РУС</a>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -65,126 +140,68 @@
 		<div class="header_menu">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-md-2">
+					<div class="col-xs-12 col-sm-12">
 						<div class="mobile_menu_button visible-xs">
 							<i class="fa fa-bars" aria-hidden="true"></i>
 						</div>
 						<a href="index.html" class="logo"><img src="img/icon/logo.png" alt=""></a>
-					</div>
-
-					<!-- <div class="pull-right"> -->
-					<div class="col-xs-12 col-md-8">
-						<ul class="menu hidden-xs">
-							<li class="active"><a href="#">главная</a></li>
-							<li class="li_dropdown">
-								<a href="services.html">услуги</a>
-								<ul class="dropdown_menu">
-									<li><a href="service.html">Разработка WEB-сайтов</a></li>
-									<li><a href="service.html">Автоматизация учета</a></li>
-									<li><a href="service.html">Печатная техника</a></li>
-									<li><a href="service.html">Компьютерная техника</a></li>
-									<li><a href="service.html">Программное обеспечение</a></li>
-									<li><a href="service.html">Торговое оборудование</a></li>
+						<div class="pull-right">
+							<ul class="menu hidden-xs">
+								<li class="active"><a href="#">главная</a></li>
+								<li class="li_dropdown">
+									<a href="services.html">услуги</a>
+									<ul class="dropdown_menu">
+										<li><a href="service.html">Разработка WEB-сайтов</a></li>
+										<li><a href="service.html">Автоматизация учета</a></li>
+										<li><a href="service.html">Печатная техника</a></li>
+										<li><a href="service.html">Компьютерная техника</a></li>
+										<li><a href="service.html">Программное обеспечение</a></li>
+										<li><a href="service.html">Торговое оборудование</a></li>
+									</ul>
+								</li>
+								<li class="li_dropdown catalog">
+									<a href="#">Каталог</a>
+									<ul class="dropdown_catalog_menu">
+										<div class="product-menu-block">
+											<a href="#">
+												<img src="img/product/product_menu.jpg">
+												<span class="product-title">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</span>
+											</a>
+										</div>
+										<div class="category_menu">
+											<p class="category_menu_title">Категории</p>
+											<ul class="category_menu_list">
+												<li><a href="catalog.html">Ноутбуки и Компьютеры</a></li>
+												<li><a href="catalog.html">Планшеты</a></li>
+												<li><a href="catalog.html">Принтера</a></li>
+												<li><a href="catalog.html">Торговое оборудование</a></li>
+											</ul>
+										</div>
+									</ul>
+								</li>
+								<li><a href="#" class="menu_go_to" data-block='.portfolio'>портфолио</a></li>
+								<li><a href="#" class="menu_go_to" data-block='.about_us'>о нас</a></li>
+								<li><a href="contacts.html">контакты</a></li>
+							</ul>
+							<div class="header_busket">
+								<i class="fa fa-shopping-cart" aria-hidden="true">
+									<span class="header_busket_quantity">1</span>
+								</i>
+							</div>
+							<div class="header_login">
+								<i class="fa fa-user" aria-hidden="true"></i>
+								<ul class="authorization-box">
+									<li><a class='login' href="#user_login">Вход</a></li>
+									<li><a class='registration' href="#user_registration">Регистрация</a></li>
 								</ul>
-							</li>
-							<li class="li_dropdown catalog">
-								<a href="#">Каталог</a>
-								<ul class="dropdown_catalog_menu">
-									<div class="product-menu-block">
-										<a href="#">
-											<img src="img/icon/product_menu.jpg">
-											<span class="product-title">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</span>
-										</a>
-									</div>
-									<div class="category_menu">
-										<p class="category_menu_title">Категории</p>
-										<ul class="category_menu_list">
-											<li><a href="catalog.html">Ноутбуки и Компьютеры</a></li>
-											<li><a href="catalog.html">Планшеты</a></li>
-											<li><a href="catalog.html">Принтера</a></li>
-											<li><a href="catalog.html">Торговое оборудование</a></li>
-										</ul>
-									</div>
-								</ul>
-							</li>
-							<li><a href="#" class="menu_go_to" data-block='.portfolio'>портфолио</a></li>
-							<li><a href="#" class="menu_go_to" data-block='.about_us'>о нас</a></li>
-							<li><a href="contacts.html">контакты</a></li>
-						</ul>
-					</div>
-					<div class="col-xs-12 col-md-2">
-						<div class="header_busket">
-							<i class="fa fa-shopping-cart" aria-hidden="true">
-								<span class="header_busket_quantity">1</span>
-							</i>
-							<div class="hidden-busket">
-									<!-- <div class="empty_busket">
-										<h4>Ваша корзина пуста</h4>
-										<p>Добавляйте понравившиеся товары в корзину</p>
-									</div> -->
-									<div class="busket_wrap">
-										<ul class="busket_list">
-											<li>
-												<div class="busket_wrap_item">
-													<a href="#" class="busket_item_delete">x</a>
-													<div class="busket_item_image"><img src="img/icon/product_menu.jpg" alt=""></div>
-													<div class="busket_item_info">
-														<p class="busket_item_name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</p>
-														<p class="busket_item_article">Код: 99999</p>
-														<p class="busket_item_price">27000<span class="curency">грн</span></p>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="busket_wrap_item">
-													<a href="#" class="busket_item_delete">x</a>
-													<div class="busket_item_image"><img src="img/icon/product_menu.jpg" alt=""></div>
-													<div class="busket_item_info">
-														<p class="busket_item_name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</p>
-														<p class="busket_item_article">Код: 99999</p>
-														<p class="busket_item_price">27000<span class="curency">грн</span></p>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="busket_wrap_item">
-													<a href="#" class="busket_item_delete">x</a>
-													<div class="busket_item_image"><img src="img/icon/product_menu.jpg" alt=""></div>
-													<div class="busket_item_info">
-														<p class="busket_item_name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</p>
-														<p class="busket_item_article">Код: 99999</p>
-														<p class="busket_item_price">27000<span class="curency">грн</span></p>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="busket_wrap_item">
-													<a href="#" class="busket_item_delete">x</a>
-													<div class="busket_item_image"><img src="img/icon/product_menu.jpg" alt=""></div>
-													<div class="busket_item_info">
-														<p class="busket_item_name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</p>
-														<p class="busket_item_article">Код: 99999</p>
-														<p class="busket_item_price">27000<span class="curency">грн</span></p>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<div class="busket_sum_price clearfix">
-										<span class="title">Сума:</span> <span class="busket_item_price">27000<span class="curency">грн</span></span>
-									</div>
-									<div class="busket_button">
-										<a href="#" class="base_button button_color">Перейти в корзину</a>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- </div> -->
 	</header>
+
 	<section class="home_baner">
 		<div class="container-fluid">
 			<div class="row">
@@ -224,7 +241,7 @@
 						<p><strong>Comp<span>Life</span></strong> – перспективная команда специалистов сферы информационных технологий. Деятельность нашей компании охватывает все основные отрасли IT-сферы направленные на автоматизацию работы предприятия: от подбора и поставки оборудования, а также программного обеспечения до разработки индивидуальных программных решений для организации и ведения бизнеса.</p>
 						<p>Одной из основных сфер нашей деятельности является разработка сайтов различной сложности под ключ. Организация обмена сайтов с учетными программами. Техническое сопровождение сайтов.</p>
 					</div>
-					<a href="#" class="base_button button_color">узнать больше</a>
+					<a href="#" class="button_color">узнать больше</a>
 				</div>
 			</div>
 		</div>
@@ -243,7 +260,7 @@
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-3">
-					<a href="#" class="base_button button_transparent">Свяжитесь с нами</a>
+					<a href="#" class="button_transparent">Свяжитесь с нами</a>
 				</div>
 			</div>
 		</div>
@@ -818,7 +835,7 @@
 					<input type="text" placeholder="Имя">
 					<input type="tel" placeholder="Номер">
 					<textarea name="" id="" placeholder="Сообщение"></textarea>
-					<a href="#" class="base_button button_color">Отправить</a>
+					<a href="#" class="button_color">Отправить</a>
 				</form>
 			</div>
 			<div class="hidden-xs col-sm-5 col-md-4">

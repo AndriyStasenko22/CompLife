@@ -1,0 +1,71 @@
+// мобільне меню
+.mob_menu{
+	left: -260px;
+	width: 260px;
+	padding-bottom: 20px;
+	border-width: 0 4px 0 0;
+	&.active{
+		left: 0;
+	}
+	.mob_header{
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		background-color: @base_color;
+	}
+	.user-profile{
+		text-align: center;
+		.user_name{
+			color: #fff;
+			margin: 20px 0;
+			&::before{
+				content: '\f2be';
+				font-family: 'FontAwesome';
+				margin-right: 10px;
+				font-size: 24px;
+				line-height: 1;
+				vertical-align: middle;
+			}
+		}
+	}
+	.mob_button{
+		display: flex;
+		justify-content: space-around;
+		.button_transparent{
+			.base_button(35px, 20px);
+			font-size: 13px;
+		}
+	}
+	.menu,.mob_dropdown_menu{
+		display: block;
+		&>li{
+			display: block;
+			img{
+				height: 35px;
+				margin-right: 5px;
+				display: inline-block;
+			}
+			a{
+				display: block;
+				height: 50px;
+				line-height: 50px;
+				border-bottom: 1px solid #ddd;
+				color: @title_color;
+				&::before{
+					width: 0;
+				}
+				&:hover, &:active{
+					color: @base_color;
+				}
+			}
+		}
+	}
+	.mob_dropdown_menu{
+		display: none;
+		li{
+			padding: 0 15px 0 25px;
+			a{
+				font-size: 11px;
+			}
+		}
+	}
+}

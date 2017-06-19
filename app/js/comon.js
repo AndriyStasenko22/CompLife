@@ -204,7 +204,7 @@ $(document).ready(function() {
 
 	$('.mob_menu li.li_dropdown > a').click(function(event) {
 		event.preventDefault();
-		$('.mob_dropdown_menu').slideToggle();
+		$(this).siblings('.mob_dropdown_menu').slideToggle();
 	});
 
 	$('.menu .catalog > a').click(function(event) {
@@ -270,21 +270,21 @@ $(document).ready(function() {
 		});
 	}
 
-	//мобільне бокове меню
-	$('.mobile_menu_button').click(function() {
-		$('.mob_menu').animate({'left': '0'}, 300);
-		$('.overlay').css({
-			'visibility': 'visible'
-		});
-		$('body').css('overflow', 'hidden');
-
+	// бокове мобільне меню, бокова корзина
+	$('.mobile_menu_button, .header_busket .fa').click(function() {
+		if($(this).hasClass('mobile_menu_button')){
+			$('.mob_menu').addClass('active');
+		}
+		else{
+			$('.sidebar-cart').addClass('active');
+		}
+		$('.overlay').addClass('active')
+		$('body').addClass('fixed');
 	});
 	$('.overlay').click(function() {
-		$('.mob_menu').animate({'left': '-260'}, 300);
-		$('.overlay').css({
-			'visibility': 'hidden'
-		});
-		$('body').css('overflow', 'visible');
+		$('.mob_menu.active, .sidebar-cart.active').removeClass('active');
+		$('.overlay').removeClass('active');
+		$('body').removeClass('fixed');
 	});
 
 	// якор
@@ -408,6 +408,8 @@ $(document).ready(function() {
 			content: $($(this).attr('href'))
 		});
 	});
+
+	// кількість замовленого товару
 	$('.checkout-product-quantity button').click(function(event) {
 		var val = $(this).siblings('.product-quantity').val();
 		console.log(val);
@@ -425,6 +427,23 @@ $(document).ready(function() {
 			}
 		}
 	});
+
+	// перевірка вибору "Нової пошти"
+	if( ! $('.checkout_delivery_info input[type="checkbox"]').prop("checked")){
+		$('.checkout_delivery_info #checkoutform').attr('disabled', 'disabled');
+	}
+	else{
+		$('.checkout_delivery_info #checkoutform').removeAttr("disabled");
+	}
+	$('.checkout_delivery_info input[type="checkbox"]').change(function(event) {
+		if( ! $(this).prop("checked")){
+			$('.checkout_delivery_info #checkoutform').attr('disabled', 'disabled');
+		}
+		else{
+			$('.checkout_delivery_info #checkoutform').removeAttr("disabled");
+		}
+	});
+	
 });
 
 //  функція додавання класу .active в елементах списку li
