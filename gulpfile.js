@@ -14,7 +14,7 @@ gulp.task('less', function(){
         .pipe(cssnano())
         .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
-});
+    });
 
 // Таск "scripts"
 gulp.task('scripts', function() {
@@ -30,12 +30,12 @@ gulp.task('scripts', function() {
         'app/libs/vivus/dist/vivus.min.js', //SVG drowin
         'app/libs/wow/dist/wow.min.js',
         'app/libs/jquery-ui/jquery-ui.min.js',
-        'app/libs/jqueryui-touch-punch/jquery.ui.touch-punch.min.js'
+        'app/libs/jqueryui-touch-punch/jquery.ui.touch-punch.min.js',
         ])
         .pipe(concat('libs.min.js')) // Собираем их в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл
         .pipe(gulp.dest('app/js')); // Выгружаем в папку app/js
-});
+    });
 
 // Таск "browser-sync"
 gulp.task('browser-sync', function() {

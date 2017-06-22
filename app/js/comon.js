@@ -291,7 +291,6 @@ $(document).ready(function() {
 		}
 		$('.overlay').addClass('active')
 		$('body').addClass('fixed');
-		$('html, body').css('overflow', 'hidden');
 	});
 	$('.overlay').click(function() {
 		$('.mob_menu.active, .sidebar-cart.active').removeClass('active');
@@ -455,7 +454,6 @@ $(document).ready(function() {
 			$('.checkout_delivery_info #checkoutform').removeAttr("disabled");
 		}
 	});
-	
 });
 
 //  функція додавання класу .active в елементах списку li
