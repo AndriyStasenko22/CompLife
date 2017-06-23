@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Контакты</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<!-- бокова корзина -->
+	//=include ../include/sidebar_cart.html
+	<!-- мобільне меню -->
+	//=include ../include/mobile_menu.html
+
+	<div class="overlay"></div>
+
+	//=include ../include/header.html
+
+	<section class="breadcrumb">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<h1 class="breadcrumb_title">
+						Контактная информация
+					</h1>
+					<ul class="bread_crumb">
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="contacts section_base">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4">
+					<div class="contact_block">
+						<div class="contact_img"><img src="img/icon/location.png" alt=""></div>
+						<h4 class="contact_title">АДРЕС</h4>
+						<div class="contact-info">
+							<p>29000, Украина, г. Хмельницкий, ул. Пересипкина 8 .</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4">
+					<div class="contact_block">
+						<div class="contact_img"><img src="img/icon/contact_phone.png" alt=""></div>
+						<h4 class="contact_title">ТЕЛЕФОН</h4>
+						<div class="contact-info">
+							<p>+38 (0382) 65-41-05</p>
+							<p>+38 (0382) 72-03-37</p>
+							<p>+38 (097) 745-29-82</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4">
+					<div class="contact_block">
+						<div class="contact_img"><img src="img/icon/mail.png" alt=""></div>
+						<h4 class="contact_title">EMAIL</h4>
+						<div class="contact-info">
+							<p>office@complife.ua</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="contacts_call">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<h1 class="section_title title_center">СВЯЗАТЬСЯ</h1>
+					<div class="row">
+						<form action="" class="contact_form clearfix">
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-xs-12 col-sm-12">
+										<input type="text" placeholder='Ваше имя'>
+									</div>
+									<div class="col-xs-12 col-sm-12">
+										<input type="text" placeholder='Ваш e-mai'>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-xs-12 col-sm-6">
+								<textarea name="" id="" cols="30" rows="10" placeholder='Сообщение'></textarea>
+							</div>
+						</div>
+					</form>
+					<div class="contacts_call_button">
+						<button type='submit' class="base_button button_color">Отправить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class='map clearfix'>
+		<div class="overlay_map" onClick="style.pointerEvents='none'"></div>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.625552880163!2d26.995279916044208!3d49.41598647934606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47320644d645f977%3A0x19fdb65cb1c08b54!2z0LLRg9C70LjRhtGPINCf0LXRgNC10YHQuNC_0LrRltC90LAsIDgsINCl0LzQtdC70YzQvdC40YbRjNC60LjQuSwg0KXQvNC10LvRjNC90LjRhtGM0LrQsCDQvtCx0LvQsNGB0YLRjA!5e0!3m2!1sru!2sua!4v1496738088506" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</section>
+	//=include ../include/footer.html
+	//=include ../include/modal_form.html
+</body>
+<script src="js/libs.min.js"></script>
+<script src="js/comon.js"></script>
+</html>

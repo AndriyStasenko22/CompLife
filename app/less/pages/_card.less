@@ -119,10 +119,10 @@
 			}
 		}
 	}
-	@media only screen and (max-width : 992px){
+	@media only screen and (max-width : 768px){
 		&{
-			.section_title{
-				margin-top: 35px;
+			.card-image-place{
+				height: 220px;
 			}
 		}
 	}
@@ -232,6 +232,17 @@
 				&.feature_name{
 					font-weight: bold;
 					color: @title_color;
+				}
+			}
+		}
+	}
+	@media only screen and (max-width : 675px){
+		&{
+			.card_tab_list li{
+				display: block;
+				a{
+					display: block;
+					border-bottom: 1px solid  #fff;
 				}
 			}
 		}

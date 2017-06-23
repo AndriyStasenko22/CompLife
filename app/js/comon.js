@@ -264,6 +264,9 @@ $(document).ready(function() {
 		});
 	}
 
+
+
+
 	// монітор svg
 	if($('#mac').length >0){
 		var flagcall=1;
@@ -369,26 +372,56 @@ $(document).ready(function() {
 
 	// fancybox товару
 	$(".card-image .card-image-place a").click(function () {
-		var active_img = $(this).attr('data-image');
-		var slide=model_slider.children('img[src="'+active_img+'"]').index();
-		// слайдер товару
-		model_slider.owlCarousel({
-			loop:true,
-			items:1,
-			dots: true,
-			dotsData: true,
-			startPosition: slide,
-			onInitialized: function(event){
-				$.fancybox({
-					content:   $('#product_fancybox'),
-					'afterClose': function() { 
-						model_slider.trigger('destroy.owl.carousel');
+		
+		if($(window).width()>767){
+			var active_img = $(this).attr('data-image');
+			var slide=model_slider.children('img[src="'+active_img+'"]').index();
+				// слайдер товару
+				model_slider.owlCarousel({
+					loop:true,
+					items:1,
+					dots: true,
+					dotsData: true,
+					startPosition: slide,
+					onInitialized: function(event){
+						$.fancybox({
+							content:   $('#product_fancybox'),
+							'afterClose': function() { 
+								model_slider.trigger('destroy.owl.carousel');
+							}
+						});
 					}
 				});
+				active_img=0;
+			}
+			else{
+				var srcimg = [];
+				var  href = {href: $('.card-slider .card-slider-img.active a').attr('data-image')};
+				srcimg.push(href);
+				$('.card-slider .card-slider-img:not(.active) a').each(function(index, el) {
+					href = {href: $(this).attr('data-image')};
+					srcimg.push(href);
+				});
+				$.fancybox.open(
+					srcimg,
+					{
+						type: "image",
+						afterShow: function() {
+							$('.fancybox-wrap').swipe({
+								swipe : function(event, direction) {
+									if (direction === 'left' || direction === 'up') {
+										$.fancybox.prev( direction );
+									} else {
+										$.fancybox.next( direction );
+									}
+								}
+							});
+
+						},
+					});
 			}
 		});
-		active_img=0;
-	});
+
 	// кнопки слайдер товару fancybox
 	$('#product_fancybox .btn_next').click(function() {
 		model_slider.trigger('next.owl.carousel');
@@ -454,6 +487,22 @@ $(document).ready(function() {
 			$('.checkout_delivery_info #checkoutform').removeAttr("disabled");
 		}
 	});
+
+
+
+	// однакова висота комірок таблиці "Сравнить"
+	if($('.compare_wrap .table').length>0){
+		HeightCell();
+
+		$('.compare_product .delete_compare_product').click(function(event) {
+			event.preventDefault();
+			var colum = $(this).parent().index()+1;
+			$(this).closest('table').find('tr').each(function() {
+				$(this).find('td:nth-child('+colum+')').remove();
+				$(this).find('th:nth-child('+colum+')').remove();
+			});
+		});
+	}
 });
 
 //  функція додавання класу .active в елементах списку li
@@ -493,3 +542,9 @@ function MaxHeight(elem){
 function proverka(input) {
 	input.value = input.value.replace(/[^\d]/g, '');
 };
+
+function HeightCell(){
+	$('.compare_wrap .table .fixed-colum').each(function() {
+		$(this).height($(this).next('td, th').height()); 
+	});
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Портфолио</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<!-- бокова корзина -->
+	//=include ../include/sidebar_cart.html
+	<!-- мобільне меню -->
+	//=include ../include/mobile_menu.html
+
+	<div class="overlay"></div>
+
+
+	<section class="breadcrumb">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<h2 class="breadcrumb_title">Корзина</h2>
+					<ul class="bread_crumb">
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="#">Корзина</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="checkout">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<table class="checkout-table">
+						<tr>
+							<th class="th-product">Товар</th>
+							<th class="th-options">Опции</th>
+							<th class="th-price">Цена</th>
+							<th class="th-quantity">Количество</th>
+							<th class="th-sum">Сумма</th>
+							<th class="th-delete"></th>
+						</tr>
+						<tr>
+							<td class="td-product">
+								<div class="checkout-product-image">
+									<img src="img/product/product_menu.jpg" alt="">
+								</div>
+								<div class="checkout-product-info">
+									<p class="checkout-product-name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</p>
+									<p class="checkout-article">Код: 66666</p>
+								</div>
+							</td>
+							<td class="td-options">
+								<div class="checkout-product-options">
+									15.6" (1920x1080); Intel Core i3-5005U (2.0 ГГц); ОЗП: 4 ГБ; Без ОС; RAM:500 ГБ; 
+								</div>
+							</td>
+							<td class="td-price">
+								<div class="checkout-product-price">
+									27000грн
+								</div>
+							</td>
+							<td class="td-quantity">
+								<div class="checkout-product-quantity">
+									<button class='product-less'>-</button>
+									<input class='product-quantity' type="text" value="1">
+									<button class='product-more'>+</button>
+								</div>
+							</td>
+							<td class="td-sum">
+								27000грн
+							</td>
+							<td class="td-delete">
+								<a href="#" class="checkout-product-delete"><i class="fa fa-times" aria-hidden="true"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-product">
+								<div class="checkout-product-image">
+									<img src="img/product/product_menu.jpg" alt="">
+								</div>
+								<div class="checkout-product-info">
+									<p class="checkout-product-name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</p>
+									<p class="checkout-article">Код: 66666</p>
+								</div>
+							</td>
+							<td class="td-options">
+								<div class="checkout-product-options">
+									15.6" (1920x1080); Intel Core i3-5005U (2.0 ГГц); ОЗП: 4 ГБ; Без ОС; RAM:500 ГБ; 
+								</div>
+							</td>
+							<td class="td-price">
+								<div class="checkout-product-price">
+									27000грн
+								</div>
+							</td>
+							<td class="td-quantity">
+								<div class="checkout-product-quantity">
+									<button class='product-less'>-</button>
+									<input class='product-quantity' type="text" value="1">
+									<button class='product-more'>+</button>
+								</div>
+							</td>
+							<td class="td-sum">
+								27000грн
+							</td>
+							<td class="td-delete">
+								<a href="#" class="checkout-product-delete"><i class="fa fa-times" aria-hidden="true"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-product">
+								<div class="checkout-product-image">
+									<img src="img/product/product_menu.jpg" alt="">
+								</div>
+								<div class="checkout-product-info">
+									<p class="checkout-product-name">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</p>
+									<p class="checkout-article">Код: 66666</p>
+								</div>
+							</td>
+							<td class="td-options">
+								<div class="checkout-product-options">
+									15.6" (1920x1080); Intel Core i3-5005U (2.0 ГГц); ОЗП: 4 ГБ; Без ОС; RAM:500 ГБ; 
+								</div>
+							</td>
+							<td class="td-price">
+								<div class="checkout-product-price">
+									27000грн
+								</div>
+							</td>
+							<td class="td-quantity">
+								<div class="checkout-product-quantity">
+									<button class='product-less'>-</button>
+									<input class='product-quantity' type="text" value="1">
+									<button class='product-more'>+</button>
+								</div>
+							</td>
+							<td class="td-sum">
+								27000грн
+							</td>
+							<td class="td-delete">
+								<a href="#" class="checkout-product-delete"><i class="fa fa-times" aria-hidden="true"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3" class="td_outline"></td>
+							<td colspan="3" class='td_sumtotal'>
+								<div class="checkout_sumtotal">
+									<span class="sumtotal-title">Сумма:</span>
+									<span class="sumtotal-value">27 000<span class="currency">грн</span></span>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="checkout_form">
+		<div class="container">
+			<div class="row">
+				<form action="">
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<div class="checkout_user_info">
+							<h4 class="section_title">
+								АНКЕТА ПОЛУЧАТЕЛЯ
+							</h4>
+							<div class="form_row">
+								<label class="label-require" for="">ФИО</label>
+								<input type="text" placeholder="ФИО">
+								<div class="help-block"></div>
+							</div>
+							<div class="form_row">
+								<label class="label-require" for="">Телефон</label>
+								<input type="text" placeholder="Телефон">
+								<div class="help-block"></div>
+							</div>
+							<div class="form_row">
+								<label class="label-require" for="">E-mail</label>
+								<input type="text" placeholder="E-mail">
+								<div class="help-block"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<h4 class="section_title">
+							ДОСТАВКА
+						</h4>
+						<div class="checkout_delivery_info">
+							<div class="form_row">
+								<div class="checkout_delivery_chekbox">
+									<input type="checkbox" id="checkbox52">
+									<label for="checkbox52">Доставка "Новая Почта"</label>
+								</div>
+							</div>
+							<div class="form_row">
+								<label class="label-require" for="">Город</label>
+								<select>
+									<option>Хмельницький</option>
+									<option>Київ</option>
+									<option>Одеса</option>
+								</select>
+							</div>
+							<div class="form_row">
+								<label class="label-require" for="">Склад</label>
+								<select>
+									<option>Віділ 1</option>
+									<option>Віділ 2</option>
+									<option>Віділ 3</option>
+								</select>
+							</div>
+							<div class="form_row">
+								<label class="label-require" for="">Укажите свой метод доставки</label>
+								<input type="text" placeholder="Укажите свой метод доставки" id='checkoutform'>
+								<div class="help-block"></div>
+							</div>
+							<div class="form_row">
+								<label class="label-require" for="">Информация</label>
+								<textarea placeholder="Информация"></textarea>
+								<div class="help-block"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<h4 class="section_title">
+							К ОПЛАТЕ
+						</h4>
+						<div class="checkout_price_list">
+							<ul class="price_list">
+								<li>
+									<p>Всего за товар</p>
+									<span>2700 грн</span>
+								</li>
+								<li>
+									<p>Доставка</p>
+									<span>2700 грн</span>
+								</li>
+								<li>
+									<p>Всего</p>
+									<span>2700 грн</span>
+								</li>
+							</ul>
+							<div class="checkout_button">
+								<button class="base_button button_color"><i class="fa fa-check" aria-hidden="true"></i>Подтвердить заказ</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	//=include ../include/footer.html
+	//=include ../include/modal_form.html
+</body>
+<script src="js/libs.min.js"></script>
+<script src="js/comon.js"></script>
+</html>

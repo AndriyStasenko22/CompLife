@@ -33,5 +33,8 @@
     "vivus": "^0.4.0",
     "wow": "^1.1.2",
     "jqueryui-touch-punch": "*"
+  },
+  "devDependencies": {
+    "jquery-touchswipe": "^1.6.18"
   }
 }

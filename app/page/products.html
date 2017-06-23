@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ноутбуки</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<!-- бокова корзина -->
+	//=include ../include/sidebar_cart.html
+	<!-- мобільне меню -->
+	//=include ../include/mobile_menu.html
+
+	<div class="overlay"></div>
+
+	//=include ../include/header.html
+	
+	<section class="breadcrumb">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<h2 class="breadcrumb_title">Ноутбуки</h2>
+					<ul class="bread_crumb">
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="catalog.html">Каталог</a></li>
+						<li><a href="#">Ноутбуки</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="shop">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 col-md-3">
+					<div class="shop-list-categories">
+						<div class="shop_categories_header">Подбор по параметрам</div>
+						<div class="categories-list">
+							<ul class="category-list">
+								<li class='li_dropdown'>
+									<a href="#">Производитель</a>
+									<ul class="category_dropdown">
+										<li>
+											<input type="checkbox" id="checkbox1">
+											<label for="checkbox1">Asus</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox2">
+											<label for="checkbox2">Acer</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox3">
+											<label for="checkbox3">Apple</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox4">
+											<label for="checkbox4">Dell</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox5">
+											<label for="checkbox5">Lenovo</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox6">
+											<label for="checkbox6">HP (Hewlett Packard)</label>
+											<span class='category_number'>(0)</span>
+										</li>
+									</ul>
+								</li>
+								<li class='li_dropdown'>
+									<a href="#">Диагональ экрана</a>
+									<ul class="category_dropdown">
+										<li>
+											<input type="checkbox" id="checkbox7">
+											<label for="checkbox7">13"</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox8">
+											<label for="checkbox8">15"-15.6"</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox9">
+											<label for="checkbox9">16"-17"</label>
+											<span class='category_number'>(0)</span>
+										</li>
+									</ul>
+								</li>
+								<li class='li_dropdown'>
+									<a href="#">Процессор</a>
+									<ul class="category_dropdown">
+										<li>
+											<input type="checkbox" id="checkbox10">
+											<label for="checkbox10">Intel Core i7</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox11">
+											<label for="checkbox11">Intel Core i5</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox13">
+											<label for="checkbox13">Intel Core i3</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox14">
+											<label for="checkbox14">Intel Pentium</label>
+											<span class='category_number'>(0)</span>
+										</li>
+									</ul>
+								</li>
+								<li class='li_dropdown'>
+									<a href="#">Объем оперативной памяти</a>
+									<ul class="category_dropdown">
+										<li>
+											<input type="checkbox" id="checkbox15">
+											<label for="checkbox15">2 ГБ</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox16">
+											<label for="checkbox16">4 ГБ</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox17">
+											<label for="checkbox17">6-8 ГБ</label>
+											<span class='category_number'>(0)</span>
+										</li>
+									</ul>
+								</li>
+								<li class='li_dropdown'>
+									<a href="#">Тип накопителя</a>
+									<ul class="category_dropdown">
+										<li>
+											<input type="checkbox" id="checkbox18">
+											<label for="checkbox18">SSD</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox19">
+											<label for="checkbox19">HDD</label>
+											<span class='category_number'>(0)</span>
+										</li>
+									</ul>
+								</li>
+								<li class='li_dropdown'>
+									<a href="#">Объём накопителя</a>
+									<ul class="category_dropdown">
+										<li>
+											<input type="checkbox" id="checkbox20">
+											<label for="checkbox20">до 500 ГБ</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox21">
+											<label for="checkbox21">500 ГБ - 750 ГБ</label>
+											<span class='category_number'>(0)</span>
+										</li>
+										<li>
+											<input type="checkbox" id="checkbox22">
+											<label for="checkbox22">1 ТБ - 2 ТБ</label>
+											<span class='category_number'>(0)</span>
+										</li>
+									</ul>
+								</li>
+								<li class='li_dropdown'>
+									<a href="#">Цена</a>
+									<ul class="category_dropdown">
+										<li>
+											<div class="product_price">
+												<p>
+													<input type="text" id="price_min"> - 
+													<input type="text" id="price_max"> грн
+												</p>
+												<div id="slider-range"></div>
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-9">
+					<h2 class="section_title">Ноутбуки</h2>
+					<div class="products_categories_tabs">
+						<div class="products_tab_item">
+							<div class="product-wrap">
+								<div class="products_tab_img">
+									<a href="card.html"><img src="img/product/product_menu.jpg" alt=""></a>
+								</div>
+								<div class="products_tab_name">
+									<a href="card.html"><h4>Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</h4></a>
+								</div>
+								<div class="products_tab_options">
+									<div class="products_tab_price"><strong>27 000</strong><span class="currency">грн</span></div>
+									<div class="products_tab_button"><a href="#" class="button_color">Купить</a></div>
+								</div>
+								<div class="product-stock-status clearfix">
+									<span class="in-stock">Есть в наличии</span>
+									<!-- <span class="not-stock">Нет в наличии</span> -->
+									<span class="product_article">Код 6315898</span>
+								</div>
+								<div class="products_tab_description">
+									<div class="tab_description_img"><img src="img/icon/corel-3.jpg" alt=""></div>
+									Диагональ дисплея - 15.6", разрешение - HD (1366 х 768), тип матрицы - TN+film, процессор - Intel Pentium 3825U (1.9 ГГц), объем оперативной памяти - 4 ГБ, объем HDD - 500 ГБ, видеокарта - NVIDIA GeForce 920MX, 2 ГБ, No ODD, Wi-Fi, Bluetooth, LAN (RJ-45), DOS, 2.3 кг, Black
+								</div>
+							</div>
+						</div>
+						<div class="products_tab_item">
+							<div class="product-wrap">
+								<div class="products_tab_img">
+									<a href="#"><img src="img/product/product_menu.jpg" alt=""></a>
+								</div>
+								<div class="products_tab_name">
+									<a href="#"><h4>Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</h4></a>
+								</div>
+								<div class="products_tab_options">
+									<div class="products_tab_price"><strong>27 000</strong><span class="currency">грн</span></div>
+									<div class="products_tab_button"><a href="#" class="button_color">Купить</a></div>
+								</div>
+								<div class="product-stock-status clearfix">
+									<span class="in-stock">Есть в наличии</span>
+									<!-- <span class="not-stock">Нет в наличии</span> -->
+									<span class="product_article">Код 6315898</span>
+								</div>
+								<div class="products_tab_description">
+									<div class="tab_description_img"><img src="img/icon/corel-3.jpg" alt=""></div>
+									Диагональ дисплея - 15.6", разрешение - HD (1366 х 768), тип матрицы - TN+film, процессор - Intel Pentium 3825U (1.9 ГГц), объем оперативной памяти - 4 ГБ, объем HDD - 500 ГБ, видеокарта - NVIDIA GeForce 920MX, 2 ГБ, No ODD, Wi-Fi, Bluetooth, LAN (RJ-45), DOS, 2.3 кг, Black
+								</div>
+							</div>
+						</div>
+						<div class="products_tab_item">
+							<div class="product-wrap">
+								<div class="products_tab_img">
+									<a href="#"><img src="img/product/product_menu.jpg" alt=""></a>
+								</div>
+								<div class="products_tab_name">
+									<a href="#"><h4>Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</h4></a>
+								</div>
+								<div class="products_tab_options">
+									<div class="products_tab_price"><strong>27 000</strong><span class="currency">грн</span></div>
+									<div class="products_tab_button"><a href="#" class="button_color">Купить</a></div>
+								</div>
+								<div class="product-stock-status clearfix">
+									<span class="in-stock">Есть в наличии</span>
+									<!-- <span class="not-stock">Нет в наличии</span> -->
+									<span class="product_article">Код 6315898</span>
+								</div>
+								<div class="products_tab_description">
+									<div class="tab_description_img"><img src="img/icon/corel-3.jpg" alt=""></div>
+									Диагональ дисплея - 15.6", разрешение - HD (1366 х 768), тип матрицы - TN+film, процессор - Intel Pentium 3825U (1.9 ГГц), объем оперативной памяти - 4 ГБ, объем HDD - 500 ГБ, видеокарта - NVIDIA GeForce 920MX, 2 ГБ, No ODD, Wi-Fi, Bluetooth, LAN (RJ-45), DOS, 2.3 кг, Black
+								</div>
+							</div>
+						</div>
+						<div class="products_tab_item">
+							<div class="product-wrap">
+								<div class="products_tab_img">
+									<a href="#"><img src="img/product/product_menu.jpg" alt=""></a>
+								</div>
+								<div class="products_tab_name">
+									<a href="#"><h4>Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</h4></a>
+								</div>
+								<div class="products_tab_options">
+									<div class="products_tab_price"><strong>27 000</strong><span class="currency">грн</span></div>
+									<div class="products_tab_button"><a href="#" class="button_color">Купить</a></div>
+								</div>
+								<div class="product-stock-status clearfix">
+									<span class="in-stock">Есть в наличии</span>
+									<!-- <span class="not-stock">Нет в наличии</span> -->
+									<span class="product_article">Код 6315898</span>
+								</div>
+								<div class="products_tab_description">
+									<div class="tab_description_img"><img src="img/icon/corel-3.jpg" alt=""></div>
+									Диагональ дисплея - 15.6", разрешение - HD (1366 х 768), тип матрицы - TN+film, процессор - Intel Pentium 3825U (1.9 ГГц), объем оперативной памяти - 4 ГБ, объем HDD - 500 ГБ, видеокарта - NVIDIA GeForce 920MX, 2 ГБ, No ODD, Wi-Fi, Bluetooth, LAN (RJ-45), DOS, 2.3 кг, Black
+								</div>
+							</div>
+						</div>
+						<div class="products_tab_item">
+							<div class="product-wrap">
+								<div class="products_tab_img">
+									<a href="#"><img src="img/product/product_menu.jpg" alt=""></a>
+								</div>
+								<div class="products_tab_name">
+									<a href="#"><h4>Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</h4></a>
+								</div>
+								<div class="products_tab_options">
+									<div class="products_tab_price"><strong>27 000</strong><span class="currency">грн</span></div>
+									<div class="products_tab_button"><a href="#" class="button_color">Купить</a></div>
+								</div>
+								<div class="product-stock-status clearfix">
+									<span class="in-stock">Есть в наличии</span>
+									<!-- <span class="not-stock">Нет в наличии</span> -->
+									<span class="product_article">Код 6315898</span>
+								</div>
+								<div class="products_tab_description">
+									<div class="tab_description_img"><img src="img/icon/corel-3.jpg" alt=""></div>
+									Диагональ дисплея - 15.6", разрешение - HD (1366 х 768), тип матрицы - TN+film, процессор - Intel Pentium 3825U (1.9 ГГц), объем оперативной памяти - 4 ГБ, объем HDD - 500 ГБ, видеокарта - NVIDIA GeForce 920MX, 2 ГБ, No ODD, Wi-Fi, Bluetooth, LAN (RJ-45), DOS, 2.3 кг, Black
+								</div>
+							</div>
+						</div>
+						<div class="products_tab_item">
+							<div class="product-wrap">
+								<div class="products_tab_img">
+									<a href="#"><img src="img/product/product_menu.jpg" alt=""></a>
+								</div>
+								<div class="products_tab_name">
+									<a href="#"><h4>Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</h4></a>
+								</div>
+								<div class="products_tab_options">
+									<div class="products_tab_price"><strong>27 000</strong><span class="currency">грн</span></div>
+									<div class="products_tab_button"><a href="#" class="button_color">Купить</a></div>
+								</div>
+								<div class="product-stock-status clearfix">
+									<span class="in-stock">Есть в наличии</span>
+									<!-- <span class="not-stock">Нет в наличии</span> -->
+									<span class="product_article">Код 6315898</span>
+								</div>
+								<div class="products_tab_description">
+									<div class="tab_description_img"><img src="img/icon/corel-3.jpg" alt=""></div>
+									Диагональ дисплея - 15.6", разрешение - HD (1366 х 768), тип матрицы - TN+film, процессор - Intel Pentium 3825U (1.9 ГГц), объем оперативной памяти - 4 ГБ, объем HDD - 500 ГБ, видеокарта - NVIDIA GeForce 920MX, 2 ГБ, No ODD, Wi-Fi, Bluetooth, LAN (RJ-45), DOS, 2.3 кг, Black
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="paginator">
+						<ul>
+							<li class='active'><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li class='next'><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	//=include ../include/footer.html
+	//=include ../include/modal_form.html
+</body>
+<script src="js/libs.min.js"></script>
+<script src="js/comon.js"></script>
+</html>
