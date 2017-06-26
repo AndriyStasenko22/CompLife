@@ -1,7 +1,7 @@
 .project{
 	.btn_prev, .btn_next{
-		border-color: #ddd;
-		color: #ddd;
+		border-color: #c5c2c2;
+		color: #c5c2c2;
 		font-size: 18px;
 	}
 }
@@ -53,6 +53,9 @@
 	.base_button{
 		margin-top: 20px;
 	}
+	.social_icon{
+		.social_icon();
+	}
 	@media only screen and (max-width : 767px){
 		&{
 			.social_icon{
@@ -80,14 +83,17 @@
 	position: relative;
 	.tab_layout{
 		background-color: rgba(28,42,50,.8);
-		.layout_icon a{
-			background-color: @footer_color;
-			border-color: @footer_color;
-			&:hover{
-				background-color: @base_color;
-				border-color: @base_color;
+		.layout_icon{
+			a{
 				color: #fff;
-				text-transform: uppercase;
+				background-color: @footer_color;
+				border-color: @footer_color;
+				&:hover{
+					background-color: @base_color;
+					border-color: @base_color;
+					color: #fff;
+					text-transform: uppercase;
+				}
 			}
 		}
 	}

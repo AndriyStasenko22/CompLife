@@ -6,37 +6,68 @@ header{
 			line-height: 25px;
 		}
 	}
-	.login_block{
+	.language{
 		float: right;
-		.base_button{
-			height: 35px;
-			line-height: 35px;
-			padding: 0 20px;
-			color: @base_color;
-			border-color: @base_color;
-			margin-right: 10px;
-			&:hover{
-				background-color: @base_color;
-				color: #fff;
+		li{
+			float: left;
+			margin-right: 5px;
+			&:last-child{
+				margin-right: 0;
+				a::after{
+					content: '';
+					margin-left: 0;
+				}
 			}
-		}
-		.login, .registration{
-			color: @title_color;
-			&:hover{
-				color: @base_color;
+			a{
+				color: @title_color;
+				&::after{
+					content: '|';
+					color: @title_color;
+					margin-left: 5px;
+				}
+				&:hover{
+					color: @base_color;
+				}
 			}
 		}
 	}
-	
 	.header_menu{
 		background-color: @base_color;
 		line-height: 69px;
 		box-shadow: 0px -1px 9px 0px rgba(50, 50, 50, 0.64);
 	}
+	.header_mobile_menu{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;	
+	}
 	.logo{
 		float: left;
 		img{
 			height: 50px;
+		}
+	}
+	@media only screen and (max-width : 1200px){
+		.header_menu .menu>li>a{
+			margin: 0 5px;
+		}
+	}
+	@media only screen and (max-width : 991px){
+		&{
+			.header_menu{
+				.menu>li>a{
+					font-size: 12px;
+				}
+				.dropdown_catalog_menu{
+					min-width: 600px;
+				}
+			}
+			.logo img{
+				height: 40px;
+			}
+			.header_options>li>a{
+				font-size: 20px;
+			}
 		}
 	}
 	@media only screen and (max-width : 767px){
@@ -52,86 +83,95 @@ header{
 					}
 				}
 			}
-			.header_menu{
-				line-height: 60px;
-				text-align: center;
+			.mobile-user-actions , .logo, .header_options{
+				width: 33%;
 			}
 			.logo{
 				float: none;
-				img{
-					height: 40px;
+				text-align: center;
+			}
+			.header_options
+			{
+				text-align: right;
+				&>li{
+					padding: 0 9px;
+					&:first-child{
+						padding: 0;
+					}
+					&>a{
+						font-size: 20px;
+					}
 				}
 			}
 		}
 	}
 }
-.header_busket{
+
+.header_options{
 	display: inline-block;
-	position: relative;
-	padding: 0 15px;
-	&:hover{
-		.hidden-busket{
-			visibility: visible;
-			opacity: 1;
-		}
-	}
-	.fa{
-		font-size: 25px;
-		color: #fff;
-		vertical-align: middle;
-		position: relative;
-		cursor: pointer;
-	}
-	.header_busket_quantity{
-		position: absolute;
-		text-align: center;
+	vertical-align: middle;
+	font-size: 0;
+	line-height: 1;
+	// line-height: 69px;
+	&>li{
 		display: inline-block;
-		width: 20px;
-		height: 20px;
-		color: #fff;
-		line-height: 18px;
-		font-size: 10px;
-		background-color: #63150d;
-		border: 1px solid  #fff;
-		bottom: -10px;
-		right: -10px;
-		border-radius: 50%;
-		font-weight: bold;
-	}
-}
-.header_login{
-	display: inline-block;
-	position: relative;
-	.fa{
-		font-size: 25px;
-		vertical-align: middle;
-		color: #fff;
-		transition: all 0.3s;
-		cursor: pointer;
-		&:hover{
-			color: @title_color;
+		position: relative;
+		padding: 0 10px;
+		// line-height: 1;
+		&:last-child{
+			padding-right: 0;
 		}
-	}
-	padding:0 15px;
-	.authorization-box{
-		display: none;
-		position: absolute;
-		width: 150px;
-		right: 0;
-		padding: 10px;
-		background-color: #fff;
-		z-index: 2;
-		li{
-			line-height: 28px;
-			a{
-				line-height: 28px;
-				color: @title_color;
-				display: inline-block;
-				transition: all 0.3s;
-				&:hover{
-					color: @base_color;
+		&>a{
+			position: relative;
+			color: #fff;
+			font-size: 25px;
+			line-height: 69px;
+			transition: all 0.3s;
+			.fa{
+				vertical-align: middle;
+			}
+		}
+		.header_busket_quantity, .header_scale_quantity{
+			position: absolute;
+			text-align: center;
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			color: #fff;
+			line-height: 16px;
+			font-size: 8px;
+			background-color: #63150d;
+			border: 1px solid  #fff;
+			bottom: -8px;
+			right: -8px;
+			border-radius: 50%;
+			font-weight: bold;
+		}
+		.authorization-box{
+			display: none;
+			position: absolute;
+			width: 150px;
+			right: 0;
+			background-color: #fff;
+			z-index: 2;
+			li{
+				a{
+					display: block !important;
+					padding: 0 10px;
+					font-size: 14px;
+					line-height: 40px;
+					color: @title_color;
+					display: inline-block;
+					transition: all 0.3s;
+					&:hover{
+						color: @base_color;
+						background-color: #eee;
+					}
 				}
 			}
+		}
+		&.header_login a:hover{
+			color: @title_color;
 		}
 	}
 }

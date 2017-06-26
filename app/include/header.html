@@ -11,11 +11,14 @@
 					</div>
 				</div>
 				<div class="hidden-xs col-sm-4">
-					<div class="login_block">
-						<a href="#" class="login">УКР</a> | 
-						<a href="#" class="registration">РУС</a>
-					</div>
-
+					<ul class="language">
+						<li>
+							<a href="#">УКР</a>
+						</li>
+						<li>
+							<a href="#">РУС</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -24,58 +27,97 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12">
-					<div class="mobile_menu_button visible-xs">
-						<i class="fa fa-bars" aria-hidden="true"></i>
-					</div>
-					<a href="index.html" class="logo"><img src="img/icon/logo.png" alt=""></a>
-					<div class="pull-right">
-						<ul class="menu hidden-xs">
-							<li class="active"><a href="index.html">главная</a></li>
-							<li class="li_dropdown">
-								<a href="services.html">услуги</a>
-								<ul class="dropdown_menu">
-									<li><a href="service.html">Разработка WEB-сайтов</a></li>
-									<li><a href="service.html">Автоматизация учета</a></li>
-									<li><a href="service.html">Печатная техника</a></li>
-									<li><a href="service.html">Компьютерная техника</a></li>
-									<li><a href="service.html">Программное обеспечение</a></li>
-									<li><a href="service.html">Торговое оборудование</a></li>
-								</ul>
-							</li>
-							<li class="li_dropdown catalog">
-								<a href="catalog.html">Каталог</a>
-								<ul class="dropdown_catalog_menu">
-									<div class="product-menu-block">
-										<a href="#">
-											<img src="img/product/product_menu.jpg">
-											<span class="product-title">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</span>
-										</a>
-									</div>
-									<div class="category_menu">
-										<p class="category_menu_title">Категории</p>
-										<ul class="category_menu_list">
-											<li><a href="catalog.html">Ноутбуки и Компьютеры</a></li>
-											<li><a href="catalog.html">Планшеты</a></li>
-											<li><a href="catalog.html">Принтера</a></li>
-											<li><a href="catalog.html">Торговое оборудование</a></li>
-										</ul>
-									</div>
-								</ul>
-							</li>
-							<li><a href="portfolio.html" class="menu_go_to" data-block='.portfolio'>портфолио</a></li>
-							<li><a href="about.html" class="menu_go_to" data-block='.about_us'>о нас</a></li>
-							<li><a href="contacts.html">контакты</a></li>
-						</ul>
-						<div class="header_busket">
-							<i class="fa fa-shopping-cart" aria-hidden="true">
-								<span class="header_busket_quantity">1</span>
-							</i>
+					<div class="hidden-xs">
+						<a href="index.html" class="logo"><img src="img/icon/logo.png" alt=""></a>
+						<div class="pull-right">
+							<ul class="menu hidden-xs">
+								<li class="active"><a href="index.html">главная</a></li>
+								<li class="li_dropdown">
+									<a href="services.html">услуги</a>
+									<ul class="dropdown_menu">
+										<li><a href="service.html">Разработка WEB-сайтов</a></li>
+										<li><a href="automation.html">Автоматизация учета</a></li>
+										<li><a href="service.html">Печатная техника</a></li>
+										<li><a href="service.html">Компьютерная техника</a></li>
+										<li><a href="service.html">Программное обеспечение</a></li>
+										<li><a href="service.html">Торговое оборудование</a></li>
+									</ul>
+								</li>
+								<li class="li_dropdown catalog">
+									<a href="catalog.html">Каталог</a>
+									<ul class="dropdown_catalog_menu">
+										<div class="product-menu-block">
+											<a href="#">
+												<img src="img/product/product_menu.jpg">
+												<span class="product-title">Acer Aspire ES1-571-30JH (NX.GCEEU.098) Black</span>
+											</a>
+										</div>
+										<div class="category_menu">
+											<p class="category_menu_title">Категории</p>
+											<ul class="category_menu_list">
+												<li><a href="catalog.html">Ноутбуки и Компьютеры</a></li>
+												<li><a href="catalog.html">Планшеты</a></li>
+												<li><a href="catalog.html">Принтера</a></li>
+												<li><a href="catalog.html">Торговое оборудование</a></li>
+											</ul>
+										</div>
+									</ul>
+								</li>
+								<li><a href="portfolio.html" class="menu_go_to" data-block='.portfolio'>портфолио</a></li>
+								<li><a href="about.html" class="menu_go_to" data-block='.about_us'>о нас</a></li>
+								<li><a href="contacts.html">контакты</a></li>
+							</ul>
+							<ul class="header_options">
+								<li class="header_login">
+									<a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
+									<ul class="authorization-box">
+										<li><a class='login' href="#user_login">Вход</a></li>
+										<li><a class='registration' href="#user_registration">Регистрация</a></li>
+									</ul>
+								</li>
+								<li class="header_busket">
+									<a href="#">
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<span class="header_busket_quantity">1</span>
+									</a>
+								</li>
+								<li class="header_scale">
+									<a href="compare.html">
+										<i class="fa fa-balance-scale" aria-hidden="true"></i>
+										<span class="header_scale_quantity">1</span>
+									</a>
+								</li>
+							</ul>
 						</div>
-						<div class="header_login">
-							<i class="fa fa-user" aria-hidden="true"></i>
-							<ul class="authorization-box">
-								<li><a class='login' href="#user_login">Вход</a></li>
-								<li><a class='registration' href="#user_registration">Регистрация</a></li>
+					</div>
+					<div class="visible-xs">
+						<div class="header_mobile_menu">
+							<div class="mobile-user-actions">
+								<div class="mobile_menu_button">
+									<i class="fa fa-bars" aria-hidden="true"></i>
+								</div>
+							</div>
+							<a href="index.html" class="logo"><img src="img/icon/logo.png" alt=""></a>
+							<ul class="header_options">
+								<li class="header_login">
+									<a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
+									<ul class="authorization-box">
+										<li><a class='login' href="#user_login">Вход</a></li>
+										<li><a class='registration' href="#user_registration">Регистрация</a></li>
+									</ul>
+								</li>
+								<li class="header_busket">
+									<a href="#">
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<span class="header_busket_quantity">1</span>
+									</a>
+								</li>
+								<li class="header_scale">
+									<a href="compare.html">
+										<i class="fa fa-balance-scale" aria-hidden="true"></i>
+										<span class="header_scale_quantity">1</span>
+									</a>
+								</li>
 							</ul>
 						</div>
 					</div>

@@ -9,7 +9,7 @@
 		right: 0;
 	}
 	.sidebar-cart-icon{
-		height: 110px;
+		height: 80px;
 		text-align: center;
 		margin-bottom: 30px;
 	}
@@ -32,17 +32,30 @@
 	.base_button{
 		width: 100%;
 	}
+	@media only screen and (max-width : 767px){
+		&{
+			padding: 25px;
+		}
+	}
 	@media only screen and (max-width : 480px){
 		&{
 			width: 260px;
 			right: -260px;
+			.sidebar-cart-list{
+				.cart_item_price{
+					font-size: 14px;
+				}
+				.cart-item-quantity{
+					font-size: 11px;
+					line-height: 1;
+				}
+			}
 		}
 	}
 }
 
 .sidebar-cart-list{
 	overflow-y: auto;
-	max-height: 33%;
 	&::-webkit-scrollbar{
 		width: 5px;
 		height: 8px;
