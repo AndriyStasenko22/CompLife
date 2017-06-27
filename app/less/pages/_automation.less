@@ -1,17 +1,24 @@
-.automation{
-	color: #333;
+.automation, .automation_rezalt, .automation_place{
 	padding: 50px 0;
+}
+.automation_baner, .automation_service{
+	padding: 80px 0;
+	@media only screen and (max-width : 1600px){
+		padding: 60px 0;
+	}
+}
+
+.automation{
 	.automation_description{
+		color: #333;
 		font-size: 18px;
 		strong{
 			color: #222;
-			// font-weight: 500;
 		}
 	}
 }
 .automation_baner{
-	padding: 80px;
-	background: url(../img/avtomatizat/avtomatizatsiya-torgovli-magazina.jpg) center center no-repeat;
+	background: url(../img/avtomatizat/avtomatizatsiya.jpg) center center no-repeat;
 	background-size: cover;
 	.automation_company_info h4{
 		line-height: 28px;
@@ -20,5 +27,135 @@
 	}
 	.automation_button .button_color{
 		box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+	}
+	@media only screen and (max-width : 767px){
+		&{
+			.automation_button{
+				text-align: center;
+			}
+		}
+	}
+}
+.automation_rezalt{
+	.automation_rezalt_list{
+		color: #333;
+		margin-top: 40px;
+		li{
+			position: relative;
+			min-height: 50px;
+			margin-bottom: 30px;
+			padding-left: 80px;
+			font-size: 18px;
+			font-family: @Ubuntu-Light;
+			img, &::before{
+				position: absolute;
+				content: '';
+				top: 0;
+				left: 0;
+				display: block;
+			}
+			&::before{
+				box-sizing: content-box;
+				width: 50px;
+				height: 50px;
+				border: 2px solid #d0d0d0;
+				border-radius: 22px;
+			}
+			img{
+				width: 55px;
+				height: 42px;
+				top: -3px;
+				left: 9px;
+				opacity: 1;
+			}
+		}
+	}
+}
+.automation_service{
+	position: relative;
+	color: #fff;
+	background: url(../img/avtomatizat/bg-supermarket1.jpg) center center no-repeat;
+	background-size: cover;
+	.automation_service_image{
+		position: absolute;
+		bottom: 0;
+		right: 5%;
+		max-width: 50%;
+	}
+	.automation_service_title{
+		margin: 0 0 30px;
+		color: #333;
+	}
+	.automation_service_list{
+		li{
+			list-style: disc;
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+	}
+	@media only screen and (max-width : 767px){
+		&{
+			.automation_service_list{
+				margin-left: 15px;
+			}
+		}
+	}
+}
+.automation_place{
+	.automation_place_wrap{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		.automation_place_item{
+			width: 31%;
+			position: relative;
+			margin-top: 35px;
+			overflow: hidden;
+			img{
+				transition: all 0.5s;
+			}
+			&:hover img{
+				transform: scale(1.1);
+			}
+			span{
+				position: absolute;
+				left: 20px;
+				bottom: 10px;
+				color: #fff;
+				font-size: 30px;
+				z-index: 10;
+			}
+			&::after{
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				display: block;
+				z-index: 9;
+				background: linear-gradient(to top, rgba(0,0,0, 0.7), rgba(0,0,0, 0.1));
+			}
+		}
+	}
+	@media only screen and (max-width : 992px){
+		&{
+			.automation_place_wrap .automation_place_item{
+				width: 47%;
+			}
+		}
+	}
+	@media only screen and (max-width : 600px){
+		&{
+			.automation_place_wrap{
+				justify-content: center;
+				.automation_place_item{
+					width: 90%;
+					span{
+						font-size: 24px;
+					}
+				}
+			}
+		}
 	}
 }

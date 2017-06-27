@@ -2,6 +2,51 @@
 	.short_info{
 		margin-bottom: 30px;
 	}
+	.service_proces_img{ 
+		position: relative;
+		text-align: right;
+		img{
+			box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+			animation-name: fadeInRight;
+			animation-duration: 1s;
+			&:first-child{
+				position: absolute;
+				top: 20%;
+				right: 50%;
+			}
+			&:nth-child(2){
+				position: absolute;
+				top: 10%;
+				right: 30%;
+				animation-delay: 0.6s;
+			}
+			&:last-child{
+				position: relative;
+				right: 10%;
+				animation-delay: 1.2s;
+
+			}
+		}
+	}
+	@media only screen and (max-width : 992px){
+		&{
+			.service_proces_img{
+				margin: 5% 0px 30%;
+				img{
+					width: 50%;
+					&:first-child{
+						right: 45%;
+					}
+					&:nth-child(2){
+						right: 25%
+					}
+					&:last-child{
+						right: 5%;
+					}
+				}
+			}
+		}
+	}
 }
 .panel{
 	position: relative;
@@ -30,7 +75,7 @@
 			position: relative;
 			width: 12px;
 			height: 12px;
-			margin: 22px 0;
+			margin: 15px 0;
 			&::before{
 				content: '';
 				width: 100%;
@@ -56,7 +101,7 @@
 		a{
 			position: relative;
 			display: block;
-			line-height: 60px;
+			line-height: 45px;
 			transition: all 0.3s;
 			span{
 				position: absolute;
@@ -142,6 +187,64 @@
 			.services-block{
 				width: 100%;
 			}
+		}
+	}
+}
+.service_type{
+	padding: 70px 0;
+	.section_title{
+		margin: 50px 0 100px;
+	}
+	.service_type_wrap{
+		padding-top: 5%;
+	}
+	.service_type_title{
+		font-size: ~"calc(18px + 2vw)";
+		color: #585858;
+		font-family: @Ubuntu-Bold;
+		margin-top: 50px;
+	}
+	.service_type_description{
+		font-size: 16px;
+	}
+	.window-icon{
+		width: 70%;
+	}
+	@media only screen and (max-width : 480px){
+		&{
+			.service_type_title{
+				margin-top: 0;
+			}
+		}
+	}
+}
+.visit{
+	background-color: #f3f3f3;
+	.window-icon{
+		width: 35%;
+		margin-left: 65%;
+	}
+	@media only screen and (max-width : 480px){
+		.window-icon{
+			width: 60%;
+			margin-left: 40%;
+		}
+	}
+}
+.characteristics{
+	.characteristics_wrap{
+		display: flex;
+		justify-content: center;
+	}
+	.characteristics_item{
+		display: inline-block;
+	}
+	.characteristics_list{
+		margin-left: 20px;
+		li{
+			list-style-type: disc;
+			font-size: 18px;
+			margin-bottom: 25px;
 		}
 	}
 }
