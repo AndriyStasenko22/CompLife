@@ -1,8 +1,48 @@
 .project{
+		padding: 50px 0;
 	.btn_prev, .btn_next{
 		border-color: #c5c2c2;
 		color: #c5c2c2;
 		font-size: 18px;
+	}
+	.project_image_block{
+		position: relative;
+		// margin-bottom: 50px;
+		padding: 50px 0;
+		span{
+			display: inline-block;
+		}
+		.destop{
+			position: relative;
+			animation-delay: 0.3s;
+		}
+		.phone, .tablet{
+			position: absolute;
+		}
+		.tablet{
+			right: 0;
+			top: 25%;
+			animation-delay: 0.6s;
+		}
+		.phone{
+			right: 25%;
+			top: 60%;
+			animation-delay: 0.9s;
+		}
+	}
+	@media only screen and (max-width : 767px){
+		&{
+			// .project_image_block{
+			// 	width: 60%;
+			// }
+			// .project_image_block{
+			// 	.phone, .tablet{
+			// 		img{
+			// 			width: 80%;	
+			// 		}
+			// 	}
+			// }
+		}
 	}
 }
 
@@ -66,7 +106,7 @@
 }
 
 .project_slider_title{
-	margin-top: 100px;
+	margin-top: 50px;
 	.section_title{
 		display: inline-block;
 	}

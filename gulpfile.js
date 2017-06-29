@@ -13,16 +13,16 @@ gulp.task('less', function(){
     .pipe(less())
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Префиксы
         .pipe(cssnano())
-        .pipe(gulp.dest('app/css')); // Результат в папку app/css
-        // .pipe(browserSync.reload({stream: true})); // Обновляем CSS на странице при изменении
+        .pipe(gulp.dest('app/css')) // Результат в папку app/css
+        .pipe(browserSync.reload({stream: true})); // Обновляем CSS на странице при изменении
     });
 
 // Таск "include"
 gulp.task('include', function() {
     return gulp.src("app/page/*.html") // Источники
     .pipe(include())
-    .pipe(gulp.dest("app"));
-    // .pipe(browserSync.reload({stream: true}));
+    .pipe(gulp.dest("app"))
+    .pipe(browserSync.reload({stream: true}));
 });
 // gulp.task('icons', function() {
 //   return gulp.src(config.bowerDir + '/app/libs/font-awesome/fonts/**.*')
@@ -40,8 +40,8 @@ gulp.task('scripts', function() {
         'app/libs/fancybox-2.1.7/source/jquery.fancybox.js', //FancyBox
         'app/libs/jquery-mousewheel/jquery.mousewheel.min.js',
         'app/libs/jquery-mixitup/dist/mixitup.min.js', //MixitUp
-        'app/libs/vivus/dist/vivus.min.js', //SVG drowin
-        'app/libs/wow/dist/wow.min.js',
+        'app/libs/vivus/dist/vivus.min.js', // SVG drowin
+        'app/libs/wow/dist/wow.min.js', // Wow.js
         'app/libs/jquery-ui/jquery-ui.min.js',
         'app/libs/jqueryui-touch-punch/jquery.ui.touch-punch.min.js',
         'app/libs/jquery-touchswipe/jquery.touchSwipe.min.js',
@@ -64,11 +64,8 @@ gulp.task('browser-sync', function() {
 
 // Таск "watch"
 gulp.task('watch', ['browser-sync', 'less', 'scripts', 'include'], function() {
-    // gulp.watch('app/less/**/*.less', ['less']); // Наблюдение за less файлами
-    gulp.watch('app/less/**/*.less', browserSync.reload); // Наблюдение за less файлами
-    // gulp.watch('app/page/*.html', ['include']); // Наблюдение за HTML файлами в корне проекта
-    gulp.watch('app/page/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
-    // gulp.watch('app/js/**/*.js', ['scripts']); // Наблюдение за JS файлами в папке js
+    gulp.watch('app/less/**/*.less', ['less']); // Наблюдение за less файлами
+    gulp.watch('app/page/*.html', ['include']); // Наблюдение за HTML файлами в корне проекта
     gulp.watch('app/js/**/*.js', browserSync.reload); // Наблюдение за JS файлами в папке js
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
 });

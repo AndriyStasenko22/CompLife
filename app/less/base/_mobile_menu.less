@@ -31,13 +31,20 @@
 		display: flex;
 		justify-content: space-around;
 		.button_transparent{
-			.base_button(35px, 20px);
-			font-size: 13px;
+			.base_button(35px, 0px);
+			font-size: 12px;
+			width: 45%;
 		}
 	}
 	.menu, .mob_dropdown_menu{
 		display: block;
 		&>li{
+			&>ul{
+				padding: 0 15px 0 25px;
+				a{
+					font-size: 11px;
+				}
+			}
 			display: block;
 			img{
 				height: 35px;
@@ -62,7 +69,7 @@
 	.mob_dropdown_menu{
 		display: none;
 		li{
-			padding: 0 15px 0 25px;
+			// padding: 0 15px 0 25px;
 			a{
 				font-size: 11px;
 			}
