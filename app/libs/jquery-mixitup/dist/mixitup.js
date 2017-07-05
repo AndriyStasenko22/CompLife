@@ -1,7 +1,7 @@
 /**!
- * MixItUp v3.1.11
+ * MixItUp v3.2.1
  * A high-performance, dependency-free library for animated filtering, sorting and more
- * Build df0ecdbb-7676-4e95-b437-ba1d1a4bff66
+ * Build ea75207d-1036-4d1b-af10-9800590d2906
  *
  * @copyright Copyright 2014-2017 KunkaLabs Limited.
  * @author    KunkaLabs Limited.
@@ -18,8 +18,7 @@
     'use strict';
 
     var mixitup = null,
-        h       = null,
-        jq      = null;
+        h       = null;
 
     (function() {
         var VENDORS = ['webkit', 'moz', 'o', 'ms'],
@@ -408,17 +407,6 @@
      *
      * var mixer = mixitup('.container');
      *
-     * @example <caption>Example 2: Activating the legacy jQuery API</caption>
-     *
-     * import mixitup from 'mixitup';
-     * import $ from 'jquery';
-     *
-     * mixitup.use($);
-     *
-     * // MixItUp can now be used as a jQuery plugin, as per the v2 API
-     *
-     * $('.container').mixitup();
-     *
      * @public
      * @name     use
      * @memberof mixitup
@@ -447,54 +435,9 @@
             // jQuery
 
             mixitup.libraries.$ = extension;
-
-            // Register MixItUp as a jQuery plugin to allow v2 API
-
-            mixitup.registerJqPlugin(extension);
         }
 
         mixitup.Base.prototype.callActions.call(mixitup, 'afterUse', arguments);
-    };
-
-    /**
-     * @private
-     * @static
-     * @since   3.0.0
-     * @param   {jQuery} $
-     * @return  {void}
-     */
-
-    mixitup.registerJqPlugin = function($) {
-        $.fn.mixItUp = function() {
-            var method  = arguments[0],
-                config  = arguments[1],
-                args    = Array.prototype.slice.call(arguments, 1),
-                outputs = [],
-                chain   = [];
-
-            chain = this.each(function() {
-                var instance = null,
-                    output   = null;
-
-                if (method && typeof method === 'string') {
-                    // jQuery-UI method syntax
-
-                    instance = mixitup.instances[this.id];
-
-                    output = instance[method].apply(instance, args);
-
-                    if (typeof output !== 'undefined' && output !== null && typeof output.then !== 'function') outputs.push(output);
-                } else {
-                    mixitup(this, config);
-                }
-            });
-
-            if (outputs.length) {
-                return outputs.length > 1 ? outputs : outputs[0];
-            } else {
-                return chain;
-            }
-        };
     };
 
     mixitup.instances   = {};
@@ -2301,6 +2244,78 @@
     mixitup.ConfigAnimation.prototype.constructor = mixitup.ConfigAnimation;
 
     /**
+     * A group of properties relating to the behavior of the Mixer.
+     *
+     * @constructor
+     * @memberof    mixitup.Config
+     * @name        behavior
+     * @namespace
+     * @public
+     * @since       3.1.12
+     */
+
+    mixitup.ConfigBehavior = function() {
+        mixitup.Base.call(this);
+
+        this.callActions('beforeConstruct');
+
+        /**
+         * A boolean dictating whether to allow "live" sorting of the mixer.
+         *
+         * Because of the expensive nature of sorting, MixItUp makes use of several
+         * internal optimizations to skip redundant sorting operations, such as when
+         * the newly requested sort command is the same as the active one. The caveat
+         * to this optimization is that "live" edits to the value of a target's sorting
+         * attribute will be ignored when requesting a re-sort by the same attribute.
+         *
+         * By setting to `behavior.liveSort` to `true`, the mixer will always re-sort
+         * regardless of whether or not the sorting attribute and order have changed.
+         *
+         * @example <caption>Example: Enabling `liveSort` to allow for re-sorting</caption>
+         *
+         * var mixer = mixitup(containerEl, {
+         *     behavior: {
+         *         liveSort: true
+         *     },
+         *     load: {
+         *         sort: 'edited:desc'
+         *     }
+         * });
+         *
+         * var target = containerEl.children[3];
+         *
+         * console.log(target.getAttribute('data-edited')); // '2015-04-24'
+         *
+         * target.setAttribute('data-edited', '2017-08-10'); // Update the target's edited date
+         *
+         * mixer.sort('edited:desc')
+         *     .then(function(state) {
+         *         // The target is now at the top of the list
+         *
+         *         console.log(state.targets[0] === target); // true
+         *     });
+         *
+         * @name        liveSort
+         * @memberof    mixitup.Config.behavior
+         * @instance
+         * @type        {boolean}
+         * @default     false
+         */
+
+        this.liveSort = false;
+
+        this.callActions('afterConstruct');
+
+        h.seal(this);
+    };
+
+    mixitup.BaseStatic.call(mixitup.ConfigBehavior);
+
+    mixitup.ConfigBehavior.prototype = Object.create(mixitup.Base.prototype);
+
+    mixitup.ConfigBehavior.prototype.constructor = mixitup.ConfigBehavior;
+
+    /**
      * A group of optional callback functions to be invoked at various
      * points within the lifecycle of a mixer operation.
      *
@@ -3759,6 +3774,7 @@
         this.callActions('beforeConstruct');
 
         this.animation          = new mixitup.ConfigAnimation();
+        this.behavior           = new mixitup.ConfigBehavior();
         this.callbacks          = new mixitup.ConfigCallbacks();
         this.controls           = new mixitup.ConfigControls();
         this.classNames         = new mixitup.ConfigClassNames();
@@ -7745,7 +7761,7 @@
                             frag.appendChild(self.dom.document.createTextNode(' '));
                         }
 
-                        self.insertDatasetFrag(frag, target.dom.el, self.targets.indexOf(target), insertedTargets);
+                        self.insertDatasetFrag(frag, target.dom.el, insertedTargets);
 
                         frag = null;
                     }
@@ -7763,7 +7779,7 @@
                     frag.appendChild(self.dom.document.createTextNode(' '));
                 }
 
-                self.insertDatasetFrag(frag, nextEl, self.dom.targets.length, insertedTargets);
+                self.insertDatasetFrag(frag, nextEl, insertedTargets);
             }
 
             for (i = 0; data = operation.startDataset[i]; i++) {
@@ -7795,20 +7811,20 @@
          * @since   3.1.5
          * @param   {DocumentFragment}          frag
          * @param   {(HTMLElement|null)}        nextEl
-         * @param   {number}                    insertionIndex
          * @param   {Array.<mixitup.Target>}    targets
          * @return  {void}
          */
 
-        insertDatasetFrag: function(frag, nextEl, insertionIndex, targets) {
+        insertDatasetFrag: function(frag, nextEl, targets) {
             var self = this;
+            var insertAt = nextEl ? Array.from(self.dom.parent.children).indexOf(nextEl) : self.targets.length;
 
             self.dom.parent.insertBefore(frag, nextEl);
 
             while (targets.length) {
-                self.targets.splice(insertionIndex, 0, targets.shift());
+                self.targets.splice(insertAt, 0, targets.shift());
 
-                insertionIndex++;
+                insertAt++;
             }
         },
 
@@ -7826,6 +7842,7 @@
                 result  = false;
 
             if (
+                self.config.behavior.liveSort ||
                 sortCommandA.order       === 'random' ||
                 sortCommandA.attribute   !== sortCommandB.attribute ||
                 sortCommandA.order       !== sortCommandB.order ||
@@ -8524,6 +8541,10 @@
                 self.getTweenData(operation);
             }
 
+            if (operation.willSort) {
+                self.targets = operation.newOrder;
+            }
+
             operation.newState = self.buildState(operation);
 
             return self.callFilters('operationMappedGetOperation', operation, arguments);
@@ -9109,6 +9130,87 @@
             var self = this;
 
             self.indexTargets();
+        },
+
+        /**
+         * Forces the re-rendering of all targets when using the Dataset API.
+         *
+         * By default, targets are only re-rendered when `data.dirtyCheck` is
+         * enabled, and an item's data has changed when `dataset()` is called.
+         *
+         * The `forceRender()` method allows for the re-rendering of all targets
+         * in response to some arbitrary event, such as the changing of the target
+         * render function.
+         *
+         * Targets are rendered against their existing data.
+         *
+         * @example
+         *
+         * .forceRender()
+         *
+         * @example <caption>Example: Force render targets after changing the target render function</caption>
+         *
+         * console.log(container.innerHTML);
+         *
+         * // <div class="container">
+         * //     <div class="mix">Foo</div>
+         * //     <div class="mix">Bar</div>
+         * // </div>
+         *
+         * mixer.configure({
+         *     render: {
+         *         target: (item) => `<a href="/${item.slug}/" class="mix">${item.title}</a>`
+         *     }
+         * });
+         *
+         * mixer.forceRender();
+         *
+         * console.log(container.innerHTML);
+         *
+         * // <div class="container">
+         * //     <a href="/foo/" class="mix">Foo</div>
+         * //     <a href="/bar/" class="mix">Bar</div>
+         * // </div>
+         *
+         * @public
+         * @instance
+         * @since 3.2.1
+         * @return {void}
+         */
+
+        forceRender: function() {
+            var self    = this,
+                target  = null,
+                el      = null,
+                id      = '';
+
+            for (id in self.cache) {
+                target = self.cache[id];
+
+                el = target.render(target.data);
+
+                if (el !== target.dom.el) {
+                    // Update target element reference
+
+                    if (target.isInDom) {
+                        target.unbindEvents();
+
+                        self.dom.parent.replaceChild(el, target.dom.el);
+                    }
+
+                    if (!target.isShown) {
+                        el.style.display = 'none';
+                    }
+
+                    target.dom.el = el;
+
+                    if (target.isInDom) {
+                        target.bindEvents();
+                    }
+                }
+            }
+
+            self.state = self.buildState(self.lastOperation);
         },
 
         /**
@@ -10513,7 +10615,6 @@
         this.sort               = mixer.sort.bind(mixer);
         this.changeLayout       = mixer.changeLayout.bind(mixer);
         this.multimix           = mixer.multimix.bind(mixer);
-        this.multiMix           = mixer.multimix.bind(mixer);
         this.dataset            = mixer.dataset.bind(mixer);
         this.tween              = mixer.tween.bind(mixer);
         this.insert             = mixer.insert.bind(mixer);
@@ -10524,6 +10625,7 @@
         this.remove             = mixer.remove.bind(mixer);
         this.destroy            = mixer.destroy.bind(mixer);
         this.forceRefresh       = mixer.forceRefresh.bind(mixer);
+        this.forceRender        = mixer.forceRender.bind(mixer);
         this.isMixing           = mixer.isMixing.bind(mixer);
         this.getOperation       = mixer.getOperation.bind(mixer);
         this.getConfig          = mixer.getConfig.bind(mixer);
@@ -10548,14 +10650,10 @@
             return mixitup;
         });
     } else if (typeof window.mixitup === 'undefined' || typeof window.mixitup !== 'function') {
-        window.mixitup = window.mixItUp = mixitup;
-    }
-
-    if ((jq = window.$ || window.jQuery) && jq.fn.jquery) {
-        mixitup.registerJqPlugin(jq);
+        window.mixitup = mixitup;
     }
     mixitup.BaseStatic.call(mixitup.constructor);
 
     mixitup.NAME = 'mixitup';
-    mixitup.CORE_VERSION = '3.1.11';
+    mixitup.CORE_VERSION = '3.2.1';
 })(window);

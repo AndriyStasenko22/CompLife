@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	
+	console.log("hellow");
 	// initialize();
 	wow = new WOW(
 	{
