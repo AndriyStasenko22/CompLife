@@ -7,6 +7,16 @@ var gulp         = require('gulp'), // Подключаем gulp
     cssnano      = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
     include      = require("gulp-include"); // Подключаем gulp-include (для подгрузки htlm блоков)
 
+// Таск "browser-sync"
+gulp.task('browser-sync', function() {
+    browserSync({ // Выполняем browser Sync
+        server: { // Определяем параметры сервера
+            baseDir: 'app' // Директория для сервера - app
+        },
+        notify: false // Отключаем уведомления
+    });
+});
+
 // Таск "LESS"
 gulp.task('less', function(){
     return gulp.src('app/less/main.less') // Источник
@@ -21,13 +31,8 @@ gulp.task('less', function(){
 gulp.task('include', function() {
     return gulp.src("app/page/*.html") // Источники
     .pipe(include())
-    .pipe(gulp.dest("app"))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(gulp.dest("app"));
 });
-// gulp.task('icons', function() {
-//   return gulp.src(config.bowerDir + '/app/libs/font-awesome/fonts/**.*')
-//     .pipe(gulp.dest('./public/fonts'));
-// });
 
 // Таск "scripts"
 gulp.task('scripts', function() {
@@ -49,26 +54,16 @@ gulp.task('scripts', function() {
         ])
         .pipe(concat('libs.min.js')) // Собираем их в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл
-        .pipe(gulp.dest('app/js')); // Выгружаем в папку app/js
-        // .pipe(browserSync.reload({stream: true}));
+        .pipe(gulp.dest('app/js')) // Выгружаем в папку app/js
+        .pipe(browserSync.reload({stream: true}));
     });
-
-// Таск "browser-sync"
-gulp.task('browser-sync', function() {
-    browserSync({ // Выполняем browser Sync
-        server: { // Определяем параметры сервера
-            baseDir: 'app' // Директория для сервера - app
-        },
-        notify: false // Отключаем уведомления
-    });
-});
 
 // Таск "watch"
-gulp.task('watch', ['browser-sync', 'less', 'scripts', 'include'], function() {
+gulp.task('watch', ['less', 'scripts', 'include'], function() {
     gulp.watch('app/less/**/*.less', ['less']); // Наблюдение за less файлами
     gulp.watch('app/page/*.html', ['include']); // Наблюдение за HTML файлами в корне проекта
-    gulp.watch('app/js/**/*.js', browserSync.reload); // Наблюдение за JS файлами в папке js
+    gulp.watch('app/js/*.js', ['scripts']); // Наблюдение за JS файлами в папке js
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['browser-sync', 'watch']);
