@@ -35,6 +35,7 @@
     "jqueryui-touch-punch": "*"
   },
   "devDependencies": {
-    "jquery-touchswipe": "^1.6.18"
+    "jquery-touchswipe": "^1.6.18",
+    "waypoints": "^4.0.1"
   }
 }

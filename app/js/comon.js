@@ -259,10 +259,9 @@ $(document).ready(function() {
 		$('.call_icon img').removeClass('active');
 		$('.call_icon img').eq($(this).index()).addClass('active');
 	});
-
 	// процентні лінії
-	if($('.progres').length >0){
-		var flagproc=1;
+	if($('.progres').length > 0){
+		var flagproc=true;
 		$(document).scroll(function() {
 			if($(window).scrollTop() >= $('.progres').offset().top-200 && flagproc){
 				$('.progres_bar').each(function() {
@@ -272,9 +271,6 @@ $(document).ready(function() {
 			}
 		});
 	}
-
-
-
 
 	// монітор svg
 	if($('#mac').length >0){
