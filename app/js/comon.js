@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	
-	console.log("hellow");
 	// initialize();
 	wow = new WOW(
 	{
@@ -13,7 +12,8 @@ $(document).ready(function() {
                   )
 	wow.init();
 
-	$('#Grid').mixItUp();
+	// $('#Grid').mixItUp();
+	var mix = mixitup('#Grid');
 
 	$(".open_fancykbox").fancybox();
 
