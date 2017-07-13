@@ -25,16 +25,13 @@
 
 // Опыт работы
 .experience{
-	// color: #fff;
 	color: #000;
-	// background-color: @base_color;
-	// background-color: @portfolio_color;
-	background: url(../../img/icon/circles-25.jpg) top center no-repeat;
+	background: url(../img/icon/circles-25.jpg) top center no-repeat;
 	box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);
 	background-size: cover;
 	font-family: @Roboto-Regular;
 	font-size: 24px;
-	padding: 40px 0;
+	padding: 1.6em 0;
 	.experience_info{
 		p{
 			display: inline-block;
@@ -60,12 +57,10 @@
 		&{
 			font-size: 16px;
 			text-align: center;
-			padding: 25px;
-			p{
+			p, span{
 				display: block;
 			}
 			span{
-				display: block;
 				font-size: 20px;
 			}
 		}
@@ -117,9 +112,9 @@
 		line-height: 22px;
 		ul{
 			margin-left: 35px;
-		}
-		ul, li{
-			list-style: square;
+			li{
+				list-style: square;
+			}
 		}
 	}
 	@media only screen and (max-width : 992px){
@@ -163,9 +158,8 @@
 		margin-bottom: 50px;
 		.filter_list{
 			display: inline-block;
-			&>li{
-				display: block;
-				float: left;
+			& > li{
+				display: inline-block;
 				margin-right: 40px;
 				height: auto;
 				&:last-child{
@@ -189,10 +183,9 @@
 					text-transform: uppercase;
 					font-size: 16px;
 					font-weight: 600;
-					line-height: 40px;
+					line-height: 2.5em;
 					display: inline-block;
 					position: relative;
-					transition: all 0.3s;
 					&:hover{
 						color: @base_color;
 						&::before{
@@ -201,23 +194,15 @@
 							width: 100%;
 						}
 					}
-					&::before{
-						content: "";
-						display: block;
-						position: absolute;
-						width: 0px;
-						height: 1px;
+					&::before:extend(.menu>li>a::before){
 						background-color: @base_color;
 						bottom: 0;
-						left: 50%;
-						transition: all 0.3s;
 					}
 				}
 			}
 		}
 	}
 	.tab_item{
-		// border: 1px solid @base_color;
 		min-height: 200px;
 		max-height: 360px;
 		overflow: hidden;
@@ -233,8 +218,6 @@
 					&:hover{
 						background-color: @base_color;
 						border-color: @base_color;
-						color: #fff;
-						text-transform: uppercase;
 					}
 				}
 			}
@@ -322,7 +305,7 @@
 		width: 25px;
 		text-align: center;
 		top: -22px;
-		transform: translateX(-12px);
+		transform: translateX(-50%);
 		left: 0%;
 		color: red;
 		font-size: 16px;
@@ -380,18 +363,7 @@
 			}
 		}
 		&:hover{
-			.tab_layout{
-				opacity: 1;
-				transform: scale(1);
-			}
-			.tab_layout_T, .tab_layout_B{
-				width: 90%;
-				transition-delay: 0.3s;
-			}
-			.tab_layout_L, .tab_layout_R{
-				height: 90%;
-				transition-delay: 0.6s;
-			}
+			&:extend(.portfolio .tab_item:hover all);
 		}
 	}
 	.comand_person_info{
@@ -442,9 +414,9 @@
 		border-radius: 50%;
 		overflow: hidden;
 		position: absolute;
-		top: -55px;
+		top: 0;
 		left: 50%;
-		margin-left: -55px;
+		transform: translate(-50%, -50%);
 	}
 	.say_user_info{
 		text-transform: uppercase;
