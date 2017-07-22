@@ -2,10 +2,12 @@
 	display: none;
 }
 .ui-common-form{
-	width: 270px;
+	width: 250px;
 	margin-top: 20px;
 	.user-form-checkbox{
-		.checkbox_style(15px, 15px, 10px); // стилі checkbox
+		// стилі checkbox 
+		&:extend(.checkbox_style_base all);
+		.checkbox_style(15px, 15px, 10px);
 	}
 	.form-header-title{
 		text-align: center;

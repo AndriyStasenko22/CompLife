@@ -1,18 +1,21 @@
 .shop-list-categories{
-	.checkbox_style(24px, 24px); // стилі checkbox
+	
+	// стилі checkbox 
+	&:extend(.checkbox_style_base all);
+	.checkbox_style(24px, 24px);
+
 	.shop_categories_header{
 		color: #fff;
 		display: block;
 		width: 100%;
 		text-align: center;
 		line-height: 60px;
-		font-size: 21px;
+		font-size: 20px;
 		background-color: @base_color;
 		border-top-right-radius: 3px;
 		border-top-left-radius: 3px;
 	}
 	.categories-list{
-		// padding: 25px 10px;
 		padding: 25px 0;
 		border: 1px solid  #eee;
 		border-width: 0 1px 1px 1px;
@@ -82,6 +85,16 @@
 	.category_number{
 		float: right;
 		font-size: 14px;
+	}
+	@media only screen and (max-width : 1200px){
+		&{
+			.shop_categories_header{
+				font-size: 16px;
+			}
+			.category-list>li>a{
+				font-size: 13px;
+			}
+		}
 	}
 	@media only screen and (max-width : 767px){
 		margin-bottom: 30px;

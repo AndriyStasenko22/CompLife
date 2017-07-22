@@ -13,7 +13,10 @@ $(document).ready(function() {
 	wow.init();
 
 	// $('#Grid').mixItUp();
-	var mix = mixitup('#Grid');
+
+	if ($('#Grid').length > 0) {
+		var mix = mixitup('#Grid');
+	}
 
 	$(".open_fancykbox").fancybox();
 
@@ -291,7 +294,7 @@ $(document).ready(function() {
 	}
 
 	// бокове мобільне меню, бокова корзина
-	$('.mobile_menu_button, .header_busket a').click(function() {
+	$('.mobile_menu_button, .header_busket>a').click(function() {
 		if($(this).hasClass('mobile_menu_button')){
 			$('.mob_menu').addClass('active');
 		}

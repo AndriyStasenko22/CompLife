@@ -85,11 +85,9 @@
 			height: 26px;
 			text-align: center;
 			display: block;
-			line-height: 24px;
 			border-radius: 50%;
 			border: 1px solid #cfcfcf;
 			background-color: transparent;
-			font-size: 18px;
 			font-weight: bold;
 			cursor: pointer;
 			vertical-align: top;
@@ -130,9 +128,11 @@
 	}
 }
 .checkout_delivery_chekbox{
-	.checkbox_style(20px, 20px, 12px); // стилі checkbox
-}
 
+	// стилі checkbox 
+	&:extend(.checkbox_style_base all);
+	.checkbox_style(20px, 20px, 12px);
+}
 .checkout_price_list{
 	.price_list li{
 		display: flex;

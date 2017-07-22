@@ -6,6 +6,7 @@ var gulp         = require('gulp'), // Подключаем gulp
 	autoprefixer = require('gulp-autoprefixer'), // Подключаем библиотеку для автоматического добавления префиксов
     cssnano      = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
     include      = require("gulp-include"); // Подключаем gulp-include (для подгрузки htlm блоков)
+    rename      = require('gulp-rename');
 
 // Таск "browser-sync"
 gulp.task('browser-sync', function() {
@@ -20,7 +21,7 @@ gulp.task('browser-sync', function() {
 // Таск "LESS"
 gulp.task('less', function(){
     return gulp.src('app/less/main.less') // Источник
-    .pipe(less())
+        .pipe(less())
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Префиксы
         .pipe(cssnano())
         .pipe(gulp.dest('app/css')) // Результат в папку app/css
@@ -58,11 +59,12 @@ gulp.task('scripts', function() {
     });
 
 // Таск "watch"
-gulp.task('watch', ['less', 'scripts', 'include'], function() {
+gulp.task('watch', ['browser-sync', 'less', 'scripts', 'include'], function() {
     gulp.watch('app/less/**/*.less', ['less']); // Наблюдение за less файлами
-    gulp.watch('app/page/*.html', ['include']); // Наблюдение за HTML файлами в корне проекта
+    gulp.watch('app/include/*.html', ['include']); // Наблюдение за HTML файлами в корне проекта
+     gulp.watch('app/page/*.html', ['include']); // Наблюдение за HTML файлами в корне проекта
     gulp.watch('app/js/*.js', browserSync.reload); // Наблюдение за JS файлами в папке js
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
 });
 
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['watch']);

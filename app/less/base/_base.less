@@ -54,12 +54,25 @@ img{
 // базові стилі checkbox
 .checkbox_style(@width, @height, @font_size:15px){
 	label{
+		padding-left: @width + 10;
+		line-height: @height;
+	}
+	label:before {
+		width: @width;
+		height: @height;
+	}
+	input[type=checkbox]:checked + label:before {
+		font-size: @font_size;
+		line-height: @height - 2;
+	}
+}
+
+.checkbox_style_base{
+	label{
 		display: inline-block;
 		cursor: pointer;
 		position: relative;
-		padding-left: @width + 10;
 		font-weight: normal;
-		line-height: @height;
 	}
 	input[type=checkbox] {
 		display: none;
@@ -68,8 +81,6 @@ img{
 		content: "";
 		display: inline-block;
 		border-radius: 3px;
-		width: @width;
-		height: @height;
 		position: absolute;
 		left: 0;
 		border: 1px solid #ccc;
@@ -77,14 +88,11 @@ img{
 	}
 	input[type=checkbox]:checked + label:before {
 		content: "\2713";
-		font-size: @font_size;
 		text-align: center;
-		line-height: @height - 2;
 		background-color: @base_color;
 		color: #fff;
 	}
 }
-
 
 .section_base{
 	padding: 100px 0;
