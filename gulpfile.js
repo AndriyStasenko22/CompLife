@@ -51,7 +51,7 @@ gulp.task('scripts', function() {
         'app/libs/jquery-ui/jquery-ui.min.js',
         'app/libs/jqueryui-touch-punch/jquery.ui.touch-punch.min.js',
         'app/libs/jquery-touchswipe/jquery.touchSwipe.min.js',
-        'app/libs/waypoints/lib/jquery.waypoints.min.js'
+        'app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js'
         ])
         .pipe(concat('libs.min.js')) // Собираем их в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл

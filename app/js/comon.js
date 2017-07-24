@@ -12,13 +12,16 @@ $(document).ready(function() {
                   )
 	wow.init();
 
-	// $('#Grid').mixItUp();
-
+	// плагін MixItup для профіля
 	if ($('#Grid').length > 0) {
 		var mix = mixitup('#Grid');
 	}
 
 	$(".open_fancykbox").fancybox();
+
+	// маска введення телефону
+	$('[id$=\'_phone\']').mask("+38 (099) 999-99-99"); 
+
 
 	// перлоадер
 	// $('#load').css('opacity', '1');
@@ -381,6 +384,7 @@ $(document).ready(function() {
 	});
 
 	var model_slider= $('.model_slider');
+	
 
 	// fancybox товару
 	$(".card-image .card-image-place a").click(function () {
@@ -388,51 +392,59 @@ $(document).ready(function() {
 		if($(window).width()>767){
 			var active_img = $(this).attr('data-image');
 			var slide=model_slider.children('img[src="'+active_img+'"]').index();
-				// слайдер товару
-				model_slider.owlCarousel({
-					loop:true,
-					items:1,
-					dots: true,
-					dotsData: true,
-					startPosition: slide,
-					onInitialized: function(event){
-						$.fancybox({
-							content:   $('#product_fancybox'),
-							'afterClose': function() { 
-								model_slider.trigger('destroy.owl.carousel');
+			// слайдер товару
+			model_slider.owlCarousel({
+				loop:true,
+				items: 1,
+				dots: true,
+				dotsData: true,
+				margin: 10,
+				startPosition: slide
+			});
+			$.fancybox({
+				content: $('#product_fancybox'),
+				'afterLoad': function(){
+					console.log('load');
+					$('#product_fancybox').css({
+						'height': 'auto',
+						'overflow': 'auto',
+						'visibility': 'visible',
+						'padding' : "25px 0"
+					});
+				},
+				'afterClose': function() { 
+					model_slider.trigger('destroy.owl.carousel');
+					$('#product_fancybox').removeAttr('style');
+				}
+			});
+		}
+		else{
+			var srcimg = [];
+			var  href = {href: $('.card-slider .card-slider-img.active a').attr('data-image')};
+			srcimg.push(href);
+			$('.card-slider .card-slider-img:not(.active) a').each(function(index, el) {
+				href = {href: $(this).attr('data-image')};
+				srcimg.push(href);
+			});
+			$.fancybox.open(
+				srcimg,
+				{
+					type: "image",
+					afterShow: function() {
+						$('.fancybox-wrap').swipe({
+							swipe : function(event, direction) {
+								if (direction === 'left' || direction === 'up') {
+									$.fancybox.prev( direction );
+								} else {
+									$.fancybox.next( direction );
+								}
 							}
 						});
-					}
-				});
-				active_img=0;
-			}
-			else{
-				var srcimg = [];
-				var  href = {href: $('.card-slider .card-slider-img.active a').attr('data-image')};
-				srcimg.push(href);
-				$('.card-slider .card-slider-img:not(.active) a').each(function(index, el) {
-					href = {href: $(this).attr('data-image')};
-					srcimg.push(href);
-				});
-				$.fancybox.open(
-					srcimg,
-					{
-						type: "image",
-						afterShow: function() {
-							$('.fancybox-wrap').swipe({
-								swipe : function(event, direction) {
-									if (direction === 'left' || direction === 'up') {
-										$.fancybox.prev( direction );
-									} else {
-										$.fancybox.next( direction );
-									}
-								}
-							});
 
-						},
-					});
-			}
-		});
+					},
+				});
+		}
+	});
 
 	// кнопки слайдер товару fancybox
 	$('#product_fancybox .btn_next').click(function() {
@@ -443,7 +455,7 @@ $(document).ready(function() {
 	});
 
 	// додати "отзив"
-	$('.block_stars>a').click(function(event) {
+	$('card .block_stars>a.card_coment').click(function(event) {
 		var element = $(this).attr('href');
 		var pos = $(element).parents('.card_tab').offset().top;
 		$('.card_tab_list li.active').removeClass('active');
@@ -515,6 +527,24 @@ $(document).ready(function() {
 			});
 		});
 	}
+
+	//  валідація форми
+	$(document).on('submit', '#registration-form, #recovery-form, #login-form', function(event) {
+		validation(this);
+		console.log('123');
+		return false;
+	});
+
+	// вибір мови
+	$('.language a').click(function(event) {
+		event.preventDefault();
+		AddActive(this);
+	});
+
+	$('.products_tab_item .add-compare').click(function(event) {
+		event.preventDefault();
+		$(this).addClass('active');
+	});
 });
 
 //  функція додавання класу .active в елементах списку li
@@ -558,5 +588,16 @@ function proverka(input) {
 function HeightCell(){
 	$('.compare_wrap .table .fixed-colum').each(function() {
 		$(this).height($(this).next('td, th').height()); 
+	});
+}
+
+
+function validation(form){
+	$(form).find('.form_row').each(function(index, el) {
+		var value = $(this).children('input').val();
+		var label_text = $(this).children('label').text();
+		if(value.length == 0){
+			$(this).children('.help-block').text('Необходимо заполнить поле "'+label_text+'"');
+		}
 	});
 }

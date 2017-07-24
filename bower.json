@@ -32,7 +32,8 @@
     "slick-carousel": "^1.6.0",
     "vivus": "^0.4.0",
     "wow": "^1.1.2",
-    "jqueryui-touch-punch": "*"
+    "jqueryui-touch-punch": "*",
+    "jquery.maskedinput": "^1.4.1"
   },
   "devDependencies": {
     "jquery-touchswipe": "^1.6.18",

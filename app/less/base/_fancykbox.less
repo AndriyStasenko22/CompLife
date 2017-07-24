@@ -1,10 +1,13 @@
 .fancybox-skin{
 	background-color: #fff;
+	.fancybox-inner{
+		overflow: hidden;
+	}
 	.fancybox-close{
 		background-image: none;
 		display: inline-block;
 		border-radius: 50%;
-		background-color: @base_color;
+		background-color: fade(@base_color, 80%);
 		color: #fff;
 		width: 28px;
 		height: 28px;
@@ -22,6 +25,9 @@
 			color: #fff;
 			display: block;
 			content: '\00d7';
+		}
+		&:hover{
+			background-color: @base_color;
 		}
 	}
 }

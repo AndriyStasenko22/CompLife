@@ -18,12 +18,17 @@ header{
 					margin-left: 0;
 				}
 			}
+			&.active a{
+				color: @base_color;
+				font-weight: 600;
+			}
 			a{
 				color: @title_color;
 				&::after{
 					content: '|';
 					color: @title_color;
 					margin-left: 5px;
+					font-weight: normal;
 				}
 				&:hover{
 					color: @base_color;
@@ -157,6 +162,7 @@ header{
 			li{
 				a{
 					display: block !important;
+					text-align: center;
 					padding: 0 10px;
 					font-size: 14px;
 					line-height: 40px;

@@ -13,8 +13,11 @@
 	margin: 20px 0;
 	border-right: 1px solid #eee;
 	border-bottom: 1px solid #eee;
-	.shop_tab_wrap, .product-wrap{
+	.product-wrap{
 		padding: 0 10px 10px 0;
+	}
+	.shop_tab_wrap{
+		padding-bottom: 10px;
 	}
 	.products_tab_img, .shop_tab_img{
 		height: 150px;
@@ -34,6 +37,9 @@
 			}
 		}
 	}
+	.shop_tab_title{
+		padding-right: 10px;
+	}
 	.shop_tab_property{
 		margin-bottom: 10px;
 	}
@@ -49,6 +55,7 @@
 				display: block;
 				position: relative;
 				padding-right: 15px;
+				padding-left: 5px;
 				overflow: hidden;
 				white-space: nowrap;
 				text-overflow: ellipsis;
@@ -61,7 +68,7 @@
 					font-family: 'FontAwesome';
 					display: inline-block;
 					position: absolute;
-					right: 0;
+					right: 8px;
 					font-size: 10px;
 				}
 			}
@@ -74,10 +81,13 @@
 		width: 100%;
 	}
 }
-// силка всі товари
+
+// силка 'Всі товари'
+
 .show_all{
 	display: block;
 	color: @base_color;
+	padding-left: 5px;
 	&::after{
 		content: '\f178';
 		font-family: 'FontAwesome';

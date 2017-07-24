@@ -23,7 +23,8 @@
 		}
 	}
 	.block_stars{
-		line-height: 24px;
+		line-height: 30px;
+		vertical-align: middle;
 		.stars_list{
 			margin-right: 15px;
 			direction: rtl;
@@ -46,11 +47,21 @@
 		.card_coment{
 			vertical-align: top;
 			display: inline-block;
+			margin-right: 15px;
 			&::before{
 				content: "\f0e5";
 				font-family: 'FontAwesome';
 				margin-right: 5px;
 			}
+		}
+		.add-compare{
+			display: inline-block;
+			font-size: 30px;
+			color: #aaa;
+			&:hover, &.active{
+				color: @base_color;
+			}
+
 		}
 	}
 	.card_button{
@@ -207,6 +218,10 @@
 		border: 1px solid #eee;
 		color: @color_catalog_text;
 	}
+	.delivery_image{
+		display: flex;
+		justify-content: space-between;
+	}
 	.delivery_company{
 		display: inline-block;
 		width: 31%;
@@ -283,8 +298,9 @@
 }
 
 #product_fancybox{
-	display: none;
-	padding: 25px 0;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
 	position: relative;
 	.btn_prev, .btn_next{
 		cursor: pointer;
@@ -307,14 +323,11 @@
 		right: 8%;
 	}
 	.owl-carousel{
-		.owl-stage-outer{
-			margin: 0 15% 0 25%;
-			img{
-				width: 60%;
-			}
-		}
+		width: 57%;
+		margin: 0 18% 0 25%;
 		.owl-dot{
-			width: 100%;
+			width: 98%;
+			margin-left: 2%;
 			display: block;
 			padding: 10px;
 			border: 1px solid #fff;
@@ -326,10 +339,19 @@
 			direction: rtl;
 			position: absolute;
 			top: 0;
-			left: 0;
+			left: -43%;
 			max-height: 100%;
 			overflow-x: auto;
-			width: 10%;
+			width: 19%;
+			&::-webkit-scrollbar{
+				width: 5px;
+				height: 8px;
+				background-color: #eee;
+			}
+			&::-webkit-scrollbar-thumb{
+				background: @base_color;
+				height: 15px;
+			}
 		}
 	}
 	.model_title{
