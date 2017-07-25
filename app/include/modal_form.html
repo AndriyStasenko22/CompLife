@@ -10,14 +10,13 @@
 			</div>
 			<div class="form_row">
 				<label class="label-require" for="">Пароль</label>
-				<input type="password">
+				<span class="password">
+					<input type="password">
+					<a href="#" class="show-password" title="Показать пароль"><i class="fa fa-low-vision" aria-hidden="true"></i></a>
+				</span>
 				<div class="help-block"></div>
 			</div>
 			<div class="form_row">
-				<div class="user-form-checkbox">
-					<input type="checkbox" id="checkbox50">
-					<label for="checkbox50">Показать пароль</label>
-				</div>
 				<div class="user-form-checkbox">
 					<input type="checkbox" id="checkbox51">
 					<label for="checkbox51">Запомнить меня</label>
@@ -56,14 +55,11 @@
 			</div>
 			<div class="form_row">
 				<label class="label-require" for="">Пароль</label>
-				<input type="password">
+				<span class="password">
+					<input type="password">
+					<a href="#" class="show-password" title="Показать пароль"><i class="fa fa-low-vision" aria-hidden="true"></i></a>
+				</span>
 				<div class="help-block"></div>
-			</div>
-			<div class="form_row">
-				<div class="user-form-checkbox">
-					<input type="checkbox" id="checkbox52">
-					<label for="checkbox52">Показать пароль</label>
-				</div>
 			</div>
 			<div class="form_button">
 				<button class="base_button button_color" id='registration-button'>Регистрация</button>
@@ -84,6 +80,30 @@
 			</div>
 			<div class="form_button">
 				<button class="base_button button_color">Восстановление</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+<!-- форма зворотнього зв'язку -->
+<div id="callback">
+	<div class="ui-common-form">
+		<h3 class="form-header-title">Обратный звонок</h3>
+		<h5 class="form-header-info">Оставьте свой номер и мы сами вам перезвоним в течение дня</h5>
+		<form action="" class="registration-form" id="callback-form">
+			<div class="form_row">
+				<label class="label-require" for="">Ваше имя</label>
+				<input type="text">
+				<div class="help-block"></div>
+			</div>
+			<div class="form_row">
+				<label class="label-require" for="">Ваше номер телефона</label>
+				<input type="text" id='callback_phone'>
+				<div class="help-block"></div>
+			</div>
+			<div class="form_button">
+				<button class="base_button button_color">Отправить</button>
 			</div>
 		</form>
 	</div>

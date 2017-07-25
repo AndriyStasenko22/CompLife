@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Мой аккаунт</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<!-- бокова корзина -->
+	//=include ../include/sidebar_cart.html
+	<!-- мобільне меню -->
+	//=include ../include/mobile_menu.html
+
+	<div class="overlay"></div>
+
+	//=include ../include/header.html
+	<section class="breadcrumb">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<h2 class="breadcrumb_title">Мой аккаунт</h2>
+					<ul class="bread_crumb">
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="#">Мой аккаунт</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="profile section_base">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-3">
+
+				</div>
+				<div class="col-xs-12 col-sm-9">
+					<div class="profile-info">
+						<div class="row">
+							<form action="" class="profile-info-form">
+								<div class="col-sm-6">
+									<h4 class="section_title">Личные данные</h4>
+									<div class="form_row">
+										<label class="label-require" for="">Фамилия, Имя, Отчество</label>
+										<input type="text" value="Стасенко Андрій Сергійович">
+										<div class="help-block"></div>
+									</div>
+									<div class="form_row">
+										<label class="label-require" for="">Дата рождения</label>
+										<input type="text" value="Стасенко Андрій Сергійович">
+										<div class="help-block"></div>
+									</div>
+									<div class="form_row">
+										<a href="#" class="change-password button_transparent">
+											<i class="fa fa-unlock-alt "></i>Изменить пароль
+										</a>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<h4 class="section_title">Контактные данные</h4>
+									<div class="form_row">
+										<label class="label-require" for="">Мобильный телефон</label>
+										<input type="text" id='callback_phone' value="0635600951">
+										<div class="help-block"></div>
+									</div>
+									<div class="form_row">
+										<label class="label-require" for="">Город</label>
+										<input type="text" value="Кам'янець-Подільський">
+										<div class="help-block"></div>
+									</div>
+									<div class="form_row">
+										<label class="label-require" for="">E-mail</label>
+										<input type="text" value="andriystasenko22@gmail.com">
+										<div class="help-block"></div>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<div class="save-block">
+										<button class='button_color'>Сохранить</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="profile-order">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	//=include ../include/footer.html
+	//=include ../include/modal_form.html
+</body>
+<script src="js/libs.min.js"></script>
+<script src="js/comon.js"></script>
+</html>

@@ -2,11 +2,22 @@
 .sidebar-cart{
 	right: -450px;
 	width: 350px;
+	height: 100vh;
 	border-width: 0 0 0 4px;
-	padding: 40px;
+	padding: 25px;
 	transition: right 0.3s ease-out;
 	&.active{
 		right: 0;
+		touch-action: none;
+	}
+	.sidebar-cart-block{
+		height: 100%;
+	}
+	.sidebar-cart-header{
+		max-height: 32%;
+	}
+	.sidebar-cart-button{
+		max-height: 20%;
 	}
 	.sidebar-cart-icon{
 		height: 80px;
@@ -15,11 +26,22 @@
 	}
 	.sidebar-cart-content{
 		margin: 25px 0;
+		max-height: 43%;
+		overflow-y: auto;
+		&::-webkit-scrollbar{
+			width: 5px;
+			height: 8px;
+			background-color: #eee;
+		}
+		&::-webkit-scrollbar-thumb{
+			background: @base_color;
+			height: 35px;
+		}
 	}
 	.sidebar-cart-sum{
 		display: flex;
 		justify-content: space-between;
-		margin-top: 25px;
+		margin: 25px 0;
 		font-size: 24px;
 		color: @title_color;
 		span:first-child{
@@ -35,6 +57,9 @@
 	@media only screen and (max-width : 767px){
 		&{
 			padding: 15px;
+			.sidebar-cart-content{
+				max-height: 35%;
+			}
 		}
 	}
 	@media only screen and (max-width : 480px){

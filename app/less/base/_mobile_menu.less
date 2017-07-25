@@ -2,13 +2,12 @@
 .mob_menu{
 	left: -260px;
 	width: 260px;
-	padding-bottom: 20px;
 	border-width: 0 4px 0 0;
+	height: 100vh;
 	&.active{
 		left: 0;
 	}
 	.mob_header{
-		padding-bottom: 20px;
 		margin-bottom: 20px;
 		background-color: @base_color;
 	}
@@ -36,6 +35,28 @@
 			width: 45%;
 			line-height: 35px;
 		}
+	}
+	.mob_options{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 20px 0;
+		.language{
+			&:extend(header .language all);
+			float: none !important;
+			li.active a{
+				color: #fff !important;
+			}
+		}
+		.header_options li{
+			margin-left: 10px !important;
+			a{
+				line-height: 1 !important;
+			}
+		}
+	}
+	.menu{
+		height: 100%;
 	}
 	.menu, .mob_dropdown_menu{
 		display: block;

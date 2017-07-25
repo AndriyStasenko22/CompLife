@@ -210,11 +210,11 @@ $(document).ready(function() {
 				items:3,
 				margin: 30
 			},
-			// 992:{
-			// 	items:3,
-			// },
+			992:{
+				items:4,
+			},
 			1200:{
-				items:4
+				items:5
 			}
 		}
 	});
@@ -297,7 +297,8 @@ $(document).ready(function() {
 	}
 
 	// бокове мобільне меню, бокова корзина
-	$('.mobile_menu_button, .header_busket>a').click(function() {
+	$('.mobile_menu_button, .header_busket>a').click(function(e) {
+		e.preventDefault();
 		if($(this).hasClass('mobile_menu_button')){
 			$('.mob_menu').addClass('active');
 		}
@@ -306,11 +307,9 @@ $(document).ready(function() {
 		}
 		$('.overlay').addClass('active')
 		$('body').addClass('fixed');
-		$(window).css('overflow', 'hidden');
 	});
 	$('.overlay').click(function() {
-		$('.mob_menu.active, .sidebar-cart.active').removeClass('active');
-		$('.overlay').removeClass('active');
+		$('.mob_menu.active, .sidebar-cart.active, .overlay.active').removeClass('active');
 		$('body').removeClass('fixed');
 	});
 
@@ -376,7 +375,7 @@ $(document).ready(function() {
 	// змінна картинок товара в картці товара, додавання data-image
 	$('.card-slider-img>a').click(function(event) {
 		event.preventDefault();
-		$(this).parent().siblings('.card-slider-img').removeClass('active');
+		$('.card-slider-img.active').removeClass('active');
 		$(this).parent().addClass('active');
 		var img = $(this).data('image');
 		$('.card-image-place img').attr('src', img);
@@ -389,10 +388,12 @@ $(document).ready(function() {
 	// fancybox товару
 	$(".card-image .card-image-place a").click(function () {
 		
-		if($(window).width()>767){
-			var active_img = $(this).attr('data-image');
-			var slide=model_slider.children('img[src="'+active_img+'"]').index();
-			// слайдер товару
+		// для великих екранів використоється owl carusel, розташування картинок не важлива
+		if( $(window).width()>767 ){
+			var active_img = $(this).attr('data-image'); // адреса вибраної картинки
+			var slide = model_slider.children('img[src="'+active_img+'"]').index(); // індекс вибраної картинки, необхідний для вказання початкового слайду 
+			
+			// ініціалізація слайдера товару, початковий слайд - індекс вибраної картинки
 			model_slider.owlCarousel({
 				loop:true,
 				items: 1,
@@ -404,8 +405,7 @@ $(document).ready(function() {
 			$.fancybox({
 				content: $('#product_fancybox'),
 				'afterLoad': function(){
-					console.log('load');
-					$('#product_fancybox').css({
+					$('#product_fancybox').css({  // відкриття слайдера в fancybox
 						'height': 'auto',
 						'overflow': 'auto',
 						'visibility': 'visible',
@@ -413,17 +413,19 @@ $(document).ready(function() {
 					});
 				},
 				'afterClose': function() { 
-					model_slider.trigger('destroy.owl.carousel');
+					model_slider.trigger('destroy.owl.carousel'); // після закриття fancybox слайдер знищується
 					$('#product_fancybox').removeAttr('style');
 				}
 			});
 		}
+		// для мобільних використоється fancybox галерея
 		else{
+			//  створюється масив з адресами картинок
 			var srcimg = [];
-			var  href = {href: $('.card-slider .card-slider-img.active a').attr('data-image')};
+			var  href = {href: $('.card-slider .card-slider-img.active a').attr('data-image')}; // першою додається адреса активної картинки
 			srcimg.push(href);
 			$('.card-slider .card-slider-img:not(.active) a').each(function(index, el) {
-				href = {href: $(this).attr('data-image')};
+				href = {href: $(this).attr('data-image')}; // додаються адреси картинок, крім активної
 				srcimg.push(href);
 			});
 			$.fancybox.open(
@@ -431,7 +433,7 @@ $(document).ready(function() {
 				{
 					type: "image",
 					afterShow: function() {
-						$('.fancybox-wrap').swipe({
+						$('.fancybox-wrap').swipe({ 
 							swipe : function(event, direction) {
 								if (direction === 'left' || direction === 'up') {
 									$.fancybox.prev( direction );
@@ -464,16 +466,30 @@ $(document).ready(function() {
 
 	});
 
-	// блок "Войти"
+	// блок з кнопками "Вхід / Реєстрація"
 	$('.header_login a').click(function(event) {
+		event.preventDefault();
 		$('.authorization-box').slideToggle();
 	});
 
 	// форми "Реєстрація", "Авторизація", "Відновлення пароля"
-	$('.registration, .login, .password-recovery').click(function(event) {
-		$('.authorization-box').css('display', 'none');
+	$('.registration, .login, .password-recovery, .callback-button').click(function(event) {
+		event.preventDefault();
+		$('.authorization-box').css('display', 'none'); // приховування блоку з кнопками "Вхід / Реєстрація"
+		var object = $(this).attr('href'); // id форми, яка має відкриватися в fancybox
 		$.fancybox({
-			content: $($(this).attr('href'))
+			content: $(object),
+			afterShow: function(){
+				// після відкриття fancybox приховувати бокове меню, козрину та оверлей, заборонти скролл для body 
+				$('.show-password').siblings('input').attr('type', 'password');
+				$('.sidebar-cart, .mob_menu, .overlay, .show-password').removeClass('active');
+				$('body, html').css('overflow', 'hidden');
+			},
+			afterClose: function(){
+				// після закриття fancybox дозволити скролл для body та очистити поля відповідної форми 
+				$(object).find('input').val("");
+				$('body, html').removeAttr('style');
+			}
 		});
 	});
 
@@ -529,11 +545,14 @@ $(document).ready(function() {
 	}
 
 	//  валідація форми
-	$(document).on('submit', '#registration-form, #recovery-form, #login-form', function(event) {
-		validation(this);
-		console.log('123');
-		return false;
-	});
+	// $(document).on('submit', '#registration-form, #recovery-form, #login-form', function(event) {
+	// 	// if( !validation(this) ){
+	// 		// return false;	
+	// 	// }
+	// 	validation(this);
+	// 	return false;
+
+	// });
 
 	// вибір мови
 	$('.language a').click(function(event) {
@@ -544,6 +563,14 @@ $(document).ready(function() {
 	$('.products_tab_item .add-compare').click(function(event) {
 		event.preventDefault();
 		$(this).addClass('active');
+	});
+
+
+	$('.show-password').click(function(event) {
+		event.preventDefault();
+		$(this).toggleClass('active');
+		var pass = $(this).siblings('input');
+		pass.attr('type', pass.attr('type') === 'password' ? 'text' : 'password');
 	});
 });
 
@@ -597,7 +624,7 @@ function validation(form){
 		var value = $(this).children('input').val();
 		var label_text = $(this).children('label').text();
 		if(value.length == 0){
-			$(this).children('.help-block').text('Необходимо заполнить поле "'+label_text+'"');
+			$(this).children('.help-block').text('Необходимо заполнить поле "' + label_text + '"');
 		}
 	});
 }
