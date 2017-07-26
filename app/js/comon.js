@@ -467,13 +467,13 @@ $(document).ready(function() {
 	});
 
 	// блок з кнопками "Вхід / Реєстрація"
-	$('.header_login a').click(function(event) {
+	$('.header_login>a').click(function(event) {
 		event.preventDefault();
 		$('.authorization-box').slideToggle();
 	});
 
-	// форми "Реєстрація", "Авторизація", "Відновлення пароля"
-	$('.registration, .login, .password-recovery, .callback-button').click(function(event) {
+	// форми "Реєстрація", "Авторизація", "Відновлення пароля", "Зворотній звязок", "Змінити пароль"
+	$('.registration, .login, .password-recovery, .callback-button, .change-password').click(function(event) {
 		event.preventDefault();
 		$('.authorization-box').css('display', 'none'); // приховування блоку з кнопками "Вхід / Реєстрація"
 		var object = $(this).attr('href'); // id форми, яка має відкриватися в fancybox
@@ -565,13 +565,51 @@ $(document).ready(function() {
 		$(this).addClass('active');
 	});
 
-
+	// кнопка відображення введеного пароля в формі "Реєстрації/Авторизації"
 	$('.show-password').click(function(event) {
 		event.preventDefault();
 		$(this).toggleClass('active');
 		var pass = $(this).siblings('input');
 		pass.attr('type', pass.attr('type') === 'password' ? 'text' : 'password');
 	});
+
+	// анімація маркера меню на сотрінці "Профіль користовача"
+	$('.profile-menu a').click(function(event) {
+		event.preventDefault();
+		$('.profile-menu a.active').removeClass('active');
+		$(this).addClass('active');
+		if( $(window).width() > 767){
+			horizontal_marker(this, '1');
+		}
+		else{
+			vertical_marker(this, '1');
+		}
+	});
+
+	$('#datetimepicker').datepicker({
+		language: 'ru',
+		clearBtn: true
+	});
+});
+
+$(window).on('load', function(event) {
+	event.preventDefault();
+	if( $(window).width() > 767){
+		horizontal_marker($('.profile-menu a.active'), 'load');
+	}
+	else{
+		vertical_marker($('.profile-menu a.active'), 'load');
+	}
+});
+
+$(window).on('resize', function(event) {
+	event.preventDefault();
+	if( $(window).width() > 767){
+		horizontal_marker($('.profile-menu a.active'), 'load');
+	}
+	else{
+		vertical_marker($('.profile-menu a.active'), 'load');
+	}
 });
 
 //  функція додавання класу .active в елементах списку li
@@ -627,4 +665,51 @@ function validation(form){
 			$(this).children('.help-block').text('Необходимо заполнить поле "' + label_text + '"');
 		}
 	});
+}
+
+
+function horizontal_marker(active, flag){
+	var marker = $('.profile-menu .menu-marker');
+	var position = $(active).position().top; // позиція зверху активного пункта меню
+	var heigth = $(active).height(); // висота активного пункта меню
+	var marker_position = position + heigth / 2; // позиція маркера
+	
+	// додавання початкової позиції маркера при завантажені сторінки 
+	if(flag === 'load'){
+		marker.removeAttr('style');
+		marker.css({
+			'top': marker_position,
+			'opacity': '1'
+		});
+		$( $(active).attr('href') ).addClass('active'); // відображення блока з відповідним id з пункта меню
+	}
+	//  анімація маркера при виборі пункта меню
+	else{
+		marker.animate({'top': marker_position}, 400);
+		$('.profile .tab.active').removeClass('active'); // приховування непотрібних блоків
+		$($(active).attr('href')).addClass('active'); // відображення блока з відповідним id з пункта меню
+	}
+}
+
+function vertical_marker(active, flag){
+	var marker = $('.profile-menu .menu-marker');
+	var position = $(active).position().left; // позиція зверху активного пункта меню
+	var width = $(active).width(); // висота активного пункта меню
+	var marker_position = position + width / 2; // позиція маркера
+	
+	// додавання початкової позиції маркера при завантажені сторінки 
+	if(flag === 'load'){
+		marker.removeAttr('style');
+		marker.css({
+			'left': marker_position,
+			'opacity': '1'
+		});
+		$( $(active).attr('href') ).addClass('active'); // відображення блока з відповідним id з пункта меню
+	}
+	//  анімація маркера при виборі пункта меню
+	else{
+		marker.animate({'left': marker_position}, 400);
+		$('.profile .tab.active').removeClass('active'); // приховування непотрібних блоків
+		$($(active).attr('href')).addClass('active'); // відображення блока з відповідним id з пункта меню
+	}
 }

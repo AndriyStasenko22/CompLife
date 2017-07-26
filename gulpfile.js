@@ -48,10 +48,12 @@ gulp.task('scripts', function() {
         'app/libs/jquery-mixitup/dist/mixitup.min.js', //MixitUp
         'app/libs/vivus/dist/vivus.min.js', // SVG drowin
         'app/libs/wow/dist/wow.min.js', // Wow.js
-        'app/libs/jquery-ui/jquery-ui.min.js',
-        'app/libs/jqueryui-touch-punch/jquery.ui.touch-punch.min.js',
-        'app/libs/jquery-touchswipe/jquery.touchSwipe.min.js',
-        'app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js'
+        'app/libs/jquery-ui/jquery-ui.min.js', // Price
+        'app/libs/jqueryui-touch-punch/jquery.ui.touch-punch.min.js', // Touch-Punch for price
+        'app/libs/jquery-touchswipe/jquery.touchSwipe.min.js', // TouchSwipe for product slider
+        'app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js', // MaskedInput
+        'app/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js', // Bootstrap-Datepicker
+        'app/libs/bootstrap-datepicker/js/locales/bootstrap-datepicker.ru.js' // Bootstrap-Datepicker  
         ])
         .pipe(concat('libs.min.js')) // Собираем их в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл

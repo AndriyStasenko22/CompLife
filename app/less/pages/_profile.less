@@ -2,15 +2,181 @@
 	.section_title{
 		font-size: 18px;
 	}
+	.tab{
+		display: none;
+		&.active{
+			display: block;
+		}
+	}
 	.change-password{
 		margin-top: 15px;
-		float: right;
+		height: 37px;
+		line-height: 37px;
+		padding: 0 15px;
+		font-size: 13px;
 		.fa{
-			margin-right: 15px;
+			margin-right: 10px;
 		}
 	}
 	.save-block{
 		text-align: center;
-		margin: 30px 0;
+		margin-top: 30px;
+	}
+	.profile-menu{
+		position: relative;
+		padding-left: 30px;
+		&::before{
+			position: absolute;
+			top: 0;
+			width: 2px;
+			height: 100%;
+			content: '';
+			left: 15px;
+			transform: translateX(-50%);
+			background-color: #f2f2f2;
+		}
+		li{
+			&.menu-marker{
+				position: absolute;	
+				width: 8px;
+				height: 8px;
+				display: block;
+				opacity: 0;
+				left: 15px;
+				transform: translate(-50%, -50%);
+				background-color: @base_color;
+			}
+			a{
+				line-height: 40px;
+				display: block;
+				font-size: 18px;
+				color: @color_catalog_text;
+				transition: all 0.3s easy-in-out;
+				&:hover, &.active{
+					color: @base_color;
+				}
+				&.active{
+					font-family: "Ubuntu-Bold";
+				}
+			}
+		}
+	}
+	.profile-number-coments{
+		font-size: 16px;
+		color: @title_color;
+		font-family: "Ubuntu-Bold";
+		margin: 10px 0 50px;
+		display: inline-block;
+	}
+	.profile-coment{
+		display: flex;
+		width: 100%;
+		&:extend(.coment all);
+		.profile-coment-info{
+			width: 93%;
+			margin: 0 2%;
+			strong{
+				color: @title_color;
+			}
+			.user:hover{
+				color: @base_color;
+			}
+		}
+		.profile-coment-image{
+			width: 25%;
+		}
+	}
+	@media only screen and (max-width : 992px){
+		&{
+			.profile-menu li a{
+				font-size: 14px;
+			}
+		}
+	}
+	@media only screen and (max-width : 767px){
+		&{
+			.section_title{
+				margin-top: 40px;
+			}
+			.profile-menu{
+				display: flex;
+				flex-flow: row;
+				justify-content: space-between;
+				align-items: center;
+				padding-left: 0;
+				padding-bottom: 15px;
+				&:before{
+					width: 100%;
+					height: 2px;
+					top: 100%;
+					left: 0;
+					transform: translateY(-50%);
+				}
+				li{
+					width: 30%;
+					&.menu-marker{
+						left: 0;
+						top: 100%;
+					}
+					a{
+						line-height: 1.4em;
+						text-align: center;
+						font-size: 14px;
+					}
+				}
+			}
+			.profile-coment{
+				flex-direction: column;
+				align-items: center;
+				.profile-coment-image{
+					margin-bottom: 15px;
+					width: 50%;
+				}
+			}
+		}
+	}
+}
+.profile-order-table{
+	&:extend(.checkout-table all);
+	img{
+		width: 40%;
+	}
+	th, .profile-order-summ{
+		white-space: nowrap;
+	}
+	.profile-order-info{
+		font-family: "Ubuntu-Bold";
+		color: @base_color;
+	}
+	@media only screen and (max-width : 992px){
+		&{
+			img{
+				width: 50%;
+			}
+			tr, td{
+				display: block;
+			}
+			th{
+				display: none;
+			}
+			td:not(.profile-order-info){
+				position: relative;
+				padding-left: 50%;
+				&::before{
+					position: absolute;
+					height: 100%;
+					width: 45%;
+					content: attr(data-name);
+					left: 0;
+					top: 0;
+					background-color: #f8f8f8;
+					border-right: 2px solid #eee;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-family: "Ubuntu-Bold";
+				}
+			}
+		}
 	}
 }

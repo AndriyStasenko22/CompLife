@@ -13,6 +13,6 @@
 		clear: "Очистить",
 		format: "dd.mm.yyyy",
 		weekStart: 1,
-    monthsTitle: 'Месяцы'
+    	monthsTitle: 'Месяцы'
 	};
 }(jQuery));
