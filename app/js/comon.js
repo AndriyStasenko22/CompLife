@@ -574,18 +574,16 @@ $(document).ready(function() {
 	});
 
 	// анімація маркера меню на сотрінці "Профіль користовача"
-	$('.profile-menu a').click(function(event) {
-		event.preventDefault();
-		$('.profile-menu a.active').removeClass('active');
-		$(this).addClass('active');
-		if( $(window).width() > 767){
-			horizontal_marker(this, '1');
-		}
-		else{
-			vertical_marker(this, '1');
-		}
-	});
+	if($('.profile-menu').length>0){
+		$('.profile-menu a').click(function(event) {
+			event.preventDefault();
+			$('.profile-menu a.active').removeClass('active');
+			$(this).addClass('active');
+			marker(this, '1');
+		});
+	}
 
+	// маска дати  
 	$('#datetimepicker').datepicker({
 		language: 'ru',
 		clearBtn: true
@@ -594,21 +592,15 @@ $(document).ready(function() {
 
 $(window).on('load', function(event) {
 	event.preventDefault();
-	if( $(window).width() > 767){
-		horizontal_marker($('.profile-menu a.active'), 'load');
-	}
-	else{
-		vertical_marker($('.profile-menu a.active'), 'load');
+	if($('.profile-menu').length>0){
+		marker($('.profile-menu a.active'), 'load');
 	}
 });
 
 $(window).on('resize', function(event) {
 	event.preventDefault();
-	if( $(window).width() > 767){
-		horizontal_marker($('.profile-menu a.active'), 'load');
-	}
-	else{
-		vertical_marker($('.profile-menu a.active'), 'load');
+	if($('.profile-menu').length>0){
+		marker($('.profile-menu a.active'), 'load');
 	}
 });
 
@@ -650,13 +642,14 @@ function proverka(input) {
 	input.value = input.value.replace(/[^\d]/g, '');
 };
 
+//  однакова висота комірок "Зрівняння"
 function HeightCell(){
 	$('.compare_wrap .table .fixed-colum').each(function() {
 		$(this).height($(this).next('td, th').height()); 
 	});
 }
 
-
+//  валідація форм
 function validation(form){
 	$(form).find('.form_row').each(function(index, el) {
 		var value = $(this).children('input').val();
@@ -667,49 +660,32 @@ function validation(form){
 	});
 }
 
-
-function horizontal_marker(active, flag){
+//  анімація маркера в "Профіль"
+function marker(active, flag){
 	var marker = $('.profile-menu .menu-marker');
-	var position = $(active).position().top; // позиція зверху активного пункта меню
+	var position = $(active).position(); // позиція активного пункта меню
 	var heigth = $(active).height(); // висота активного пункта меню
-	var marker_position = position + heigth / 2; // позиція маркера
-	
-	// додавання початкової позиції маркера при завантажені сторінки 
-	if(flag === 'load'){
-		marker.removeAttr('style');
-		marker.css({
-			'top': marker_position,
-			'opacity': '1'
-		});
-		$( $(active).attr('href') ).addClass('active'); // відображення блока з відповідним id з пункта меню
-	}
-	//  анімація маркера при виборі пункта меню
-	else{
-		marker.animate({'top': marker_position}, 400);
-		$('.profile .tab.active').removeClass('active'); // приховування непотрібних блоків
-		$($(active).attr('href')).addClass('active'); // відображення блока з відповідним id з пункта меню
-	}
-}
-
-function vertical_marker(active, flag){
-	var marker = $('.profile-menu .menu-marker');
-	var position = $(active).position().left; // позиція зверху активного пункта меню
 	var width = $(active).width(); // висота активного пункта меню
-	var marker_position = position + width / 2; // позиція маркера
+	var marker_position = 0; // позиція маркера
+	var marker_value = [];
 	
+	if($(window).width()>767){
+		//  вертикальна анімація 
+		marker_position = position.top + heigth / 2;
+		m=[{'top': marker_position}];
+	}
+	else{
+		//  горизонтальна анімація 
+		marker_position = position.left + width / 2;
+		m=[{'left': marker_position}];
+	}
 	// додавання початкової позиції маркера при завантажені сторінки 
 	if(flag === 'load'){
 		marker.removeAttr('style');
-		marker.css({
-			'left': marker_position,
-			'opacity': '1'
-		});
-		$( $(active).attr('href') ).addClass('active'); // відображення блока з відповідним id з пункта меню
+		marker.css(m[0]).css('opacity', '1');
 	}
 	//  анімація маркера при виборі пункта меню
 	else{
-		marker.animate({'left': marker_position}, 400);
-		$('.profile .tab.active').removeClass('active'); // приховування непотрібних блоків
-		$($(active).attr('href')).addClass('active'); // відображення блока з відповідним id з пункта меню
+		marker.animate(m[0], 400);
 	}
 }

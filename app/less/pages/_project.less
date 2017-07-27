@@ -1,5 +1,5 @@
 .project{
-		padding: 50px 0;
+	padding: 50px 0;
 	.btn_prev, .btn_next{
 		border-color: #c5c2c2;
 		color: #c5c2c2;
@@ -30,23 +30,9 @@
 			animation-delay: 0.9s;
 		}
 	}
-	@media only screen and (max-width : 767px){
-		&{
-			// .project_image_block{
-			// 	width: 60%;
-			// }
-			// .project_image_block{
-			// 	.phone, .tablet{
-			// 		img{
-			// 			width: 80%;	
-			// 		}
-			// 	}
-			// }
-		}
-	}
 }
 
-.service_section_image, .project_image{
+.project_image{
 	display: flex;
 	justify-content: center;
 	@media only screen and (max-width : 767px){
@@ -95,6 +81,7 @@
 	}
 	.social_icon{
 		.social_icon();
+		margin-bottom: 20px;
 	}
 	@media only screen and (max-width : 767px){
 		&{
@@ -149,6 +136,26 @@
 		.tab_layout_L, .tab_layout_R{
 			height: 90%;
 			transition-delay: 0.6s;
+		}
+	}
+}
+.project-functions{
+	margin-top: 50px;
+	.section_title{
+		font-size: 20px;
+	}
+	ul{
+		&.marker li{
+			list-style-type: disc;
+			margin-left: 15px;
+		}
+		li{
+			margin-bottom: 15px;
+			color: #333;
+			strong{
+				font-family: "Ubuntu-Bold";
+				color: @title_color;
+			}
 		}
 	}
 }
